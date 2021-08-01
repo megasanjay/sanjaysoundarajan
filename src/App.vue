@@ -1,14 +1,16 @@
 <template>
-  <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
+  <the-header></the-header>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+// import HelloWorld from './components/HelloWorld.vue'
+ import TheHeader from './components/UI/TheHeader.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    TheHeader
   }
 }
 </script>

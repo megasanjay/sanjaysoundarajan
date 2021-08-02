@@ -114,7 +114,7 @@ export default {
   data() {
     return {
       orginalSentence: "Page under construction...",
-      displayedSentence: "",
+      displayedSentence: " ",
       counter: 0,
     };
   },
@@ -132,7 +132,7 @@ export default {
         );
         that.counter++;
       }
-    }, 4000 / this.orginalSentence.length);
+    }, 6000 / this.orginalSentence.length);
   },
 };
 </script>
@@ -154,7 +154,7 @@ export default {
 .typewriter-text::after {
   width: 0.125em;
   background: black;
-  animation: blink 500ms steps(26) infinite;
+  animation: blink 600ms steps(26) infinite;
 }
 
 @keyframes typewriter {

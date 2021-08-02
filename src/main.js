@@ -1,5 +1,8 @@
 import { createApp } from "vue";
 import App from "./App.vue";
 import "./index.css";
-
-createApp(App).mount("#app");
+import Particles from "particles.vue3";
+const app = createApp(App);
+// app.use(router);
+app.use(Particles);
+app.mount("#app");

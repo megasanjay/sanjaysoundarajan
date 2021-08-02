@@ -5,8 +5,6 @@
     <Particles
       class="absolute h-full w-full"
       id="tsparticles"
-      :particlesInit="particlesInit"
-      :particlesLoaded="particlesLoaded"
       :options="{
         background: {
           color: {
@@ -38,7 +36,7 @@
               quantity: 4,
             },
             repulse: {
-              distance: 75,
+              distance: 100,
               duration: 0.4,
             },
           },
@@ -70,7 +68,7 @@
               enable: true,
               value_area: 800,
             },
-            value: 160,
+            value: 200,
           },
           opacity: {
             value: 0.5,
@@ -93,7 +91,7 @@
       <div
         class=" text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-mono relative typewriter-text"
       >
-        Page under construction...
+        {{ this.displayedSentence }}
       </div>
     </div>
     <div class="absolute bottom-2 right-2 text-gray-200">
@@ -113,6 +111,29 @@ export default {
   components: {
     TheHeader,
   },
+  data() {
+    return {
+      orginalSentence: "Page under construction...",
+      displayedSentence: "",
+      counter: 0,
+    };
+  },
+  mounted() {
+    let that = this;
+    const typingFunction = setInterval(() => {
+      if (that.counter >= that.orginalSentence.length) {
+        that.displayedSentence = that.orginalSentence;
+        that.counter = that.orginalSentence.length;
+        clearInterval(typingFunction);
+      } else {
+        that.displayedSentence = that.orginalSentence.substring(
+          0,
+          that.counter
+        );
+        that.counter++;
+      }
+    }, 4000 / this.orginalSentence.length);
+  },
 };
 </script>
 
@@ -121,25 +142,19 @@ export default {
   color: #2c3e50;
 }
 
-.typewriter-text::before,
 .typewriter-text::after {
   content: "";
   position: absolute;
   top: -5px;
   right: 0;
   bottom: -5px;
-  left: 0;
-}
-
-.typewriter-text::before {
-  background: #f8f9fa;
-  animation: typewriter 4s steps(26) 1s forwards;
+  left: 100%;
 }
 
 .typewriter-text::after {
   width: 0.125em;
   background: black;
-  animation: typewriter 4s steps(26) 1s forwards, blink 750ms steps(26) infinite;
+  animation: blink 500ms steps(26) infinite;
 }
 
 @keyframes typewriter {

@@ -29,7 +29,7 @@
           },
           modes: {
             bubble: {
-              distance: 800,
+              distance: 200,
               duration: 2,
               opacity: 0.8,
               size: 40,
@@ -38,7 +38,7 @@
               quantity: 4,
             },
             repulse: {
-              distance: 200,
+              distance: 75,
               duration: 0.4,
             },
           },
@@ -49,7 +49,7 @@
           },
           links: {
             color: '#e9ecef',
-            distance: 150,
+            distance: 50,
             enable: true,
             opacity: 0.5,
             width: 1,
@@ -61,8 +61,8 @@
             direction: 'none',
             enable: true,
             outMode: 'bounce',
-            random: false,
-            speed: 6,
+            random: true,
+            speed: 10,
             straight: false,
           },
           number: {
@@ -70,7 +70,7 @@
               enable: true,
               value_area: 800,
             },
-            value: 80,
+            value: 160,
           },
           opacity: {
             value: 0.5,
@@ -86,6 +86,7 @@
         detectRetina: true,
       }"
     />
+
     <div
       class="flex flex-col justify-center items-center h-screen pointer-events-none"
     >
@@ -124,7 +125,7 @@ export default {
 .typewriter-text::after {
   content: "";
   position: absolute;
-  top: 0;
+  top: -5px;
   right: 0;
   bottom: -5px;
   left: 0;

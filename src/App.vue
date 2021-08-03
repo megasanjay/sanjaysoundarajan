@@ -23,15 +23,15 @@
             outModes: { bottom: 'out', left: 'out', right: 'out', top: 'out' },
             speed: 0.2,
           },
-          number: { density: { enable: true, value_area: 800 }, value: 5 },
+          number: { density: { enable: true, value_area: 800 }, value: 10 },
           size: { value: 10 },
           shape: {
-            type: ['character', 'image'],
+            type: ['character', 'circle'],
             character: [
               {
-                fill: true,
+                fill: false,
                 font: 'Verdana',
-                value: ['❌', '✖️', '🟠', '🛆', '⛛', '🔳'],
+                value: ['❌', '🛆'],
               },
             ],
             image: [

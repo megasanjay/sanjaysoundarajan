@@ -1,93 +1,58 @@
 <template>
   <the-header></the-header>
-
   <div class="relative">
     <Particles
-      class="absolute h-full w-full"
+      class=" "
       id="tsparticles"
       :options="{
-        background: {
-          color: {
-            value: '#f8f9fa',
-          },
-        },
-        fpsLimit: 60,
+        background: { color: { value: '#f8f9fa' } },
+        fullScreen: { enable: true, zIndex: -1 },
         interactivity: {
-          detectsOn: 'canvas',
+          detect_on: 'window',
           events: {
-            onClick: {
-              enable: true,
-              mode: 'push',
-            },
-            onHover: {
-              enable: true,
-              mode: 'repulse',
-            },
-            resize: true,
+            onClick: { enable: true, mode: 'push' },
+            onHover: { enable: true, parallax: { enable: true, force: 100 } },
           },
-          modes: {
-            bubble: {
-              distance: 200,
-              duration: 2,
-              opacity: 0.8,
-              size: 40,
-            },
-            push: {
-              quantity: 4,
-            },
-            repulse: {
-              distance: 100,
-              duration: 0.4,
-            },
-          },
+          modes: { grab: { distance: 50 } },
         },
         particles: {
-          color: {
-            value: '#dee2e6',
-          },
-          links: {
-            color: '#e9ecef',
-            distance: 50,
-            enable: true,
-            opacity: 0.5,
-            width: 1,
-          },
-          collisions: {
-            enable: true,
-          },
+          color: { value: 'random' },
           move: {
-            direction: 'none',
+            attract: { rotate: { x: 600, y: 1200 } },
             enable: true,
-            outMode: 'bounce',
-            random: true,
-            speed: 10,
-            straight: false,
+            outModes: { bottom: 'out', left: 'out', right: 'out', top: 'out' },
+            speed: 0.2,
           },
-          number: {
-            density: {
-              enable: true,
-              value_area: 800,
-            },
-            value: 200,
-          },
-          opacity: {
-            value: 0.5,
-          },
+          number: { density: { enable: true, value_area: 800 }, value: 5 },
+          size: { value: 10 },
           shape: {
-            type: 'circle',
-          },
-          size: {
-            random: true,
-            value: 5,
+            type: ['character', 'image'],
+            character: [
+              {
+                fill: true,
+                font: 'Verdana',
+                value: ['❌', '✖️', '🟠', '🛆', '⛛', '🔳'],
+              },
+            ],
+            image: [
+              {
+                src: 'https://particles.js.org/images/fruits//apple.png',
+                width: 32,
+                height: 32,
+              },
+              {
+                src: 'https://particles.js.org/images/fruits//avocado.png',
+                width: 32,
+                height: 32,
+              },
+            ],
           },
         },
         detectRetina: true,
       }"
     />
 
-    <div
-      class="flex flex-col justify-center items-center h-screen pointer-events-none"
-    >
+    <div class="flex flex-col justify-center items-center h-screen ">
       <div
         class=" text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-mono relative typewriter-text"
       >

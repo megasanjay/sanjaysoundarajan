@@ -1,5 +1,7 @@
 <template>
-  <div>Header here</div>
+  <div class="bg-transparent">
+    <p class="text-black">header here</p>
+  </div>
 </template>
 
 <script>

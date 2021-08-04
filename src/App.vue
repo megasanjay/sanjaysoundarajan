@@ -2,13 +2,24 @@
   <Particles id="tsparticles" :options="particlesOptions" />
   <the-header></the-header>
   <div class="relative">
-    <div class="flex flex-col justify-center items-center h-screen ">
+    <div class="flex flex-col justify-center items-center h-screen">
       <div
-        class=" text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white font-mono relative typewriter-text"
+        class="
+          text-xl
+          sm:text-4xl
+          md:text-5xl
+          lg:text-6xl
+          font-black
+          text-white
+          font-mono
+          relative
+          typewriter-text
+        "
       >
         {{ this.displayedSentence }}
       </div>
     </div>
+
     <div class="absolute bottom-2 right-2 text-gray-200">
       <div class="inline-block sm:hidden">mb</div>
       <div class="hidden sm:inline-block md:hidden">sm</div>

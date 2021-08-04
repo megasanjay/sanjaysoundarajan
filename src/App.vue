@@ -1,60 +1,10 @@
 <template>
+  <Particles id="tsparticles" :options="particlesOptions" />
   <the-header></the-header>
   <div class="relative">
-    <Particles
-      class=" "
-      id="tsparticles"
-      :options="{
-        background: { color: { value: '#f8f9fa' } },
-        fullScreen: { enable: true, zIndex: -1 },
-        interactivity: {
-          detect_on: 'window',
-          events: {
-            onClick: { enable: true, mode: 'push' },
-            onHover: { enable: true, parallax: { enable: true, force: 100 } },
-          },
-          modes: { grab: { distance: 50 } },
-        },
-        particles: {
-          color: { value: 'random' },
-          move: {
-            attract: { rotate: { x: 600, y: 1200 } },
-            enable: true,
-            outModes: { bottom: 'out', left: 'out', right: 'out', top: 'out' },
-            speed: 0.2,
-          },
-          number: { density: { enable: true, value_area: 800 }, value: 10 },
-          size: { value: 10 },
-          shape: {
-            type: ['character', 'circle'],
-            character: [
-              {
-                fill: false,
-                font: 'Verdana',
-                value: ['❌', '🛆'],
-              },
-            ],
-            image: [
-              {
-                src: 'https://particles.js.org/images/fruits//apple.png',
-                width: 32,
-                height: 32,
-              },
-              {
-                src: 'https://particles.js.org/images/fruits//avocado.png',
-                width: 32,
-                height: 32,
-              },
-            ],
-          },
-        },
-        detectRetina: true,
-      }"
-    />
-
     <div class="flex flex-col justify-center items-center h-screen ">
       <div
-        class=" text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black font-mono relative typewriter-text"
+        class=" text-xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white font-mono relative typewriter-text"
       >
         {{ this.displayedSentence }}
       </div>
@@ -81,6 +31,116 @@ export default {
       orginalSentence: "Page under construction...",
       displayedSentence: " ",
       counter: 0,
+      particlesOptions: {
+        background: { color: { value: "#1F2937" } },
+        fullScreen: { enable: true, zIndex: -1 },
+        interactivity: {
+          detect_on: "window",
+          events: {
+            onClick: { enable: true, mode: "push" },
+            onHover: {
+              enable: true,
+              mode: ["parallax"],
+              parallax: { enable: true, force: 200, smooth: 10 },
+            },
+          },
+          modes: {
+            grab: { distance: 50 },
+          },
+        },
+        particles: {
+          color: { value: "random" },
+          move: {
+            enable: true,
+            mode: ["bounce", "collisions"],
+            repulse: {
+              random: {
+                enable: true,
+                minimumValue: 10,
+              },
+              value: 30,
+              enable: true,
+              distance: 10,
+              duration: 1,
+              factor: 10,
+              speed: 10,
+            },
+
+            bounce: {
+              horizontal: {
+                random: {
+                  enable: false,
+                  minimumValue: 0.1,
+                },
+                value: 1,
+              },
+              vertical: {
+                random: {
+                  enable: false,
+                  minimumValue: 0.1,
+                },
+                value: 1,
+              },
+            },
+            collisions: {
+              bounce: {
+                horizontal: {
+                  random: {
+                    enable: true,
+                    minimumValue: 0.1,
+                  },
+                  value: 1,
+                },
+                vertical: {
+                  random: {
+                    enable: true,
+                    minimumValue: 0.1,
+                  },
+                  value: 1,
+                },
+              },
+              enable: true,
+              mode: "bounce",
+              overlap: {
+                enable: false,
+                retries: 0,
+              },
+            },
+            outModes: {
+              bottom: "bounce",
+              left: "out",
+              right: "out",
+              top: "bounce",
+            },
+            speed: 1,
+          },
+          number: { density: { enable: true, value_area: 800 }, value: 20 },
+          size: { value: 10 },
+          shape: {
+            type: ["character"],
+            character: [
+              {
+                fill: false,
+                font: "Verdana",
+                value: ["❌", "🛆"],
+              },
+            ],
+            image: [
+              {
+                src: "https://particles.js.org/images/fruits//apple.png",
+                width: 32,
+                height: 32,
+              },
+              {
+                src: "https://particles.js.org/images/fruits//avocado.png",
+                width: 32,
+                height: 32,
+              },
+            ],
+          },
+        },
+        detectRetina: true,
+      },
     };
   },
   mounted() {
@@ -118,7 +178,7 @@ export default {
 
 .typewriter-text::after {
   width: 0.125em;
-  background: black;
+  background: white;
   animation: blink 600ms steps(26) infinite;
 }
 

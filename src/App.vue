@@ -78,16 +78,7 @@ export default {
           steps: 20,
         },
       },
-      orginalSentence1: "Hi!",
-      displayedSentence1: " ",
 
-      showCursor1: false,
-      counter1: 0,
-      orginalSentence2: "I'm Sanjay",
-      displayedSentence2: " ",
-      showCursor2: false,
-
-      counter2: 0,
       particlesOptions: {
         background: { color: { value: "#1F2937" } },
         fullScreen: { enable: true, zIndex: -1 },

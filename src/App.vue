@@ -5,18 +5,34 @@
     <div class="flex flex-col justify-center items-center h-screen">
       <div
         class="
-          text-xl
+          text-2xl
           sm:text-4xl
           md:text-5xl
           lg:text-6xl
           font-black
           text-white
           font-mono
-          relative
-          typewriter-text
+          text-center
         "
       >
-        {{ this.displayedSentence }}
+        <div
+          class="relative"
+          :class="{ 'typewriter-text': displayList.sentence1.showCursor }"
+        >
+          {{ this.displayList.sentence1.displayedSentence }}
+        </div>
+        <div
+          class="relative"
+          :class="{ 'typewriter-text': displayList.sentence2.showCursor }"
+        >
+          {{ this.displayList.sentence2.displayedSentence }}
+        </div>
+        <div
+          class="relative"
+          :class="{ 'typewriter-text': displayList.sentence3.showCursor }"
+        >
+          {{ this.displayList.sentence3.displayedSentence }}
+        </div>
       </div>
     </div>
 
@@ -39,9 +55,39 @@ export default {
   },
   data() {
     return {
-      orginalSentence: "Page under construction...",
-      displayedSentence: " ",
-      counter: 0,
+      displayList: {
+        sentence1: {
+          sentence: "Hi!",
+          displayedSentence: "",
+          showCursor: false,
+          counter: 0,
+          steps: 3,
+        },
+        sentence2: {
+          sentence: "I'm Sanjay Soundarajan :)",
+          displayedSentence: "",
+          showCursor: false,
+          counter: 0,
+          steps: 11,
+        },
+        sentence3: {
+          sentence: "Nice to meet  you :)",
+          displayedSentence: "",
+          showCursor: false,
+          counter: 0,
+          steps: 20,
+        },
+      },
+      orginalSentence1: "Hi!",
+      displayedSentence1: " ",
+
+      showCursor1: false,
+      counter1: 0,
+      orginalSentence2: "I'm Sanjay",
+      displayedSentence2: " ",
+      showCursor2: false,
+
+      counter2: 0,
       particlesOptions: {
         background: { color: { value: "#1F2937" } },
         fullScreen: { enable: true, zIndex: -1 },
@@ -121,7 +167,7 @@ export default {
               bottom: "bounce",
               left: "out",
               right: "out",
-              top: "bounce",
+              top: "destroy",
             },
             speed: 1,
           },
@@ -154,21 +200,39 @@ export default {
       },
     };
   },
+  methods: {
+    typingFunction: function (key, interval, keepCursor = false) {
+      let that = this;
+      const keyString = key;
+      const typingFunction = setInterval(function () {
+        that.displayList[keyString].showCursor = true;
+        if (
+          that.displayList[keyString].counter >=
+          that.displayList[keyString].sentence.length
+        ) {
+          that.displayList[keyString].displayedSentence =
+            that.displayList[keyString].sentence;
+          that.displayList[keyString].counter =
+            that.displayList[keyString].sentence.length;
+          clearInterval(typingFunction);
+          if (!keepCursor) {
+            that.displayList[keyString].showCursor = false;
+          }
+        } else {
+          1;
+          that.displayList[keyString].displayedSentence = that.displayList[
+            keyString
+          ].sentence.substring(0, that.displayList[keyString].counter);
+          that.displayList[keyString].counter++;
+        }
+      }, interval / that.displayList[keyString].sentence.length);
+    },
+  },
   mounted() {
     let that = this;
-    const typingFunction = setInterval(() => {
-      if (that.counter >= that.orginalSentence.length) {
-        that.displayedSentence = that.orginalSentence;
-        that.counter = that.orginalSentence.length;
-        clearInterval(typingFunction);
-      } else {
-        that.displayedSentence = that.orginalSentence.substring(
-          0,
-          that.counter
-        );
-        that.counter++;
-      }
-    }, 6000 / this.orginalSentence.length);
+    setTimeout(() => that.typingFunction("sentence1", 1000), 100);
+    setTimeout(() => that.typingFunction("sentence2", 6000, true), 1500);
+    // setTimeout(() => that.typingFunction("sentence3", 4000, true), 4800);
   },
 };
 </script>
@@ -178,6 +242,10 @@ export default {
   color: #2c3e50;
 }
 
+.typewriter-text {
+  width: max-content;
+}
+
 .typewriter-text::after {
   content: "";
   position: absolute;
@@ -185,18 +253,12 @@ export default {
   right: 0;
   bottom: -5px;
   left: 100%;
+  width: 0.125em;
+  background: white;
 }
 
 .typewriter-text::after {
-  width: 0.125em;
-  background: white;
-  animation: blink 600ms steps(26) infinite;
-}
-
-@keyframes typewriter {
-  to {
-    left: 100%;
-  }
+  animation: blink 700ms infinite;
 }
 
 @keyframes blink {

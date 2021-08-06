@@ -6,7 +6,7 @@
         id="b123d103-f893-4954-b500-e41332bd6393"
         data-name="Layer 1"
         xmlns="http://www.w3.org/2000/svg"
-        class="h-10 w-auto"
+        class="h-5 sm:h-10 w-auto"
         viewBox="0 0 811.22 68.33"
       >
         <path

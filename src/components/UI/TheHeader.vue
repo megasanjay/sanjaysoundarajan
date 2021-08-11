@@ -1,5 +1,7 @@
 <template>
-  <header class="sticky top-1 transparent z-10 px-4 py-4">
+  <header
+    class="fixed top-1 transparent z-10 px-4 py-4 flex justify-between w-full"
+  >
     <div class="">
       <!-- name svg -->
       <svg
@@ -116,12 +118,37 @@
         />
       </svg>
     </div>
+    <div class="flex flex-row">
+      <div v-for="item in navigationList" :key="item.name" class="px-2">
+        <router-link
+          :to="item.href"
+          class="
+            text-xl text-white
+            font-asap
+            border-b-2 border-transparent
+            hover:border-white
+            pb-2
+            px-1
+          "
+        >
+          {{ item.name }}
+        </router-link>
+      </div>
+    </div>
   </header>
 </template>
 
 <script>
 export default {
   name: "TheHeader",
+  data() {
+    return {
+      navigationList: [
+        { name: "Home", href: "/" },
+        { name: "Projects", href: "/projects" },
+      ],
+    };
+  },
 };
 </script>
 

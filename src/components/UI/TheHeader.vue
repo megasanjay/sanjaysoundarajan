@@ -118,7 +118,7 @@
         />
       </svg>
     </div>
-    <div class="flex flex-row">
+    <div class="flex flex-row hidden">
       <div v-for="item in navigationList" :key="item.name" class="px-2">
         <router-link
           :to="item.href"

@@ -3,16 +3,7 @@
     <div class="flex flex-col justify-center items-center h-screen">
       <transition>
         <div
-          class="
-            text-2xl
-            sm:text-4xl
-            md:text-5xl
-            lg:text-6xl
-            font-black
-            text-white
-            font-mono
-            text-left
-          "
+          class="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white font-mono text-left"
         >
           <div
             class="relative my-5 whitespace-pre"
@@ -88,13 +79,6 @@
           </svg>
         </a>
       </div>
-    </div>
-
-    <div class="absolute bottom-2 right-2 text-gray-200">
-      <div class="inline-block sm:hidden">mb</div>
-      <div class="hidden sm:inline-block md:hidden">sm</div>
-      <div class="hidden md:inline-block lg:hidden">md</div>
-      <div class="hidden lg:inline-block">lg</div>
     </div>
   </div>
 </template>

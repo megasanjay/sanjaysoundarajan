@@ -122,14 +122,7 @@
       <div v-for="item in navigationList" :key="item.name" class="px-2">
         <router-link
           :to="item.href"
-          class="
-            text-xl text-white
-            font-asap
-            border-b-2 border-transparent
-            hover:border-white
-            pb-2
-            px-1
-          "
+          class="text-xl text-white font-asap border-b-2 border-transparent hover:border-white pb-2 px-1"
         >
           {{ item.name }}
         </router-link>

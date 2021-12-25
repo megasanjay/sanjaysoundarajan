@@ -1,8 +1,10 @@
 <template>
-  <Particles id="tsparticles" :options="particlesOptions" />
-  <the-header :class="{ 'debug-screens': !prod }"></the-header>
+  <div>
+    <Particles id="tsparticles" :options="particlesOptions" />
+    <the-header :class="{ 'debug-screens': !prod }"></the-header>
 
-  <router-view> </router-view>
+    <router-view> </router-view>
+  </div>
 </template>
 
 <script>

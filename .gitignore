@@ -1,3 +1,7 @@
+dist
+dist-ssr
+*.local
+
 .DS_Store
 node_modules
 /dist

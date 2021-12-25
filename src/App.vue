@@ -1,6 +1,6 @@
 <template>
   <Particles id="tsparticles" :options="particlesOptions" />
-  <the-header></the-header>
+  <the-header :class="{ 'debug-screens': !prod }"></the-header>
 
   <router-view> </router-view>
 </template>
@@ -124,6 +124,7 @@ export default {
         },
         detectRetina: true,
       },
+      prod: process.env.NODE_ENV === "production",
     };
   },
 };

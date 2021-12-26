@@ -1,9 +1,13 @@
 <template>
-  <div>
+  <div :class="{ 'debug-screens': !prod }">
     <Particles id="tsparticles" :options="particlesOptions" />
-    <the-header :class="{ 'debug-screens': !prod }"></the-header>
+    <the-header></the-header>
 
-    <router-view> </router-view>
+    <router-view v-slot="{ Component }">
+      <transition name="">
+        <component :is="Component" />
+      </transition>
+    </router-view>
   </div>
 </template>
 
@@ -135,5 +139,30 @@ export default {
 <style>
 #app {
   color: #2c3e50;
+}
+
+.slide-enter-active,
+.slide-leave-active {
+  transition: all 0.75s ease-out;
+}
+
+.slide-enter-to {
+  position: absolute;
+  right: 0;
+}
+
+.slide-enter-from {
+  position: absolute;
+  right: -100%;
+}
+
+.slide-leave-to {
+  position: absolute;
+  left: -100%;
+}
+
+.slide-leave-from {
+  position: absolute;
+  left: 0;
 }
 </style>

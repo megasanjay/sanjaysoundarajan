@@ -10,6 +10,26 @@ html {
   @apply bg-gray-800 h-screen;
 }
 
+/* ===== Scrollbar CSS ===== */
+/* Firefox */
+* {
+  scrollbar-width: auto;
+  scrollbar-color: #919191 #ffffff;
+}
+
+/* Chrome, Edge, and Safari */
+*::-webkit-scrollbar {
+  @apply w-[6px];
+}
+
+*::-webkit-scrollbar-track {
+  @apply bg-transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  @apply rounded bg-zinc-300;
+}
+
 .hover-underline-animation {
   @apply relative;
 }

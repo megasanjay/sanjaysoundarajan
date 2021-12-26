@@ -1,14 +1,14 @@
 <template>
   <header
-    class="fixed top-0 left-0 transparent z-10 px-4 py-4 flex justify-between w-full"
+    class="sticky top-0 left-0 z-10 px-4 pt-4 flex justify-between w-full backdrop-blur-sm"
   >
     <div
-      class="w-full max-w-screen-2xl flex flex-row justify-between z-20 py-3 px-5 mx-auto"
+      class="w-full max-w-screen-2xl flex flex-row justify-between z-20 pt-3 px-5 mx-auto"
     >
       <!-- name svg -->
       <router-link
         to="/"
-        class="z-20 text-transparent bg-clip-text bg-gradient-to-br font-inter font-bold text-3xl sm:text-4xl md:text-5xl pb-3"
+        class="z-20 text-transparent bg-clip-text bg-gradient-to-br font-inter font-bold text-3xl sm:text-4xl md:text-5xl pb-1"
         :class="{
           'from-pink-400': !menuOpen,
           'to-red-600': !menuOpen,
@@ -82,6 +82,7 @@ export default {
     return {
       menuOpen: false,
       hamburgerToggle: false,
+      scrolled: false,
       pages: [
         { name: "Home", href: "/" },
         { name: "Projects", href: "/projects" },
@@ -138,6 +139,14 @@ export default {
         this.menuOpen = true;
       }
     },
+    handleScroll() {
+      if (window.scrollY > 0) {
+        this.scrolled = true;
+      }
+    },
+  },
+  mounted() {
+    window.addEventListener("scroll", this.handleScroll);
   },
 };
 </script>

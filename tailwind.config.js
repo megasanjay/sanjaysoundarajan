@@ -4,6 +4,8 @@ module.exports = {
     extend: {
       fontFamily: {
         asap: ["Asap"],
+        ubuntu: ["Ubuntu"],
+        inter: ["Inter"],
       },
     },
   },

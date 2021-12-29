@@ -3,7 +3,7 @@
     class="sticky top-0 left-0 z-10 px-4 pt-4 flex justify-between w-full backdrop-blur-sm"
   >
     <div
-      class="w-full max-w-screen-2xl flex flex-row justify-between z-20 pt-3 px-5 mx-auto"
+      class="w-full max-w-screen-2xl flex flex-row justify-between z-20 pt-2 px-5 mx-auto"
     >
       <!-- name svg -->
       <router-link

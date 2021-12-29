@@ -16,8 +16,7 @@
         }"
         aria-label="Homepage"
       >
-        <span class="fast-flicker"> S</span>anjay
-        <span class="flicker">S</span>oundarajan
+        <div class="glitch-text">Sanjay Soundarajan</div>
       </router-link>
 
       <div
@@ -245,58 +244,68 @@ export default {
   }
 }
 
-.flicker {
-  animation: blink 2s infinite alternate;
+.glitch-text {
+  @apply text-white bg-clip-text bg-gradient-to-br from-blue-500 to-blue-700;
+  animation: glitch 2s linear infinite;
 }
 
-.fast-flicker {
-  animation: blink 3s infinite alternate;
+@keyframes glitch {
+  2%,
+  64% {
+    transform: translate(2px, 0) skew(0deg);
+  }
+  4%,
+  60% {
+    transform: translate(-2px, 0) skew(0deg);
+  }
+  62% {
+    transform: translate(0, 0) skew(5deg);
+  }
 }
 
-@keyframes blink {
-  0% {
-    opacity: 0.8;
-    text-shadow: none;
+.glitch-text:before,
+.glitch-text:after {
+  content: "Sanjay Soundarajan";
+  @apply absolute left-0;
+}
+
+.glitch-text:before {
+  animation: glitchTop 1s linear infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 33%, 0 33%);
+}
+
+@keyframes glitchTop {
+  2%,
+  64% {
+    transform: translate(2px, -2px);
   }
-  2% {
-    opacity: 0.7;
-    text-shadow: none;
+  4%,
+  60% {
+    transform: translate(-2px, 2px);
   }
-  4% {
-    opacity: 1;
-    text-shadow: 0 0 0.2rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  62% {
+    transform: translate(13px, -1px) skew(-13deg);
   }
-  19% {
-    opacity: 1;
-    text-shadow: 0 0 0.2rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+}
+
+.glitch-text:after {
+  animation: glitchBotom 1.5s linear infinite;
+  clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+  -webkit-clip-path: polygon(0 67%, 100% 67%, 100% 100%, 0 100%);
+}
+
+@keyframes glitchBotom {
+  2%,
+  64% {
+    transform: translate(-2px, 0);
   }
-  21% {
-    opacity: 0.8;
-    text-shadow: none;
+  4%,
+  60% {
+    transform: translate(-2px, 0);
   }
-  23% {
-    opacity: 0.9;
-    text-shadow: none;
-  }
-  80% {
-    opacity: 1;
-    text-shadow: 0 0 0.2rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
-  }
-  83% {
-    opacity: 0.8;
-    text-shadow: none;
-  }
-  87% {
-    opacity: 1;
-    text-shadow: 0 0 0.2rem #ffe6ff, 0 0 1.5rem #ff65bd,
-      -0.2rem 0.1rem 1rem #ff65bd, 0.2rem 0.1rem 1rem #ff65bd,
-      0 -0.5rem 2rem #ff2483, 0 0.5rem 3rem #ff2483;
+  62% {
+    transform: translate(-22px, 5px) skew(21deg);
   }
 }
 </style>

@@ -137,10 +137,6 @@ export default {
 </script>
 
 <style>
-#app {
-  color: #2c3e50;
-}
-
 .slide-enter-active,
 .slide-leave-active {
   transition: all 0.75s ease-out;

@@ -46,3 +46,15 @@ html {
   transform: scaleX(1);
   transform-origin: bottom left;
 }
+
+.slide-up-enter-active,
+.slide-up-leave-active {
+  transition: all 0.2s ease-in-out;
+  overflow-x: hidden;
+}
+
+.slide-up-enter-from,
+.slide-up-leave-to {
+  opacity: 0;
+  transform: translateY(-20px);
+}

@@ -1,12 +1,12 @@
 <template>
   <section>
     <div
-      class="flex flex-row justify-around items-center py-10 max-w-screen-xl mx-auto"
+      class="flex flex-row justify-around items-center py-10 max-w-screen-xl mx-auto h-screen"
     >
       <div class="flex flex-col justify-center items-center w-full">
         <div class="w-full h-[150px] relative overflow-hidden flex">
           <div class="reveal-text absolute font-semibold flex items-center">
-            <span class="text-white text-[120px]">Hello!</span>
+            <span class="text-white text-[100px]">Hi! I'm Sanjay.</span>
             <span class="wave text-[70px] font-thin">👋🏾</span>
           </div>
         </div>
@@ -29,7 +29,9 @@ import { ScrollTrigger } from "gsap/ScrollTrigger";
 export default {
   name: "HomePage",
   data() {
-    return {};
+    return {
+      dev: process.env.NODE_ENV === "development",
+    };
   },
   methods: {
     revealHeaderText() {
@@ -37,7 +39,7 @@ export default {
         ".reveal-text",
         { y: "100%" },
         {
-          duration: 1,
+          duration: 0.5,
           y: "0%",
           stagger: {
             each: 0.5,
@@ -46,8 +48,9 @@ export default {
           },
           scrollTrigger: {
             trigger: ".reveal-text",
-            markers: true,
-            toggleActions: "play none none none",
+            markers: this.dev,
+            start: "top center",
+            toggleActions: "restart none none none",
           },
         }
       );

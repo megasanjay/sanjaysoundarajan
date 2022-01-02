@@ -1,6 +1,6 @@
 <template>
   <header
-    class="sticky top-0 left-0 z-10 px-4 pt-4 flex justify-between w-full backdrop-blur-sm"
+    class="fixed top-0 left-0 z-10 px-4 pt-4 flex justify-between w-full backdrop-blur-sm"
   >
     <div
       class="w-full max-w-screen-2xl flex flex-row justify-between z-20 pt-2 px-5 mx-auto"
@@ -19,14 +19,32 @@
         Sanjay Soundarajan
       </router-link>
 
-      <div
-        class="hamburger p-1 group"
-        :class="{ active: hamburgerToggle }"
-        @click="toggleMenu"
-      >
-        <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
-        <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
-        <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
+      <div class="flex flex-row justify-center items-center space-x-4">
+        <div class="relative">
+          <transition name="slide-up" mode="out-in" appear>
+            <span
+              v-if="!menuOpen"
+              class="text-xl bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 font-bold text-transparent"
+            >
+              {{ page }}
+            </span>
+            <span
+              v-else
+              class="text-xl bg-clip-text bg-gradient-to-br from-pink-400 to-red-600 font-bold text-transparent"
+            >
+              Menu
+            </span>
+          </transition>
+        </div>
+        <div
+          class="hamburger p-1 group"
+          :class="{ active: hamburgerToggle }"
+          @click="toggleMenu"
+        >
+          <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
+          <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
+          <span class="bar bg-gradient-to-r from-red-600 to-pink-500"></span>
+        </div>
       </div>
     </div>
     <div
@@ -85,10 +103,15 @@ export default {
       pages: [
         { name: "Home", href: "/" },
         { name: "Projects", href: "/projects" },
-        { name: "About", href: "/projects" },
+        { name: "About Me", href: "/projects" },
         { name: "Contact", href: "/projects" },
       ],
     };
+  },
+  computed: {
+    page() {
+      return this.$route.name;
+    },
   },
   methods: {
     toggleMenu() {

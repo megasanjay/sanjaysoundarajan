@@ -7,7 +7,7 @@
 @tailwind utilities;
 
 html {
-  @apply bg-gray-800 h-screen;
+  @apply bg-gray-700 h-screen;
 }
 
 /* ===== Scrollbar CSS ===== */

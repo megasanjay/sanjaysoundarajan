@@ -1,21 +1,31 @@
 <template>
   <section>
     <div
-      class="flex flex-row justify-around items-center py-10 max-w-screen-xl mx-auto h-screen"
+      class="flex flex-row justify-around items-center py-10 max-w-screen-xl mx-auto h-screen px-5"
     >
       <div class="flex flex-col justify-center items-center w-full">
-        <div class="w-full h-[150px] relative overflow-hidden flex">
-          <div class="reveal-text absolute font-semibold flex items-center">
-            <span class="text-white text-[100px]">Hi! I'm Sanjay.</span>
-            <span class="wave text-[70px] font-thin">👋🏾</span>
+        <div class="w-full h-max overflow-hidden">
+          <div class="reveal-text font-semibold flex items-center">
+            <span class="text-white text-[50px] lg:text-[100px]">
+              Hi! I'm Sanjay
+            </span>
+            <span class="wave text-[50px] lg:text-[70px] font-thin mt-3 ml-2">
+              👋🏾
+            </span>
           </div>
         </div>
-        <div class="w-full h-[150px] relative overflow-hidden">
-          <div
-            class="reveal-text absolute text-[100px] text-white font-semibold"
-          >
-            I'm Sanjay.
+        <div class="w-full h-max relative overflow-hidden">
+          <div class="reveal-text text-white font-semibold">
+            <span class="text-white text-[30px] lg:text-[50px]">
+              I'm a front-end developer and I'm currently work on building web
+              applications for the future of open science.
+            </span>
           </div>
+        </div>
+        <div class="flex justify-start w-full py-4 mt-3">
+          <BubblyButton :callback="navigateToContact">
+            Contact Me
+          </BubblyButton>
         </div>
       </div>
     </div>
@@ -26,8 +36,13 @@
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 
+import BubblyButton from "@components/UI/BubblyButton.vue";
+
 export default {
   name: "HomePage",
+  components: {
+    BubblyButton,
+  },
   data() {
     return {
       dev: process.env.NODE_ENV === "development",
@@ -50,10 +65,13 @@ export default {
             trigger: ".reveal-text",
             markers: this.dev,
             start: "top center",
-            toggleActions: "restart none none none",
+            toggleActions: "play none none none",
           },
         }
       );
+    },
+    navigateToContact() {
+      this.$router.push("/contact");
     },
   },
   mounted() {

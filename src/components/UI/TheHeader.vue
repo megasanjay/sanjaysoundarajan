@@ -103,8 +103,8 @@ export default {
       pages: [
         { name: "Home", href: "/" },
         { name: "Projects", href: "/projects" },
-        { name: "About Me", href: "/projects" },
-        { name: "Contact", href: "/projects" },
+        { name: "About Me", href: "/about" },
+        { name: "Contact", href: "/contact" },
       ],
     };
   },
@@ -164,6 +164,8 @@ export default {
     handleScroll() {
       if (window.scrollY > 0) {
         this.scrolled = true;
+      } else {
+        this.scrolled = false;
       }
     },
   },

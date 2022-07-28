@@ -12,7 +12,7 @@
   "dependencies": {
     "gsap": "^3.9.1",
     "particles.vue3": "^1.20.5",
-    "vue": "^3.2.25",
+    "vue": "^3.2.37",
     "vue-router": "^4.0.12"
   },
   "devDependencies": {

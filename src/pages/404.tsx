@@ -10,6 +10,7 @@ import heroLottie from '~/lotties/404.json';
 export default function NotFoundPage() {
   return (
     <Layout>
+      <title>404</title>
       <main>
         <section className='bg-white'>
           <div className='layout -mt-20 flex min-h-screen flex-col items-center justify-center text-center text-black'>

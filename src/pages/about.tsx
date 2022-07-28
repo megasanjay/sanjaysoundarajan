@@ -24,6 +24,7 @@ export default function About() {
 
   return (
     <Layout>
+      <title>About Me</title>
       <main>
         <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
           <motion.div

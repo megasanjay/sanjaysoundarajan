@@ -37,6 +37,7 @@ export default function Publications() {
 
   return (
     <Layout>
+      <title>Publications</title>
       <main>
         <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
           <motion.div

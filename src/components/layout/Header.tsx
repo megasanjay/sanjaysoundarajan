@@ -4,9 +4,9 @@ import Link from 'next/link';
 import * as React from 'react';
 
 const links = [
-  { href: '/portfolio', label: 'Portfolio' },
-  { href: '/publications', label: 'Publications' },
-  { href: '/about', label: 'About Me' },
+  { href: '/portfolio', label: 'projects' },
+  { href: '/publications', label: 'publications' },
+  { href: '/about', label: 'about me' },
 ];
 
 export default function Header() {
@@ -42,7 +42,7 @@ export default function Header() {
               {links.map(({ href, label }) => (
                 <li key={`${href}${label}`}>
                   <Link href={href} passHref>
-                    <span className='cursor-pointer text-base transition-all hover:text-sky-600'>
+                    <span className='cursor-pointer text-base font-medium transition-all hover:text-sky-600'>
                       {label}
                     </span>
                   </Link>

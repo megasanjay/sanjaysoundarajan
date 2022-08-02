@@ -39,7 +39,7 @@ export default function Publications() {
     <Layout>
       <title>Publications</title>
       <main>
-        <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
+        <section className='mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
           <motion.div
             variants={container}
             initial='hidden'
@@ -55,9 +55,9 @@ export default function Publications() {
             </motion.h1>
 
             <motion.p variants={item} className='mt-4'>
-              All my research work that has been published (in reverse
-              chronological order) is listed here. If you are interested in
-              reading my works, please reach out to me at{' '}
+              All my research work, that has been published (in reverse
+              chronological order), is listed here. If you are interested in
+              reading any specific publication, please reach out to me at{' '}
               <StyledLink href='mailto:contact@sanjaysoundarajan.dev'>
                 contact@sanjaysoundarajan.dev
               </StyledLink>{' '}

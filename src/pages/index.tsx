@@ -27,7 +27,24 @@ export default function Home() {
 
   return (
     <Layout>
-      <title>Home</title>
+      <title>Sanjay Soundarajan</title>
+
+      <meta property='og:title' content='Sanjay Soundarajan' />
+      <meta property='twitter:title' content='Sanjay Soundarajan' />
+
+      <link rel='canonical' href='https://sanjaysoundarajan.dev' />
+      <meta property='og:url' content='https://sanjaysoundarajan.dev' />
+      <meta property='twitter:url' content='https://sanjaysoundarajan.dev' />
+
+      <meta name='description' content="Sanjay Soundarajan's portfolio" />
+      <meta
+        property='og:description'
+        content="Sanjay Soundarajan's portfolio"
+      />
+      <meta
+        property='twitter:description'
+        content="Sanjay Soundarajan's portfolio"
+      />
 
       <main>
         <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-20 md:pt-40 '>

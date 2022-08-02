@@ -15,7 +15,7 @@ type portfolioType = {
   url: string;
 };
 
-import portfolioJSON from '~/data/portfolio.json';
+import projectsJSON from '~/data/projects.json';
 
 export default function Publications() {
   const container = {
@@ -36,7 +36,7 @@ export default function Publications() {
 
   return (
     <Layout>
-      <title>Portfolio</title>
+      <title>Projects</title>
       <main>
         <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
           <motion.div
@@ -50,11 +50,11 @@ export default function Publications() {
               variants={item}
               className='mt-4 mb-2 text-left text-5xl font-bold '
             >
-              Portfolio
+              Projects
             </motion.h1>
 
             <motion.p variants={item} className='mt-4'>
-              A list of all the projects I have been a part of. All of these
+              A list of all the things I have been a part of. All of these
               projects are open source so you can check them out on GitHub.
             </motion.p>
 
@@ -71,7 +71,7 @@ export default function Publications() {
             viewport={{ once: true }}
             className='mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800'
           >
-            {portfolioJSON.map((project: portfolioType) => (
+            {projectsJSON.map((project: portfolioType) => (
               <motion.article
                 key={project.title}
                 variants={container}

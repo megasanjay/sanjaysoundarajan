@@ -1,7 +1,7 @@
 [
   {
     "title": "FAIRshare",
-    "image": "/images/portfolio/fairshare.png",
+    "image": "/images/projects/fairshare.png",
     "description": "FAIRshare is an application created to help researchers submit datasets and other releated research data while complying with the relevant FAIR data standards. It uses a Vue 3 and Tailwind CSS based frontend within an Electron container to handle the user facing portion of the application. The backend is handled by a custom Flask instance that is shipped within the application. Google Analytics is used to track the usage of the application.",
     "tech": [
       "vue3",
@@ -17,7 +17,7 @@
   },
   {
     "title": "SODA for SPARC",
-    "image": "/images/portfolio/soda.png",
+    "image": "/images/projects/soda.png",
     "description": "SODA is an Electron based application to help researchers of the NIH SPARC program comply with the rules for data sharing to the SPARC data portal. It used native html, js and css alongside a python based backend to achieve this goal. Google Analytics is used to track the usage of the application.",
     "tech": ["electron", "js", "python", "storybook", "googleanalytics"],
     "github": "https://github.com/fairdataihub/SODA-for-SPARC",
@@ -25,7 +25,7 @@
   },
   {
     "title": "fairdataihub.org",
-    "image": "/images/portfolio/fairdataihuborg.png",
+    "image": "/images/projects/fairdataihuborg.png",
     "description": "A Next.js website created for the FAIR Data Innovations Hub organization. This site uses Vercel serverless functions for contact forms with custom email responses. A custom markdown based blog has been integrated for news and updates. End-to-end testing is handled via Cypress.",
     "tech": ["nextjs", "ts", "react", "tailwind", "cypress"],
     "github": "https://github.com/fairdataihub/fairdataihub.org",
@@ -33,7 +33,7 @@
   },
   {
     "title": "FAIRshare Documentation",
-    "image": "/images/portfolio/fairsharedocs.png",
+    "image": "/images/projects/fairsharedocs.png",
     "description": "A documentation site for the FAIRshare application. This site is built with the Docusaurus framework. Custom React components are used to handle the feedback from each page of the docs platform. These results are recorded via serverless functions and stored in Google Analytics.",
     "tech": ["docusaurus", "tailwind", "react", "googleanalytics"],
     "github": "https://github.com/fairdataihub/fairdataihub.org",
@@ -41,7 +41,7 @@
   },
   {
     "title": "SPARClink",
-    "image": "/images/portfolio/sparclink.png",
+    "image": "/images/projects/sparclink.png",
     "description": "A hackathon project that uses data from the SPARC portal to create graph-based visualizations about the reuse of data from SPARC experiments. A custom Flask backend is used to handle some minor data manipulation and machine learning features on the gathered data.",
     "tech": ["vue3", "tailwind", "flask", "python"],
     "github": "https://github.com/fairdataihub/SPARClink",
@@ -49,7 +49,7 @@
   },
   {
     "title": "Developer Documentation",
-    "image": "/images/portfolio/devfairdataihuborg.png",
+    "image": "/images/projects/devfairdataihuborg.png",
     "description": "A Vitepress based site to handle all developer documentaion for the FAIR Data Innovations Hub organization. ",
     "tech": ["vite", "vue3"],
     "github": "https://github.com/fairdataihub/dev.fairdataihub.org",

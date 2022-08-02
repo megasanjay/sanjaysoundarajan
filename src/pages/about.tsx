@@ -71,7 +71,7 @@ export default function About() {
               <StyledLink href='https://nextjs.org/'>Next.js</StyledLink>, and{' '}
               <StyledLink href='https://python.org/'>Python</StyledLink>. Check
               out what I&apos;ve{' '}
-              <StyledLink href='/portfolio'> worked </StyledLink> on.
+              <StyledLink href='/projects'> worked </StyledLink> on.
             </motion.p>
 
             <motion.p variants={item} className='mt-4'>

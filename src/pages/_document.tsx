@@ -47,13 +47,20 @@ class MyDocument extends Document {
 
           <meta
             name='keywords'
-            content='sanjay soundarajan, web develeoper, fair data, sparclink, fairshare, fairdataihub'
+            content='sanjay soundarajan, web developer, fair data, sparclink, fairshare, fairdataihub'
           />
           <meta name='robots' content='index, follow' />
           <meta name='language' content='English' />
           <meta name='author' content='Sanjay Soundarajan' />
 
           <meta property='og:type' content='website' />
+
+          <script
+            async
+            defer
+            data-website-id='755919fb-f6aa-4bd2-aa7a-15420fd3e4d1'
+            src='https://umami.sanjaysoundarajan.dev/mushroom.js'
+          />
         </Head>
         <body>
           <Main />

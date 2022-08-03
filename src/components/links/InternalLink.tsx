@@ -18,7 +18,7 @@ const InternalLink = React.forwardRef<HTMLAnchorElement, InternalLinkProps>(
         </span>
       </Link>
     );
-  }
+  },
 );
 
 export default InternalLink;

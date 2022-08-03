@@ -26,7 +26,7 @@ const StyledLink = React.forwardRef<HTMLAnchorElement, StyledLinkProps>(
         )}
       </>
     );
-  }
+  },
 );
 
 export default StyledLink;

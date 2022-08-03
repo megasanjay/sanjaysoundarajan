@@ -29,26 +29,26 @@ export default function Home() {
     <Layout>
       <title>Sanjay Soundarajan</title>
 
-      <meta property='og:title' content='Sanjay Soundarajan' />
-      <meta property='twitter:title' content='Sanjay Soundarajan' />
+      <meta property="og:title" content="Sanjay Soundarajan" />
+      <meta property="twitter:title" content="Sanjay Soundarajan" />
 
-      <link rel='canonical' href='https://sanjaysoundarajan.dev' />
-      <meta property='og:url' content='https://sanjaysoundarajan.dev' />
-      <meta property='twitter:url' content='https://sanjaysoundarajan.dev' />
+      <link rel="canonical" href="https://sanjaysoundarajan.dev" />
+      <meta property="og:url" content="https://sanjaysoundarajan.dev" />
+      <meta property="twitter:url" content="https://sanjaysoundarajan.dev" />
 
-      <meta name='description' content="Sanjay Soundarajan's portfolio" />
+      <meta name="description" content="Sanjay Soundarajan's portfolio" />
       <meta
-        property='og:description'
+        property="og:description"
         content="Sanjay Soundarajan's portfolio"
       />
       <meta
-        property='twitter:description'
+        property="twitter:description"
         content="Sanjay Soundarajan's portfolio"
       />
 
       <main>
-        <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-20 md:pt-40 '>
-          <div className='mb-16 flex w-full justify-center md:justify-start '>
+        <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-20 md:pt-40 ">
+          <div className="mb-16 flex w-full justify-center md:justify-start ">
             <LottieAnimation
               animationData={heroLottie}
               width={250}
@@ -58,35 +58,35 @@ export default function Home() {
 
           <motion.div
             variants={container}
-            initial='hidden'
-            whileInView='show'
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            className='flex flex-col items-start justify-center px-4 text-center '
+            className="flex flex-col items-start justify-center px-4 text-center "
           >
             <motion.h1
               variants={item}
-              className='mt-4 text-left text-5xl font-bold md:text-5xl'
+              className="mt-4 text-left text-5xl font-bold md:text-5xl"
             >
               Hi! I&apos;m Sanjay
             </motion.h1>
 
             <motion.p
               variants={item}
-              className='mt-4 text-left text-2xl  text-slate-800 md:text-2xl'
+              className="mt-4 text-left text-2xl  text-slate-800 md:text-2xl"
             >
               I currently work as a front end developer at the{' '}
               <StyledLink
-                href='https://fairdataihub.org'
-                className='umami--click--fairdataihub-link'
+                href="https://fairdataihub.org"
+                className="umami--click--fairdataihub-link"
               >
                 FAIR Data Innovations Hub
               </StyledLink>{' '}
               where I build tools for data submission and open science.
             </motion.p>
 
-            <motion.div variants={item} className='mt-4'>
-              <Link href='/about' passHref>
-                <div className='umami--click--about-me-button mt-4'>
+            <motion.div variants={item} className="mt-4">
+              <Link href="/about" passHref>
+                <div className="umami--click--about-me-button mt-4">
                   <StyledButton>About Me</StyledButton>
                 </div>
               </Link>

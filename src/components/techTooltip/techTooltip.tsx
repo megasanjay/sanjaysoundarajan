@@ -88,17 +88,17 @@ const TechTooltip: React.FC<ToolTipProps> = ({
   const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 
   return (
-    <div className='relative'>
+    <div className="relative">
       <motion.div
         animate={isPopoverOpen ? 'open' : 'closed'}
         variants={variants}
-        className='absolute -top-10 w-max rounded-lg border border-slate-100 bg-white px-3 py-1 '
+        className="absolute -top-10 w-max rounded-lg border border-slate-100 bg-white px-3 py-1 "
       >
-        <span className='text-base font-medium'>{techData.title}</span>
+        <span className="text-base font-medium">{techData.title}</span>
       </motion.div>
 
       <Icon
-        className='grayscale'
+        className="grayscale"
         icon={techData.icon}
         width={width}
         height={height}

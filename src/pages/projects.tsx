@@ -39,27 +39,27 @@ export default function Publications() {
     <Layout>
       <title>Projects</title>
       <main>
-        <section className='mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20'>
+        <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
           <motion.div
             variants={container}
-            initial='hidden'
-            whileInView='show'
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            className='flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800'
+            className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
           >
             <motion.h1
               variants={item}
-              className='mt-4 mb-2 text-left text-5xl font-bold '
+              className="mt-4 mb-2 text-left text-5xl font-bold "
             >
               Projects
             </motion.h1>
 
-            <motion.p variants={item} className='mt-4'>
+            <motion.p variants={item} className="mt-4">
               A list of all the things I have been a part of. All of these
               projects are open source so you can check them out on GitHub.
             </motion.p>
 
-            <motion.span variants={item} className='mt-2 hidden text-xs italic'>
+            <motion.span variants={item} className="mt-2 hidden text-xs italic">
               psst... I&apos;m listing everything here since it is fun to see
               all the projects I&apos;ve been a part of.
             </motion.span>
@@ -67,82 +67,82 @@ export default function Publications() {
 
           <motion.div
             variants={container}
-            initial='hidden'
-            whileInView='show'
+            initial="hidden"
+            whileInView="show"
             viewport={{ once: true }}
-            className='mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800'
+            className="mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800"
           >
             {projectsJSON.map((project: portfolioType) => (
               <motion.article
                 key={project.title}
                 variants={container}
-                initial='hidden'
-                whileInView='show'
+                initial="hidden"
+                whileInView="show"
                 viewport={{ once: true }}
-                className='flex w-full flex-col py-4 px-3 pt-8 '
+                className="flex w-full flex-col py-4 px-3 pt-8 "
               >
                 <motion.h2
                   variants={item}
-                  className='mb-1 text-3xl font-bold md:pl-10'
+                  className="mb-1 text-3xl font-bold md:pl-10"
                 >
                   {project.title}
                 </motion.h2>
 
                 <motion.div
                   variants={item}
-                  className='flex w-full flex-col py-2 md:flex-row md:items-start md:justify-around md:px-3'
+                  className="flex w-full flex-col py-2 md:flex-row md:items-start md:justify-around md:px-3"
                 >
-                  <div className='md:w-5/12'>
+                  <div className="md:w-5/12">
                     <Image
                       src={project.image}
-                      alt='Screenshot of FAIRshare'
-                      width='1342'
-                      height='975'
+                      alt="Screenshot of FAIRshare"
+                      width="1342"
+                      height="975"
                       priority={true}
-                      objectFit='scale-down'
+                      objectFit="scale-down"
                     />
                   </div>
 
-                  <div className='flex flex-col md:w-6/12'>
-                    <p className='text-base font-normal'>
+                  <div className="flex flex-col md:w-6/12">
+                    <p className="text-base font-normal">
                       {project.description}
                     </p>
 
-                    <div className='my-4 flex space-x-4'>
+                    <div className="my-4 flex space-x-4">
                       {project.tech.map((tech: string) => (
                         <TechTooltip key={tech} tech={tech} />
                       ))}
                     </div>
 
-                    <div className='my-2 flex space-x-4'>
+                    <div className="my-2 flex space-x-4">
                       <a
                         href={project.github}
-                        target='_blank'
-                        rel='noopener noreferrer'
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={
                           `flex items-center transition-all hover:text-sky-500 ` +
                           `umami--click--${project.id}-github-repo-link`
                         }
                       >
                         <Icon
-                          icon='ant-design:github-filled'
-                          width='25'
-                          height='25'
+                          icon="ant-design:github-filled"
+                          width="25"
+                          height="25"
                         />
                       </a>
                       <a
                         href={project.url}
-                        target='_blank'
-                        rel='noopener noreferrer'
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className={
                           `flex items-center transition-all hover:text-sky-500 ` +
                           `umami--click--${project.id}-demo-link`
                         }
                       >
                         <Icon
-                          icon='akar-icons:link-out'
-                          width='20'
-                          height='20'
+                          icon="akar-icons:link-out"
+                          width="20"
+                          height="20"
                         />
                       </a>
                     </div>

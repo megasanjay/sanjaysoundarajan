@@ -12,20 +12,20 @@ export default function NotFoundPage() {
     <Layout>
       <title>404</title>
       <main>
-        <section className='bg-white'>
-          <div className='layout -mt-20 flex min-h-screen flex-col items-center justify-center text-center text-black'>
+        <section className="bg-white">
+          <div className="layout -mt-20 flex min-h-screen flex-col items-center justify-center text-center text-black">
             <LottieAnimation
               animationData={heroLottie}
               width={300}
               height={300}
             />
-            <h1 className='mt-8 text-5xl '>Nothing to see here.</h1>
-            <p className='mt-4 max-w-xl text-xl'>
+            <h1 className="mt-8 text-5xl ">Nothing to see here.</h1>
+            <p className="mt-4 max-w-xl text-xl">
               Unfortunately, this is only a 404 page. You may have mistyped the
               address, or the page has been moved to another URL.
             </p>
-            <Link href='/' passHref>
-              <div className='mt-8'>
+            <Link href="/" passHref>
+              <div className="mt-8">
                 <StyledButton>Take me back to the home page</StyledButton>
               </div>
             </Link>

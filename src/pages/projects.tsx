@@ -8,6 +8,7 @@ import TechTooltip from '@/components/techTooltip/techTooltip';
 
 type portfolioType = {
   title: string;
+  id: string;
   image: string;
   description: string;
   tech: string[];
@@ -118,7 +119,10 @@ export default function Publications() {
                         href={project.github}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='flex items-center transition-all hover:text-sky-500'
+                        className={
+                          `flex items-center transition-all hover:text-sky-500 ` +
+                          `umami--click--${project.id}-github-repo-link`
+                        }
                       >
                         <Icon
                           icon='ant-design:github-filled'
@@ -130,7 +134,10 @@ export default function Publications() {
                         href={project.url}
                         target='_blank'
                         rel='noopener noreferrer'
-                        className='flex items-center transition-all hover:text-sky-500'
+                        className={
+                          `flex items-center transition-all hover:text-sky-500 ` +
+                          `umami--click--${project.id}-demo-link`
+                        }
                       >
                         <Icon
                           icon='akar-icons:link-out'

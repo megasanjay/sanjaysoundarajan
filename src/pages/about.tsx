@@ -53,12 +53,18 @@ export default function About() {
             <motion.p variants={item} className='mt-4'>
               I originally grew up in Sri Lanka 🇱🇰 but ended up moving to
               California to attend college. After graduating from{' '}
-              <StyledLink href='https://fresnostate.edu/'>
+              <StyledLink
+                href='https://fresnostate.edu/'
+                className='umami--click--csu-fresno-link'
+              >
                 California State University, Fresno
               </StyledLink>{' '}
               with a master&apos;s degree in Computer Science (focus on parallel
               computing), I joined{' '}
-              <StyledLink href='https://calmi2.org'>
+              <StyledLink
+                href='https://calmi2.org'
+                className='umami--click--calmii-link'
+              >
                 California Medical Innovations Institute
               </StyledLink>{' '}
               where I work on developing web based software applications.
@@ -66,23 +72,62 @@ export default function About() {
 
             <motion.p variants={item} className='mt-4'>
               At the moment, I create apps with{' '}
-              <StyledLink href='https://electronjs.org/'>Electron</StyledLink>,{' '}
-              <StyledLink href='https://vuejs.org/'>Vue</StyledLink>,{' '}
-              <StyledLink href='https://nextjs.org/'>Next.js</StyledLink>, and{' '}
-              <StyledLink href='https://python.org/'>Python</StyledLink>. Check
-              out what I&apos;ve{' '}
-              <StyledLink href='/projects'> worked </StyledLink> on.
+              <StyledLink
+                href='https://electronjs.org/'
+                className='umami--click--electron-link'
+              >
+                Electron
+              </StyledLink>
+              ,{' '}
+              <StyledLink
+                href='https://vuejs.org/'
+                className='umami--click--vue3-link'
+              >
+                Vue
+              </StyledLink>
+              ,{' '}
+              <StyledLink
+                href='https://nextjs.org/'
+                className='umami--click--nextjs-link'
+              >
+                Next.js
+              </StyledLink>
+              , and{' '}
+              <StyledLink
+                href='https://python.org/'
+                className='umami--click--python-link'
+              >
+                Python
+              </StyledLink>
+              . Check out what I&apos;ve{' '}
+              <StyledLink
+                href='/projects'
+                className='umami--click--projects-link'
+              >
+                {' '}
+                worked{' '}
+              </StyledLink>{' '}
+              on.
             </motion.p>
 
             <motion.p variants={item} className='mt-4'>
               If you would like to see some of the publications that I&apos;ve
               authored or been a part of, checkout the
-              <StyledLink href='/publications'> publications </StyledLink>
+              <StyledLink
+                href='/publications'
+                className='umami--click--publications-link'
+              >
+                {' '}
+                publications{' '}
+              </StyledLink>
               section. I am very much a part of
               <span className='text-sky-500'> #OpenScience </span>
               so if you are interested in reading my works, please reach out to
               me at{' '}
-              <StyledLink href='mailto:contact@sanjaysoundarajan.dev'>
+              <StyledLink
+                href='mailto:contact@sanjaysoundarajan.dev'
+                className='umami--click--contact-me-email-link'
+              >
                 contact@sanjaysoundarajan.dev
               </StyledLink>
               . I can send you the full text if required.
@@ -95,7 +140,10 @@ export default function About() {
             </motion.p>
 
             <motion.div variants={item} className='mt-4'>
-              <StyledLink href='mailto:contact@sanjaysoundarajan.dev'>
+              <StyledLink
+                href='mailto:contact@sanjaysoundarajan.dev'
+                className='umami--click--contact-me-email-button'
+              >
                 <div className='mt-4'>
                   <StyledButton>Contact Me</StyledButton>
                 </div>

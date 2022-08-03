@@ -63,7 +63,7 @@ export default function Header() {
               href='https://github.com/megasanjay'
               target='_blank'
               rel='noopener noreferrer'
-              className='mx-2 flex items-center'
+              className='umami--click--github-profile-link mx-2 flex items-center'
             >
               <div className='flex cursor-pointer items-center justify-center transition-all hover:text-sky-500'>
                 <Icon icon='akar-icons:github-fill' width='25' height='25' />
@@ -73,7 +73,7 @@ export default function Header() {
               href='https://twitter.com/megasanjay'
               target='_blank'
               rel='noopener noreferrer'
-              className='mx-2 flex items-center'
+              className='umami--click--twitter-profile-link mx-2 flex items-center'
             >
               <div className='flex cursor-pointer items-center justify-center transition-all hover:text-sky-500'>
                 <Icon icon='akar-icons:twitter-fill' width='25' height='25' />
@@ -83,7 +83,7 @@ export default function Header() {
               href='https://www.linkedin.com/in/sanjay-soundarajan/'
               target='_blank'
               rel='noopener noreferrer'
-              className='mx-2 flex items-center'
+              className='umami--click--linkedin-profile-link mx-2 flex items-center'
             >
               <div className='flex cursor-pointer items-center justify-center transition-all hover:text-sky-500'>
                 <Icon

@@ -1,6 +1,7 @@
 [
   {
     "title": "Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool",
+    "id": "10-1101-202204-18-488694",
     "conferenceTitle": "Preprint",
     "publicationDate": "2019-12",
     "authors": "Bhavesh Patel, Sanjay Soundarajan and Zicheng Hu",
@@ -11,6 +12,7 @@
   },
   {
     "title": "SPARClink: an interactive tool to visualize the impact of the SPARC program",
+    "id": "10-12688-f1000research-75071-1",
     "conferenceTitle": "2022 F1000Research",
     "publicationDate": "2019-12",
     "authors": "Sanjay Soundarajan, Sachira Kuruppu, Ashutosh Singh, Jongchan Kim and Monalisa Achalla",
@@ -21,6 +23,7 @@
   },
   {
     "title": "A comprehensive and high-performance motif finding approach on heterogeneous systems",
+    "id": "grad-thesis",
     "conferenceTitle": "Thesis",
     "publicationDate": "2020-05",
     "authors": "Sanjay Soundarajan",
@@ -31,6 +34,7 @@
   },
   {
     "title": "CPU-GPU Collaborated Computation Models for Biological Sequence Alignment with Mirror-Based Work Load Balancing",
+    "id": "10-1109-icpads47876-2019-00043",
     "conferenceTitle": "2019 IEEE 25th International Conference on Parallel and Distributed Systems (ICPADS)",
     "publicationDate": "2019-12",
     "authors": "Sanjay Soundarajan, Michelle Salomon and Jin H. Park",
@@ -41,6 +45,7 @@
   },
   {
     "title": "Demystifying Transportation Using Big Data Analytics",
+    "id": "10-1109-csci49370-2019-00240",
     "conferenceTitle": "2019 International Conference on Computational Science and Computational Intelligence (CSCI)",
     "publicationDate": "2019-12",
     "authors": "Fletcher Trueblood, David Rodriguez, Jese Hernandez, Michelle Salomon, Sanjay Soundarajan and Matin Pirouz",
@@ -51,6 +56,7 @@
   },
   {
     "title": "PDMF: Parallel Dictionary Motif Finder on Multicore and GPU",
+    "id": "10-1109-hpcc-smartcity-dss-2019-00031",
     "conferenceTitle": "2019 IEEE 21st International Conference on High Performance Computing and Communications; IEEE 17th International Conference on Smart City; IEEE 5th International Conference on Data Science and Systems (HPCC/SmartCity/DSS)",
     "publicationDate": "2019-08",
     "authors": "Michelle Salomon, Sanjay Soundarajan and Jin H. Park",
@@ -61,6 +67,7 @@
   },
   {
     "title": "Efficient Branch and Bound Motif Finding with Maximum Accuracy based on Hashing",
+    "id": "10-1109-ccwc-2019-8666485",
     "conferenceTitle": "2019 IEEE 9th Annual Computing and Communication Workshop and Conference (CCWC)",
     "publicationDate": "2019-01",
     "authors": "Sanjay Soundarajan, Michelle Salomon and Jin H. Park",
@@ -71,6 +78,7 @@
   },
   {
     "title": "A Gaze-Based Virtual Keyboard Using a Mouth Switch for Command Selection",
+    "id": "10-1109-embc-2018-8512929",
     "conferenceTitle": "2018 40th Annual International Conference of the IEEE Engineering in Medicine and Biology Society (EMBC)",
     "publicationDate": "2018-07",
     "authors": "Sanjay Soundarajan and Hubert Cecotti",

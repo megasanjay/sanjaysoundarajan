@@ -75,7 +75,10 @@ export default function Home() {
               className='mt-4 text-left text-2xl  text-slate-800 md:text-2xl'
             >
               I currently work as a front end developer at the{' '}
-              <StyledLink href='https://fairdataihub.org'>
+              <StyledLink
+                href='https://fairdataihub.org'
+                className='umami--click--fairdataihub-link'
+              >
                 FAIR Data Innovations Hub
               </StyledLink>{' '}
               where I build tools for data submission and open science.
@@ -83,7 +86,7 @@ export default function Home() {
 
             <motion.div variants={item} className='mt-4'>
               <Link href='/about' passHref>
-                <div className='mt-4'>
+                <div className='umami--click--about-me-button mt-4'>
                   <StyledButton>About Me</StyledButton>
                 </div>
               </Link>

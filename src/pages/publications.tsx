@@ -4,6 +4,7 @@ import * as React from 'react';
 
 type publicationType = {
   title: string;
+  id: string;
   authors: string;
   url: string;
   conferenceTitle?: string;
@@ -58,7 +59,10 @@ export default function Publications() {
               All my research work, that has been published (in reverse
               chronological order), is listed here. If you are interested in
               reading any specific publication, please reach out to me at{' '}
-              <StyledLink href='mailto:contact@sanjaysoundarajan.dev'>
+              <StyledLink
+                href='mailto:contact@sanjaysoundarajan.dev'
+                className='umami--click--contact-me-email-link'
+              >
                 contact@sanjaysoundarajan.dev
               </StyledLink>{' '}
               for the full text.
@@ -97,7 +101,10 @@ export default function Publications() {
                   className=' flex w-full flex-col'
                 >
                   <h2 className='w-auto  text-xl'>
-                    <StyledLink href={publication.url}>
+                    <StyledLink
+                      href={publication.url}
+                      className={`umami--click--${publication.id}-fulltext-link`}
+                    >
                       {publication.title}
                     </StyledLink>
                   </h2>
@@ -111,7 +118,13 @@ export default function Publications() {
                   {publication.doi && (
                     <div className='mt-1 flex flex-row text-sm font-normal'>
                       <span className='mr-2'>DOI: </span>
-                      <StyledLink href={publication.url} className='break-all'>
+                      <StyledLink
+                        href={publication.url}
+                        className={
+                          `break-all ` +
+                          `umami--click--${publication.id}-doi-link`
+                        }
+                      >
                         {publication.doi}
                       </StyledLink>
                     </div>
@@ -120,14 +133,28 @@ export default function Publications() {
                   <div className='my-2 h-[1px] w-full bg-slate-300' />
 
                   <details className='mt-2 text-base'>
-                    <summary className='cursor-pointer'>Abstract</summary>
+                    <summary
+                      className={
+                        `cursor-pointer ` +
+                        `umami--click--${publication.id}-abstract`
+                      }
+                    >
+                      Abstract
+                    </summary>
                     <p className='my-1 rounded-md border border-gray-200 bg-slate-100 px-3 py-2 text-sm'>
                       {publication.abstract}
                     </p>
                   </details>
 
                   <details className='mt-2 text-base'>
-                    <summary className='cursor-pointer'>Citation</summary>
+                    <summary
+                      className={
+                        `cursor-pointer ` +
+                        `umami--click--${publication.id}-citation`
+                      }
+                    >
+                      Citation
+                    </summary>
                     <p className='relative my-1 break-all rounded-md border border-gray-200 bg-slate-100 px-3 py-2 text-sm'>
                       {publication.citation}
                     </p>

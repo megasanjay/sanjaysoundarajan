@@ -72,6 +72,10 @@ const data: dataType = {
     icon: 'cib:storybook',
     title: 'Storybook',
   },
+  histoire: {
+    icon: 'fluent:notebook-lightning-20-filled',
+    title: 'Histoire',
+  },
 };
 
 const variants = {

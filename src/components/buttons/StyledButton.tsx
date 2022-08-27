@@ -9,7 +9,7 @@ const StyledButton = React.forwardRef<HTMLButtonElement, StyledButtonProps>(
     return (
       <button
         ref={ref}
-        className="group relative inline-flex cursor-pointer items-center justify-start overflow-hidden rounded bg-gray-50 py-3 pl-4 pr-12 font-semibold text-sky-600 transition-all duration-150 ease-in-out hover:pl-10 hover:pr-6"
+        className="group relative inline-flex cursor-pointer items-center justify-start overflow-hidden rounded bg-gray-100 py-3 pl-4 pr-12 font-semibold text-sky-600 transition-all duration-150 ease-in-out hover:pl-10 hover:pr-6"
       >
         <span className="absolute bottom-0 left-0 h-1 w-full bg-cyan-600 transition-all duration-150 ease-in-out group-hover:h-full"></span>
         <span className="absolute right-0 pr-4 duration-200 ease-out group-hover:translate-x-12">

@@ -10,7 +10,8 @@
       "electron",
       "python",
       "tailwind",
-      "storybook",
+      "histoire",
+      "vite",
       "googleanalytics"
     ],
     "github": "https://github.com/fairdataihub/fairshare",
@@ -42,6 +43,15 @@
     "tech": ["docusaurus", "tailwind", "react", "googleanalytics"],
     "github": "https://github.com/fairdataihub/fairdataihub.org",
     "url": "https://fairdataihub.org"
+  },
+  {
+    "title": "FAIRshare Authentication",
+    "id": "fairshare-authentication",
+    "image": "/images/projects/fairshareauth.png",
+    "description": "Since FAIRshare integrates with external data repositories, an external browser based authentication system was created to allow users to log into their data sources and archival platforms. This system is built with Next.js and uses a custom API to handle the authentication process. Custom protocols are used to handle communication between the browser and the FAIRshare Electron application.",
+    "tech": ["nextjs", "ts", "react", "tailwind"],
+    "github": "https://github.com/fairdataihub/FAIRshare-Auth",
+    "url": "https://auth.fairshareapp.io"
   },
   {
     "title": "SPARClink",

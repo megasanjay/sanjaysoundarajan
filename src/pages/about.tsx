@@ -140,14 +140,14 @@ export default function About() {
             </motion.p>
 
             <motion.div variants={item} className="mt-4">
-              <StyledLink
-                href="mailto:contact@sanjaysoundarajan.dev"
-                className="umami--click--contact-me-email-button"
+              <a
+                href="https://tally.so#tally-open=wdWpJo&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=5000"
+                className="umami--click--contact-me-form-button"
               >
                 <div className="mt-4">
                   <StyledButton>Contact Me</StyledButton>
                 </div>
-              </StyledLink>
+              </a>
             </motion.div>
           </motion.div>
         </section>

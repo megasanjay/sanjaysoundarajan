@@ -1,0 +1,49 @@
+[
+  {
+    "title": "Vue 3 Lottie",
+    "id": "vue3-lottie",
+    "description": "Vue 3 Lottie is a component that allows you to add Lottie animations to Vue applications. Vue 3 Lottie is a vue wrapper around the lottie-web library with a few additional features.",
+    "tech": ["vue3", "vite"],
+    "github": "https://github.com/megasanjay/vue3-lottie",
+    "badges": [
+      "https://img.shields.io/github/stars/megasanjay/vue3-lottie.svg?style=flat-square",
+      "https://img.shields.io/npm/dt/vue3-lottie",
+      "https://img.shields.io/npm/v/vue3-lottie"
+    ],
+    "url": "https://vue3-lottie.vercel.app/"
+  },
+  {
+    "title": "Vue 3 Marquee",
+    "id": "vue3-marquee",
+    "description": "Vue 3 Marquee is a simple marquee component for Vue 3 that creates customizable marquees. This library was born from an internal need for a quick and easy marquee component that I wanted to use in our website homepage. Many of the component libraries that I found were either unmaintained, complex or not compatible with Vue 3. So I decided to create my own.",
+    "tech": ["vue3", "vite"],
+    "github": "https://github.com/megasanjay/vue3-marquee",
+    "badges": [
+      "https://img.shields.io/github/stars/megasanjay/vue3-marquee.svg?style=flat-square",
+      "https://img.shields.io/npm/dt/vue3-marquee",
+      "https://img.shields.io/npm/v/vue3-marquee"
+    ],
+    "url": "https://vue3-marquee.vercel.app"
+  },
+  {
+    "title": "GitHub Zenodo release action",
+    "id": "upload-to-zenodo",
+    "description": "This is a Github action to update your 'codemeta.json', 'CITATION.cff' and '.zenodo.json' files with the release information and then upload your release to Zenodo. This action is primarily created for use for documentation releases at the FAIR Data Innovations Hub but can be used by anyone for any Github repository.",
+    "tech": ["js"],
+    "github": "https://github.com/megasanjay/upload-to-zenodo",
+    "badges": [
+      "https://img.shields.io/github/stars/megasanjay/upload-to-zenodo.svg?style=flat-square"
+    ],
+    "url": "https://github.com/marketplace/actions/zenodo-upload"
+  },
+  {
+    "title": "Electron Vue 3 Flask Starter",
+    "id": "electron-vue3-flask",
+    "description": "This is a template that creates an Electron application with a Flask backend and uses Vue3 and TailwindCSS (optional) for the frontend. Your backend api will be using Flask-RESTX for easier API development and automatic Swagger documentation.",
+    "tech": ["vue3", "electron", "flask", "tailwind"],
+    "github": "https://github.com/megasanjay/electron-vue3-flask",
+    "badges": [
+      "https://img.shields.io/github/stars/megasanjay/electron-vue3-flask.svg?style=flat-square"
+    ]
+  }
+]

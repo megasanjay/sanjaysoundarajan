@@ -4,6 +4,10 @@ module.exports = {
     dirs: ['src'],
   },
 
+  images: {
+    domains: ['images.unsplash.com', 'opengraph.githubassets.com'],
+  },
+
   reactStrictMode: true,
 
   // Uncoment to add domain whitelist

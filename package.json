@@ -21,8 +21,6 @@
   },
   "dependencies": {
     "@iconify/react": "3.2.2",
-    "axios": "^0.27.2",
-    "cheerio": "^1.0.0-rc.12",
     "clsx": "1.2.1",
     "framer-motion": "7.2.1",
     "next": "12.2.5",

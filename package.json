@@ -20,7 +20,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
-    "@iconify/react": "3.2.2",
+    "@iconify/react": "4.0.0",
     "clsx": "1.2.1",
     "framer-motion": "7.2.1",
     "next": "12.3.0",

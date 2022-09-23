@@ -7,6 +7,7 @@ const links = [
   { href: '/projects', label: 'projects' },
   { href: '/publications', label: 'publications' },
   { href: '/about', label: 'about me' },
+  { href: '/gallery', label: 'gallery' },
 ];
 
 export default function Header() {

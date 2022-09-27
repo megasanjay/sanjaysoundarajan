@@ -1,9 +1,10 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
+import { useRouter } from 'next/router';
 import * as React from 'react';
 
-const links = [
+const navigationBarLinks = [
   { href: '/projects', label: 'projects' },
   { href: '/publications', label: 'publications' },
   { href: '/about', label: 'about me' },
@@ -13,6 +14,7 @@ const links = [
 export default function Header() {
   const [isOpen, setIsOpen] = React.useState(false);
   const [inClient, setInClient] = React.useState(false);
+  const router = useRouter();
 
   React.useEffect(() => {
     setInClient(typeof window !== 'undefined');
@@ -40,10 +42,14 @@ export default function Header() {
         >
           <div className="flex ">
             <ul className="hidden items-center justify-between space-x-4 md:flex">
-              {links.map(({ href, label }) => (
+              {navigationBarLinks.map(({ href, label }) => (
                 <li key={`${href}${label}`}>
                   <Link href={href} passHref>
-                    <span className="cursor-pointer text-base font-medium transition-all hover:text-sky-600">
+                    <span
+                      className={`cursor-pointer text-base font-medium transition-all hover:text-sky-600 ${
+                        router.pathname === href ? 'text-sky-500' : ''
+                      }`}
+                    >
                       {label}
                     </span>
                   </Link>
@@ -112,10 +118,12 @@ export default function Header() {
                 >
                   <Icon icon="ci:close-big" width={25} height={25} />
                 </div>
-                {links.map(({ href, label }) => (
+                {navigationBarLinks.map(({ href, label }) => (
                   <Link href={href} passHref key={`${href}${label}`}>
                     <li
-                      className="cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600"
+                      className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600 ${
+                        router.pathname === href ? 'text-sky-500' : ''
+                      } `}
                       onClick={() => setIsOpen((isOpen) => !isOpen)}
                     >
                       <span className=" ">{label}</span>

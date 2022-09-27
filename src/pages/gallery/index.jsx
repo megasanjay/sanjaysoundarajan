@@ -1,4 +1,5 @@
 import groq from 'groq';
+import Image from 'next/image';
 import Link from 'next/link';
 
 import client from '@/lib/client';
@@ -8,10 +9,10 @@ import Layout from '@/components/layout/Layout';
 const Index = ({ posts }) => {
   return (
     <Layout>
-      <title>About Me</title>
+      <title>Gallery</title>
       <main>
         <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
-          <div>
+          <div className="grid grid-cols-4 gap-4">
             {posts.length > 0 &&
               posts.map(
                 ({
@@ -22,8 +23,8 @@ const Index = ({ posts }) => {
                   mainImage = ``,
                 }) =>
                   slug && (
-                    <li key={_id}>
-                      <img src={mainImage} alt="" />
+                    <article key={_id}>
+                      <Image src={mainImage} width={400} height={400} alt="" />
                       <Link
                         href="/gallery/[slug]"
                         as={`/gallery/${slug.current}`}
@@ -31,7 +32,7 @@ const Index = ({ posts }) => {
                         <a>{title}</a>
                       </Link>{' '}
                       ({new Date(publishedAt).toDateString()})
-                    </li>
+                    </article>
                   ),
               )}
           </div>

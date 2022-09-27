@@ -2,8 +2,11 @@
 
 import imageUrlBuilder from '@sanity/image-url';
 import groq from 'groq';
+import Image from 'next/image';
 
 import client from '@/lib/client';
+
+import Layout from '@/components/layout/Layout';
 
 function urlFor(source) {
   return imageUrlBuilder(client).image(source);
@@ -14,26 +17,36 @@ const Post = ({ post }) => {
     title = 'Missing title',
     name = 'Missing name',
     categories,
-    imageAuthor,
+    mainImage,
+    authorImage,
   } = post;
   return (
-    <article>
-      <h1>{title}</h1>
-      <span>By {name}</span>
-      {categories && (
-        <ul>
-          Posted in
-          {categories.map((category) => (
-            <li key={category}>{category}</li>
-          ))}
-        </ul>
-      )}
-      {imageAuthor && (
-        <div>
-          <img src={urlFor(imageAuthor).width(50).url()} />
-        </div>
-      )}
-    </article>
+    <Layout>
+      <title>Gallery</title>
+      <main>
+        <article className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10">
+          <h1>{title}</h1>
+          <span>By {name}</span>
+          <div>
+            <Image src={mainImage} width={400} height={400} alt="" />
+          </div>
+
+          {categories && (
+            <ul>
+              Posted in
+              {categories.map((category) => (
+                <li key={category}>{category}</li>
+              ))}
+            </ul>
+          )}
+          {authorImage && (
+            <div>
+              <img src={urlFor(authorImage).width(50).url()} />
+            </div>
+          )}
+        </article>
+      </main>
+    </Layout>
   );
 };
 
@@ -41,7 +54,8 @@ const query = groq`*[_type == "post" && slug.current == $slug][0]{
   title,
   "name": imageAuthor->name,
   "categories": categories[]->title,
-  "imageAuthor": imageAuthor->image
+  "mainImage": mainImage.asset->url,
+  "authorImage": imageAuthor->image
 }`;
 
 export async function getStaticPaths() {

@@ -16,6 +16,8 @@ export default function Header() {
   const [inClient, setInClient] = React.useState(false);
   const router = useRouter();
 
+  const routerPathNameArray = router.pathname.split('/');
+
   React.useEffect(() => {
     setInClient(typeof window !== 'undefined');
   }, []);
@@ -47,7 +49,9 @@ export default function Header() {
                   <Link href={href} passHref>
                     <span
                       className={`cursor-pointer text-base font-medium transition-all hover:text-sky-600 ${
-                        router.pathname === href ? 'text-sky-500' : ''
+                        routerPathNameArray.includes(href.replace('/', ''))
+                          ? 'text-sky-500'
+                          : ''
                       }`}
                     >
                       {label}
@@ -122,7 +126,9 @@ export default function Header() {
                   <Link href={href} passHref key={`${href}${label}`}>
                     <li
                       className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600 ${
-                        router.pathname === href ? 'text-sky-500' : ''
+                        routerPathNameArray.includes(href.replace('/', ''))
+                          ? 'text-sky-500'
+                          : ''
                       } `}
                       onClick={() => setIsOpen((isOpen) => !isOpen)}
                     >

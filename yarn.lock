@@ -8533,10 +8533,10 @@ table@^4.0.3:
     slice-ansi "1.0.0"
     string-width "^2.1.1"
 
-tailwind-merge@1.6.2:
-  version "1.6.2"
-  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-1.6.2.tgz#e75ff2fd9901d4f9bad630e7ba2cc65b99441435"
-  integrity sha512-/JbgwDwsI8F4aryXAcQ6tVOZvI/YyZqPqdkG/Dj/8XZq8JDp64XxZCIDbyp7/iOpIfWFkF8swEwjXQEQkAvJNw==
+tailwind-merge@1.7.0:
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/tailwind-merge/-/tailwind-merge-1.7.0.tgz#4f980059720f3303aacfeef2ba0ef7bc8ac9948e"
+  integrity sha512-A7oBapTWhV9M4bwLtxLQS9ZpPrvcikp21l+Xhwbet5SbaxUVogbHGLy+VDZcHe4LHWE99RpRbSpCBKaVqBs5Og==
 
 tailwindcss-debug-screens@2.2.1:
   version "2.2.1"

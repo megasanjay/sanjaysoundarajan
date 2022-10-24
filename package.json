@@ -27,7 +27,7 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.6.0",
-    "react-lottie-player": "1.4.3",
+    "react-lottie-player": "1.5.0",
     "react-tiny-popover": "7.1.0",
     "react-tippy": "1.4.0",
     "tailwind-merge": "1.7.0",

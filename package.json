@@ -30,7 +30,7 @@
     "react-lottie-player": "1.4.3",
     "react-tiny-popover": "7.1.0",
     "react-tippy": "1.4.0",
-    "tailwind-merge": "1.6.2",
+    "tailwind-merge": "1.7.0",
     "url-metadata": "2.5.0"
   },
   "devDependencies": {

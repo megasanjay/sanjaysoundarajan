@@ -116,7 +116,6 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                       width="1342"
                       height="975"
                       priority={true}
-                      objectFit="scale-down"
                     />
                   </div>
 
@@ -227,7 +226,6 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                       width="1200"
                       height="600"
                       priority={true}
-                      objectFit="scale-down"
                       className="shadow-md"
                     />
                   </div>

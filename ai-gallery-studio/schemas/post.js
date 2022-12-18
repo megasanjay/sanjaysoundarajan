@@ -24,6 +24,11 @@ export default {
       to: { type: 'author' },
     },
     {
+      name: 'imagePrompt',
+      title: 'Image Prompt',
+      type: 'string',
+    },
+    {
       name: 'postAuthor',
       title: 'Post Author',
       type: 'reference',
@@ -31,7 +36,7 @@ export default {
     },
     {
       name: 'mainImage',
-      title: 'Main image',
+      title: 'Main Image',
       type: 'image',
       options: {
         hotspot: true,
@@ -45,7 +50,7 @@ export default {
     },
     {
       name: 'publishedAt',
-      title: 'Published at',
+      title: 'Published At',
       type: 'datetime',
     },
     {

@@ -1,42 +1,55 @@
 import groq from 'groq';
-import Image from 'next/image';
 import Link from 'next/link';
 
 import client from '@/lib/client';
 
+import Card from '@/components/Card';
 import Layout from '@/components/layout/Layout';
 
 const Index = ({ posts }) => {
   return (
     <Layout>
       <title>Gallery</title>
-      <main>
-        <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
-          <div className="grid grid-cols-4 gap-4">
-            {posts.length > 0 &&
-              posts.map(
-                ({
-                  _id,
-                  title = '',
-                  slug = '',
-                  publishedAt = '',
-                  mainImage = ``,
-                }) =>
-                  slug && (
-                    <article key={_id}>
-                      <Image src={mainImage} width={400} height={400} alt="" />
-                      <Link
-                        href="/gallery/[slug]"
-                        as={`/gallery/${slug.current}`}
-                      >
-                        <a>{title}</a>
-                      </Link>{' '}
-                      ({new Date(publishedAt).toDateString()})
+      <main className=" mx-auto w-full max-w-screen-lg">
+        <style jsx>{`
+          .masonry {
+            column-count: 3;
+            column-gap: 2rem;
+          }
+          @screen lg {
+            .masonry {
+              column-count: 4;
+            }
+          }
+        `}</style>
+        <div className="masonry py-16">
+          {posts.length > 0 &&
+            posts.map(
+              ({
+                _id,
+                title = '',
+                slug = '',
+                publishedAt = '',
+                mainImage = ``,
+              }) =>
+                slug && (
+                  <Link
+                    key={_id}
+                    href="/gallery/[slug]"
+                    as={`/gallery/${slug.current}`}
+                  >
+                    <article className="umami--click--gallery-image mb-8 overflow-hidden rounded-lg">
+                      <span>{_id}</span>
+                      <Card
+                        src={mainImage}
+                        title={title}
+                        publishedAt={publishedAt}
+                      />
                     </article>
-                  ),
-              )}
-          </div>
-        </section>
+                  </Link>
+                ),
+            )}
+        </div>
       </main>
     </Layout>
   );
@@ -55,7 +68,7 @@ export async function getStaticProps() {
         "mainImage": mainImage.asset->url,
       }
     `);
-  console.log(posts);
+
   return {
     props: {
       posts,

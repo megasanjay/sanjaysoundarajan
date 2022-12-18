@@ -64,5 +64,6 @@ module.exports = {
   plugins: [
     require('tailwindcss-debug-screens'),
     require('@tailwindcss/forms'),
+    require('@tailwindcss/typography'),
   ],
 };

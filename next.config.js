@@ -5,17 +5,14 @@ module.exports = {
   },
 
   images: {
-    domains: ['images.unsplash.com', 'opengraph.githubassets.com'],
+    domains: [
+      'images.unsplash.com',
+      'opengraph.githubassets.com',
+      'cdn.sanity.io',
+    ],
   },
 
   reactStrictMode: true,
-
-  // Uncoment to add domain whitelist
-  // images: {
-  //   domains: [
-  //     'res.cloudinary.com',
-  //   ],
-  // },
 
   // SVGR
   webpack(config) {

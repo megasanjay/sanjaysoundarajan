@@ -27,7 +27,9 @@
     "react-dom": "^17.0",
     "styled-components": "^5.2.0"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "@sanity/cli": "^3.0.6"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/megasanjay/sanjaysoundarajan.git"

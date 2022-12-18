@@ -31,69 +31,53 @@ const ptComponents = {
 };
 
 const Post = ({ post }) => {
-  const {
-    title = 'Missing title',
-    body = [],
-    imageAuthor = 'No Image Author',
-    categories,
-    mainImage,
-
-    authorURL,
-  } = post;
   return (
     <Layout>
       <title>Gallery</title>
       <main>
-        <article className=" mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10">
-          <h2>{title}</h2>
+        {post && (
+          <article className=" mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10">
+            <h2>{post.title}</h2>
 
-          <div className="py-3">
-            <span>Image created by </span>
-            <StyledLink
-              href={authorURL}
-              className="umami--click--publications-link"
-            >
-              {imageAuthor}
-            </StyledLink>
-          </div>
-
-          <div className="pt-4 pb-6">
-            <img src={mainImage} alt="" className="rounded-lg" />
-          </div>
-
-          <h3>Backstory</h3>
-
-          <div className="prose prose-xl max-w-full py-2">
-            <PortableText value={body} components={ptComponents} />
-          </div>
-
-          {categories && (
-            <div>
-              {categories.map((category) => (
-                <a
-                  href="#"
-                  key={category}
-                  className="mr-2 w-max rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-800 dark:hover:bg-blue-300"
-                >
-                  {category}
-                </a>
-              ))}
+            <div className="py-3">
+              <span>Image created by </span>
+              <StyledLink
+                href={post.authorURL}
+                className="umami--click--publications-link"
+              >
+                {post.imageAuthor}
+              </StyledLink>
             </div>
-          )}
-        </article>
+
+            <div className="pt-4 pb-6">
+              <img src={post.mainImage} alt="" className="rounded-lg" />
+            </div>
+
+            <h3>Backstory</h3>
+
+            <div className="prose prose-xl max-w-full py-2">
+              <PortableText value={post.body} components={ptComponents} />
+            </div>
+
+            {post.categories && (
+              <div>
+                {post.categories.map((category) => (
+                  <a
+                    href="#"
+                    key={category}
+                    className="mr-2 w-max rounded bg-blue-100 px-2.5 py-0.5 text-xs font-semibold text-blue-800 hover:bg-blue-200 dark:bg-blue-200 dark:text-blue-800 dark:hover:bg-blue-300"
+                  >
+                    {category}
+                  </a>
+                ))}
+              </div>
+            )}
+          </article>
+        )}
       </main>
     </Layout>
   );
 };
-
-const query = groq`*[_type == "post" && slug.current == $slug][0]{
-  title,
-  body,
-  "imageAuthor": imageAuthor->name,
-  "categories": categories[]->title,
-  "mainImage": mainImage.asset->url,
-  "authorURL": imageAuthor->link
-}`;
 
 export async function getStaticPaths() {
   const paths = await client.fetch(
@@ -105,6 +89,15 @@ export async function getStaticPaths() {
     fallback: true,
   };
 }
+
+const query = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  body,
+  "imageAuthor": imageAuthor->name,
+  "categories": categories[]->title,
+  "mainImage": mainImage.asset->url,
+  "authorURL": imageAuthor->link
+}`;
 
 export async function getStaticProps(context) {
   const { slug = '' } = context.params;

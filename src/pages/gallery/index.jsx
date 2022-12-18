@@ -1,5 +1,4 @@
 import groq from 'groq';
-import Link from 'next/link';
 
 import client from '@/lib/client';
 
@@ -22,32 +21,23 @@ const Index = ({ posts }) => {
             }
           }
         `}</style>
+
         <div className="masonry py-16">
           {posts.length > 0 &&
             posts.map(
-              ({
-                _id,
-                title = '',
-                slug = '',
-                publishedAt = '',
-                mainImage = ``,
-              }) =>
-                slug && (
-                  <Link
-                    key={_id}
-                    href="/gallery/[slug]"
-                    as={`/gallery/${slug.current}`}
-                  >
-                    <article className="umami--click--gallery-image mb-8 overflow-hidden rounded-lg">
-                      <span>{_id}</span>
-                      <Card
-                        src={mainImage}
-                        title={title}
-                        publishedAt={publishedAt}
-                      />
-                    </article>
-                  </Link>
-                ),
+              ({ title = '', slug = '', publishedAt = '', mainImage = `` }) => (
+                <article
+                  className="umami--click--gallery-image"
+                  key={slug.current}
+                >
+                  <Card
+                    url={`/gallery/${slug.current}`}
+                    src={mainImage}
+                    title={title}
+                    publishedAt={publishedAt}
+                  />
+                </article>
+              ),
             )}
         </div>
       </main>

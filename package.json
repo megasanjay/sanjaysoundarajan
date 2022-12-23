@@ -21,6 +21,7 @@
     "prepare": "husky install"
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.7",
     "@iconify/react": "4.0.1",
     "@portabletext/react": "^2.0.0",
     "@sanity/client": "^3.4.1",
@@ -29,12 +30,15 @@
     "framer-motion": "7.10.2",
     "groq": "^2.33.2",
     "next": "13.0.7",
+    "plaiceholder": "^2.5.0",
+    "probe-image-size": "^7.2.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "react-icons": "4.7.1",
     "react-lottie-player": "1.5.4",
     "react-tiny-popover": "7.2.0",
     "react-tippy": "1.4.0",
+    "sharp": "^0.31.3",
     "tailwind-merge": "1.8.0",
     "url-metadata": "2.5.0"
   },
@@ -47,6 +51,7 @@
     "@tailwindcss/typography": "^0.5.8",
     "@testing-library/jest-dom": "5.16.5",
     "@testing-library/react": "13.4.0",
+    "@types/probe-image-size": "^7.2.0",
     "@types/react": "18.0.26",
     "@types/tailwindcss": "3.1.0",
     "@typescript-eslint/eslint-plugin": "5.46.1",

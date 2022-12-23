@@ -145,3 +145,7 @@ body {
   background-size: 100% 3px;
   background-position: 0 100%;
 }
+
+.overlay {
+  background: linear-gradient(0deg, black, transparent);
+}

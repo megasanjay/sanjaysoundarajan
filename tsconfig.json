@@ -25,7 +25,7 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/gallery.jsx",
-    "src/pages/gallery/index.jsx"
+    "src/pages/gallery/index.tsx"
   ],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]

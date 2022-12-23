@@ -103,53 +103,55 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
             ),
           )}
         </motion.div>
+      </main>
 
-        <AnimatePresence>
-          {isOpen && (
-            <div className="fixed inset-0 z-10 flex min-h-screen items-center justify-center overflow-y-auto">
-              <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
-                <div
-                  className="fixed inset-0 bg-gray-900/90 transition-opacity"
+      <AnimatePresence>
+        {isOpen && (
+          <div className="fixed inset-0 z-10 flex min-h-screen items-center justify-center overflow-y-auto">
+            <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
+              <div
+                className="fixed inset-0 bg-gray-900/90 transition-opacity"
+                aria-hidden="true"
+                onClick={() => setIsOpen(false)}
+              ></div>
+
+              <motion.div
+                className="flex items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0"
+                initial={{
+                  opacity: 0,
+                  scale: 0.75,
+                }}
+                animate={{
+                  opacity: 1,
+                  scale: 1,
+                  transition: {
+                    ease: 'easeOut',
+                    duration: 0.15,
+                  },
+                }}
+                exit={{
+                  opacity: 0,
+                  scale: 0.75,
+                  transition: {
+                    ease: 'easeIn',
+                    duration: 0.15,
+                  },
+                }}
+              >
+                <span
+                  className="hidden sm:inline-block sm:h-screen sm:align-middle"
                   aria-hidden="true"
-                  onClick={() => setIsOpen(false)}
-                ></div>
-
-                <motion.div
-                  className="flex  items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0"
-                  initial={{
-                    opacity: 0,
-                    scale: 0.75,
-                  }}
-                  animate={{
-                    opacity: 1,
-                    scale: 1,
-                    transition: {
-                      ease: 'easeOut',
-                      duration: 0.15,
-                    },
-                  }}
-                  exit={{
-                    opacity: 0,
-                    scale: 0.75,
-                    transition: {
-                      ease: 'easeIn',
-                      duration: 0.15,
-                    },
-                  }}
                 >
-                  <span
-                    className="hidden sm:inline-block sm:h-screen sm:align-middle"
-                    aria-hidden="true"
-                  >
-                    &#8203;
-                  </span>
+                  &#8203;
+                </span>
 
-                  <div
-                    className="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle"
-                    role="dialog"
-                    aria-modal="true"
-                    aria-labelledby="modal-headline"
-                  >
+                <div
+                  className="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle"
+                  role="dialog"
+                  aria-modal="true"
+                  aria-labelledby="modal-headline"
+                >
+                  <div className="flex flex-col">
                     <Image
                       src={selectedImage.url}
                       alt=""
@@ -159,12 +161,12 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                       blurDataURL={selectedImage.blurDataURL}
                     />
                   </div>
-                </motion.div>
-              </div>
+                </div>
+              </motion.div>
             </div>
-          )}
-        </AnimatePresence>
-      </main>
+          </div>
+        )}
+      </AnimatePresence>
     </Layout>
   );
 };
@@ -186,6 +188,7 @@ export async function getStaticProps() {
         publishedAt,
         imageAuthor,
         "mainImage": mainImage.asset->url,
+        "imageAuthor": imageAuthor->name,
       }
     `);
 

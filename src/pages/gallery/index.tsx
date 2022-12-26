@@ -1,26 +1,44 @@
 /* eslint-disable @next/next/no-img-element */
-import { AnimatePresence, motion } from 'framer-motion';
+import { Dialog, Transition } from '@headlessui/react';
+import dayjs from 'dayjs';
+import { motion } from 'framer-motion';
 import groq from 'groq';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import { getPlaiceholder } from 'plaiceholder';
 import probe from 'probe-image-size';
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
+import {
+  Accordion,
+  AccordionItem,
+  AccordionItemButton,
+  AccordionItemHeading,
+  AccordionItemPanel,
+} from 'react-accessible-accordion';
+import { HiClipboardCopy } from 'react-icons/hi';
+
+import 'react-accessible-accordion/dist/fancy-example.css';
 
 import client from '@/lib/client';
+import {
+  galleryContainer,
+  galleryItem,
+  textContainer,
+  textItem,
+} from '@/lib/framer';
 
 import Layout from '@/components/layout/Layout';
-
-// type ModalProps = {
-//   isOpen: boolean;
-//   setIsOpen: React.Dispatch<React.SetStateAction<boolean>>;
-// };
+import ExternalLink from '@/components/links/ExternalLink';
 
 type ModalProps = {
   url: string;
   width: number;
   height: number;
   blurDataURL: string;
+  imageAuthorProfilePicture: string;
+  imagePrompt: string;
+  imageAuthorURL: string;
+  publishedAt: string;
 };
 
 const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
@@ -32,6 +50,10 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     width: 0,
     height: 0,
     blurDataURL: '',
+    imageAuthorProfilePicture: '',
+    imageAuthorURL: '',
+    imagePrompt: '',
+    publishedAt: '',
   });
 
   const handleImageClick = async (
@@ -39,6 +61,10 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     width: number,
     height: number,
     blurDataURL: string,
+    imageAuthorProfilePicture: string,
+    imageAuthorURL: string,
+    imagePrompt: string,
+    publishedAt: string,
   ) => {
     setIsOpen(!isOpen);
     setSelectedImage({
@@ -46,29 +72,55 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       width,
       height,
       blurDataURL,
+      imageAuthorProfilePicture,
+      imageAuthorURL,
+      imagePrompt,
+      publishedAt,
     });
+  };
+
+  const copyToClipboard = (str: string) => {
+    navigator.clipboard.writeText(str);
   };
 
   return (
     <Layout>
       <title>Gallery</title>
       <main className="relative mx-auto w-full max-w-screen-lg">
-        <h1 className="pt-8">Gallery</h1>
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pt-10 md:pt-20">
+          <motion.div
+            variants={textContainer}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: true }}
+            className="flex flex-col items-start justify-center text-left text-xl text-slate-800"
+          >
+            <motion.h1
+              variants={textItem}
+              className="mt-4 mb-4 text-left text-5xl font-bold "
+            >
+              Gallery
+            </motion.h1>
+
+            <motion.p
+              variants={{
+                hidden: { opacity: 0, translateY: 100 },
+                show: { opacity: 1, translateY: 0 },
+              }}
+            >
+              This is a collection of images that I have generated using a
+              variety of different AI models. I have also included the prompt
+              that I used to generate the image. I hope you enjoy them!
+            </motion.p>
+          </motion.div>
+        </section>
+
         <motion.div
-          variants={{
-            hidden: { opacity: 0 },
-            show: {
-              opacity: 1,
-              transition: {
-                staggerChildren: 0.15,
-                ease: 'easeInOut',
-              },
-            },
-          }}
+          variants={galleryContainer}
           initial="hidden"
           whileInView="show"
           viewport={{ once: true }}
-          className="columns-1 py-16 sm:columns-2 md:columns-3"
+          className="columns-1 py-8 sm:columns-2 md:columns-3"
         >
           {posts.map(
             ({
@@ -78,24 +130,41 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               width,
               height,
               blurDataURL,
+              imageAuthorProfilePicture,
+              imagePrompt,
+              imageAuthorURL,
             }) => (
               <motion.article
-                variants={{
-                  hidden: { opacity: 0, translateY: 100 },
-                  show: { opacity: 1, translateY: 0 },
-                }}
+                variants={galleryItem}
                 className="umami--click--gallery-image cursor-pointer px-4 sm:px-2"
                 key={title}
                 onClick={() => {
-                  handleImageClick(mainImage, width, height, blurDataURL);
+                  handleImageClick(
+                    mainImage,
+                    width,
+                    height,
+                    blurDataURL,
+                    imageAuthorProfilePicture,
+                    imageAuthorURL,
+                    imagePrompt,
+                    publishedAt,
+                  );
                 }}
               >
-                <div className="group relative mb-8">
-                  <img className="rounded-lg" src={mainImage} alt="image" />
-                  <div className="overlay absolute bottom-[-20px] hidden h-24 w-full px-4 pt-6 opacity-0 transition-all group-hover:bottom-0 group-hover:opacity-100">
-                    <div className="text-lg text-white">{title}</div>
-                    <div className="text-sm text-gray-400">
-                      {new Date(publishedAt).toDateString()}
+                <div className="group relative mb-8 h-full w-full">
+                  <Image
+                    src={mainImage}
+                    alt=""
+                    width={width}
+                    height={height}
+                    placeholder="blur"
+                    blurDataURL={blurDataURL}
+                    className="rounded-lg"
+                  />
+
+                  <div className="overlay absolute bottom-0 h-14 w-full px-4 pt-6 opacity-0 transition-all  group-hover:opacity-100">
+                    <div className="text-right text-sm text-gray-200">
+                      {dayjs(publishedAt).format('MMMM D, YYYY')}
                     </div>
                   </div>
                 </div>
@@ -105,53 +174,39 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
         </motion.div>
       </main>
 
-      <AnimatePresence>
-        {isOpen && (
-          <div className="fixed inset-0 z-10 flex min-h-screen items-center justify-center overflow-y-auto">
-            <div className="flex flex-col items-center justify-center py-8 px-4 text-center">
-              <div
-                className="fixed inset-0 bg-gray-900/90 transition-opacity"
-                aria-hidden="true"
-                onClick={() => setIsOpen(false)}
-              ></div>
+      <Transition appear show={isOpen} as={Fragment}>
+        <Dialog
+          as="div"
+          className="relative z-10"
+          onClose={() => {
+            setIsOpen(false);
+          }}
+        >
+          <Transition.Child
+            as={Fragment}
+            enter="ease-out duration-300"
+            enterFrom="opacity-0"
+            enterTo="opacity-100"
+            leave="ease-in duration-200"
+            leaveFrom="opacity-100"
+            leaveTo="opacity-0"
+          >
+            <div className="fixed inset-0 bg-black bg-opacity-80" />
+          </Transition.Child>
 
-              <motion.div
-                className="flex items-end justify-center px-4 pt-4 pb-20 text-center sm:block sm:p-0"
-                initial={{
-                  opacity: 0,
-                  scale: 0.75,
-                }}
-                animate={{
-                  opacity: 1,
-                  scale: 1,
-                  transition: {
-                    ease: 'easeOut',
-                    duration: 0.15,
-                  },
-                }}
-                exit={{
-                  opacity: 0,
-                  scale: 0.75,
-                  transition: {
-                    ease: 'easeIn',
-                    duration: 0.15,
-                  },
-                }}
+          <div className="fixed inset-0 overflow-y-auto">
+            <div className="flex min-h-full items-center justify-center text-center">
+              <Transition.Child
+                as={Fragment}
+                enter="ease-out duration-300"
+                enterFrom="opacity-0 scale-95"
+                enterTo="opacity-100 scale-100"
+                leave="ease-in duration-200"
+                leaveFrom="opacity-100 scale-100"
+                leaveTo="opacity-0 scale-95"
               >
-                <span
-                  className="hidden sm:inline-block sm:h-screen sm:align-middle"
-                  aria-hidden="true"
-                >
-                  &#8203;
-                </span>
-
-                <div
-                  className="inline-block transform overflow-hidden rounded-lg bg-white text-left align-bottom shadow-xl transition-all sm:my-8 sm:w-full sm:max-w-lg sm:align-middle"
-                  role="dialog"
-                  aria-modal="true"
-                  aria-labelledby="modal-headline"
-                >
-                  <div className="flex flex-col">
+                <Dialog.Panel className="w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
+                  <ExternalLink href={selectedImage.url}>
                     <Image
                       src={selectedImage.url}
                       alt=""
@@ -160,13 +215,64 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                       placeholder="blur"
                       blurDataURL={selectedImage.blurDataURL}
                     />
-                  </div>
-                </div>
-              </motion.div>
+                  </ExternalLink>
+
+                  <Accordion allowZeroExpanded className="mt-2">
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>Details</AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <div className="flex flex-wrap items-center ">
+                          <span>Generated by </span>
+
+                          <a
+                            href={selectedImage.imageAuthorURL}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                          >
+                            <Image
+                              src={selectedImage.imageAuthorProfilePicture}
+                              alt=""
+                              width={40}
+                              height={40}
+                              className="ml-2 rounded-full"
+                            />
+                          </a>
+                          <span>
+                            on{' '}
+                            {dayjs(selectedImage.publishedAt).format(
+                              'ddd, MMMM D YYYY',
+                            )}{' '}
+                          </span>
+                        </div>
+                        <div className="text-sm text-gray-400"></div>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                    <AccordionItem>
+                      <AccordionItemHeading>
+                        <AccordionItemButton>Prompt</AccordionItemButton>
+                      </AccordionItemHeading>
+                      <AccordionItemPanel>
+                        <p>{selectedImage.imagePrompt}</p>
+                        <div className="flex justify-end ">
+                          <HiClipboardCopy
+                            size={25}
+                            className="cursor-pointer rounded-lg hover:bg-slate-200"
+                            onClick={() => {
+                              copyToClipboard(selectedImage.imagePrompt);
+                            }}
+                          />
+                        </div>
+                      </AccordionItemPanel>
+                    </AccordionItem>
+                  </Accordion>
+                </Dialog.Panel>
+              </Transition.Child>
             </div>
           </div>
-        )}
-      </AnimatePresence>
+        </Dialog>
+      </Transition>
     </Layout>
   );
 };
@@ -187,8 +293,11 @@ export async function getStaticProps() {
         slug,
         publishedAt,
         imageAuthor,
+        imagePrompt,
         "mainImage": mainImage.asset->url,
         "imageAuthor": imageAuthor->name,
+        "imageAuthorProfilePicture": imageAuthor->image.asset->url,
+        "imageAuthorURL": imageAuthor->link
       }
     `);
 

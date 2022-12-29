@@ -1,4 +1,4 @@
-name: rebuild-website
+name: Rebuild website
 
 on:
   workflow_dispatch:
@@ -7,19 +7,16 @@ on:
     - cron: '0 0 * * *' 
 
 jobs:
-  php-cs-fixer:
+  add-empty-commit:
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v2
       with:
         ref: ${{ github.head_ref }}
-
-    - uses: stefanzweifel/git-auto-commit-action@v4
-      with:
-        commit_message: "release: :rocket: rebuild website"
-        branch: main
-        add_options: '-u'
-        commit-options: '--allow-empty --no-verify'
-        skip_dirty_check: true
-        push_options: '--force'
+        
+    - name: Add empty commit
+      run: "git commit -m 'release: :rocket: rebuild website'"
+      
+    - name: Push to repo
+      run: "git push origin main"

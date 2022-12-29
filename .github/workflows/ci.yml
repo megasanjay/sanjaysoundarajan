@@ -16,7 +16,7 @@ jobs:
         ref: ${{ github.head_ref }}
         
     - name: Add empty commit
-      run: "git commit -m 'release: :rocket: rebuild website'"
+      run: "git commit -m 'release: :rocket: rebuild website' --allow-empty --no-verify"
       
     - name: Push to repo
-      run: "git push origin main"
+      run: "git push origin main" 

@@ -15,6 +15,12 @@ jobs:
       with:
         ref: ${{ github.head_ref }}
         
+    - name: Set email credentials
+      run: 'git config user.email "ssoundarajan@calmi2.org"'
+      
+    - name: Set name credentials
+      run: 'git config user.name "Sanjay Soundarajan"'
+        
     - name: Add empty commit
       run: "git commit -m 'release: :rocket: rebuild website' --allow-empty --no-verify"
       

@@ -1,4 +1,4 @@
-export default {
+const CATEGGORY_SCHEMA = {
   name: 'category',
   title: 'Category',
   type: 'document',
@@ -15,3 +15,5 @@ export default {
     },
   ],
 };
+
+export default CATEGGORY_SCHEMA;

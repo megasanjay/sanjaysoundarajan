@@ -2,47 +2,33 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import * as React from 'react';
 
+import { textContainer, textItem } from '@/lib/framer';
+
 import StyledButton from '@/components/buttons/StyledButton';
 import Layout from '@/components/layout/Layout';
 import StyledLink from '@/components/links/StyledLink';
 
 export default function About() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-        ease: 'anticipate',
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, translateY: 100 },
-    show: { opacity: 1, translateY: 0 },
-  };
-
   return (
     <Layout>
       <title>About Me</title>
       <main>
         <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
           <motion.div
-            variants={container}
+            variants={textContainer}
             initial="hidden"
             whileInView="show"
             viewport={{ once: true }}
             className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
           >
             <motion.h1
-              variants={item}
+              variants={textItem}
               className="mt-4 mb-4 text-left text-5xl font-bold "
             >
               About me 👋
             </motion.h1>
 
-            <motion.div variants={item}>
+            <motion.div variants={textItem}>
               <p className="mt-4">Hello! வணக்கம்! ආයුබෝවන්! Hola!</p>
 
               <p className="mt-4">
@@ -121,7 +107,7 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div variants={item} className="mt-4">
+            <motion.div variants={textItem} className="mt-4">
               <a
                 href="https://tally.so#tally-open=wdWpJo&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=5000"
                 className="umami--click--contact-me-form-button"

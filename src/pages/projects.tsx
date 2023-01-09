@@ -68,7 +68,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
               variants={item}
               className="mt-4 mb-2 text-left text-5xl font-bold "
             >
-              Projects
+              Projects 🛠️
             </motion.h1>
 
             <motion.p variants={item} className="mt-4">

@@ -52,7 +52,7 @@ export default function Publications() {
               variants={item}
               className="mt-4 mb-4 text-left text-5xl font-bold "
             >
-              Publications & Research
+              Publications & Research 🔬
             </motion.h1>
 
             <motion.p variants={item} className="mt-4">

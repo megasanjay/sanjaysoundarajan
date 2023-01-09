@@ -26,6 +26,7 @@
     "@portabletext/react": "^2.0.0",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
+    "@types/react-responsive-masonry": "^2.1.0",
     "clsx": "1.2.1",
     "dayjs": "^1.11.7",
     "framer-motion": "8.2.4",
@@ -38,8 +39,10 @@
     "react-dom": "18.2.0",
     "react-icons": "4.7.1",
     "react-lottie-player": "1.5.4",
+    "react-responsive-masonry": "^2.1.7",
     "react-tiny-popover": "7.2.0",
     "react-tippy": "1.4.0",
+    "react-toastify": "^9.1.1",
     "sharp": "^0.31.3",
     "tailwind-merge": "1.8.1",
     "url-metadata": "2.5.0"

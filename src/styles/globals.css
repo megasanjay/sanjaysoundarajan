@@ -149,32 +149,3 @@ body {
 .overlay {
   background: linear-gradient(0deg, black, transparent);
 }
-
-.ggrid {
-  display: flex;
-  padding: 0.5rem 0.5rem 0 0.5rem;
-}
-
-.ggrid-col {
-  flex-grow: 1;
-}
-
-/* 2 columns by default, hide columns 2 & 3 */
-.ggrid-col:nth-child(2),
-.ggrid-col:nth-child(3) {
-  display: none;
-}
-
-/* 3 columns at medium size */
-@media (min-width: 768px) {
-  .ggrid-col:nth-child(2) {
-    display: block;
-  } /* show column 2 */
-}
-
-/* 4 columns at large size */
-@media (min-width: 1080px) {
-  .ggrid-col:nth-child(3) {
-    display: block;
-  } /* show column 3 */
-}

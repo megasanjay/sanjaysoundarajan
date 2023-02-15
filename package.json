@@ -24,7 +24,7 @@
     "@headlessui/react": "^1.7.7",
     "@iconify/react": "4.1.0",
     "@portabletext/react": "^2.0.0",
-    "@sanity/client": "^4.0.0",
+    "@sanity/client": "^5.0.0",
     "@sanity/image-url": "^1.0.1",
     "@types/react-responsive-masonry": "^2.1.0",
     "clsx": "1.2.1",

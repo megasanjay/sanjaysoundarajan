@@ -44,7 +44,7 @@
     "react-tippy": "1.4.0",
     "react-toastify": "^9.1.1",
     "sharp": "^0.31.3",
-    "tailwind-merge": "1.9.1",
+    "tailwind-merge": "1.10.0",
     "url-metadata": "2.5.0"
   },
   "devDependencies": {

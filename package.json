@@ -29,7 +29,7 @@
     "@types/react-responsive-masonry": "^2.1.0",
     "clsx": "1.2.1",
     "dayjs": "^1.11.7",
-    "framer-motion": "10.0.0",
+    "framer-motion": "10.0.1",
     "groq": "^2.33.2",
     "next": "13.2.1",
     "plaiceholder": "^2.5.0",

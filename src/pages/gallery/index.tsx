@@ -218,7 +218,7 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                     <ExternalLink href={selectedImage.url}>
                       <Image
                         src={selectedImage.url}
-                        alt=""
+                        alt={selectedImage.imagePrompt}
                         width={selectedImage.width}
                         height={selectedImage.height}
                         placeholder="blur"
@@ -322,7 +322,7 @@ export async function getStaticProps() {
 
       return {
         ...img,
-        alt: ``,
+
         width: imageMeta.width,
         height: imageMeta.height,
         ...post,
@@ -330,6 +330,9 @@ export async function getStaticProps() {
       };
     }),
   ).then((values) => values);
+
+  // reverse the array to show the latest images first
+  posts.reverse();
 
   return {
     props: {

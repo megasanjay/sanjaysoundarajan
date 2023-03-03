@@ -9,6 +9,8 @@ module.exports = {
       'images.unsplash.com',
       'opengraph.githubassets.com',
       'cdn.sanity.io',
+      'raw.githubusercontent.com',
+      'cdn.jsdelivr.net',
     ],
   },
 

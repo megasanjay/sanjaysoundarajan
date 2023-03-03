@@ -20,6 +20,15 @@ import { textContainer, textItem } from '@/lib/framer';
 import Layout from '@/components/layout/Layout';
 import ExternalLink from '@/components/links/ExternalLink';
 
+type Post = {
+  id: string;
+  prompt: string;
+  publishedAt: string;
+  imageURL: string;
+  imageAuthor: string;
+  extension: string;
+};
+
 type ModalProps = {
   url: string;
   width: number;
@@ -51,11 +60,24 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
     width: number,
     height: number,
     blurDataURL: string,
-    imageAuthorProfilePicture: string,
-    imageAuthorURL: string,
+    imageAuthor: string,
     imagePrompt: string,
     publishedAt: string,
   ) => {
+    let imageAuthorProfilePicture = '';
+    let imageAuthorURL = '';
+
+    if (imageAuthor === 'midjourney') {
+      imageAuthorProfilePicture = '/images/gallery/midjourney.png';
+      imageAuthorURL = 'https://www.midjourney.com/';
+    } else if (imageAuthor === 'dall-e-2') {
+      imageAuthorProfilePicture = '/images/gallery/dall-e-2.png';
+      imageAuthorURL = 'https://openai.com/dall-e-2/';
+    } else if (imageAuthor === 'chatgpt') {
+      imageAuthorProfilePicture = '/images/gallery/chatgpt.jpg';
+      imageAuthorURL = 'https://chat.openai.com/';
+    }
+
     setIsOpen(!isOpen);
     setSelectedImage({
       url: image,
@@ -114,34 +136,32 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           <Masonry columnsCount={3}>
             {posts.map(
               ({
-                title = '',
+                id = '',
                 publishedAt = '',
-                mainImage = '',
+                imageURL = '',
                 width,
                 height,
                 blurDataURL,
-                imageAuthorProfilePicture,
-                imagePrompt,
-                imageAuthorURL,
+                imageAuthor = '',
+                prompt = '',
               }) => (
                 <div
                   className="group relative mx-2 mb-3 w-auto md:px-0"
-                  key={title}
+                  key={id}
                   onClick={() => {
                     handleImageClick(
-                      mainImage,
+                      imageURL,
                       width,
                       height,
                       blurDataURL,
-                      imageAuthorProfilePicture,
-                      imageAuthorURL,
-                      imagePrompt,
+                      imageAuthor,
+                      prompt,
                       publishedAt,
                     );
                   }}
                 >
                   <Image
-                    src={mainImage}
+                    src={imageURL}
                     alt=""
                     width={width}
                     height={height}
@@ -262,14 +282,6 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   );
 };
 
-type Post = {
-  id: string;
-  prompt: string;
-  publishedAt: string;
-  imageURL: string;
-  extension: string;
-};
-
 export async function getStaticProps() {
   if (!process.env.MONGODB_URI) {
     throw new Error('Missing the MongoDB URI');
@@ -293,7 +305,8 @@ export async function getStaticProps() {
       prompt: item.prompt,
       publishedAt: dayjs.unix(item.timestamp).format('MMMM D, YYYY'),
       extension: item.extension,
-      imageURL: `https://raw.githubusercontent.com/megasanjay/aigallery/main/${item.imageId}.${item.extension}`,
+      imageAuthor: item.imageAuthor,
+      imageURL: `https://cdn.jsdelivr.net/gh/megasanjay/aigallery/${item.imageId}.${item.extension}`,
     };
   });
 

@@ -310,8 +310,17 @@ export async function getStaticProps() {
     };
   });
 
+  const totalNumberOfImages = formattedDBEntries.length;
+
   const posts = await Promise.all(
-    formattedDBEntries.map(async (post: Post) => {
+    formattedDBEntries.map(async (post: Post, index: number) => {
+      // eslint-disable-next-line no-console
+      console.log(
+        `Generating placeholder for ${post.imageURL} - (${
+          index + 1
+        }/${totalNumberOfImages})`,
+      );
+
       const {
         base64,
         // eslint-disable-next-line unused-imports/no-unused-vars

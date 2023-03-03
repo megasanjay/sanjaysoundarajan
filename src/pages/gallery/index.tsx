@@ -2,7 +2,7 @@
 import { Dialog, Transition } from '@headlessui/react';
 import dayjs from 'dayjs';
 import { motion } from 'framer-motion';
-import groq from 'groq';
+import { MongoClient } from 'mongodb';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
 import { getPlaiceholder } from 'plaiceholder';
@@ -15,7 +15,6 @@ import { toast, ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-accessible-accordion/dist/fancy-example.css';
 
-import client from '@/lib/client';
 import { textContainer, textItem } from '@/lib/framer';
 
 import Layout from '@/components/layout/Layout';
@@ -264,38 +263,49 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 };
 
 type Post = {
-  title: string;
-  slug: string;
+  id: string;
+  prompt: string;
   publishedAt: string;
-  imageAuthor: string;
-  mainImage: string;
+  imageURL: string;
+  extension: string;
 };
 
 export async function getStaticProps() {
-  const listOfPosts = await client.fetch(groq`
-      *[_type == "post" && publishedAt  < now()] | order(publishedAt desc)
-      {
-        title,
-        slug,
-        publishedAt,
-        imageAuthor,
-        imagePrompt,
-        "mainImage": mainImage.asset->url,
-        "imageAuthor": imageAuthor->name,
-        "imageAuthorProfilePicture": imageAuthor->image.asset->url,
-        "imageAuthorURL": imageAuthor->link
-      }
-    `);
+  if (!process.env.MONGODB_URI) {
+    throw new Error('Missing the MongoDB URI');
+  }
+
+  const mongoDB_client = new MongoClient(process.env.MONGODB_URI);
+  await mongoDB_client.connect();
+
+  const db = mongoDB_client.db(process.env.MONGODB_DB);
+
+  const collection = db.collection('AIGallery');
+
+  /**
+   * TODO: Do this with pagination
+   */
+  const dbEntries = await collection.find({}).toArray();
+
+  const formattedDBEntries = dbEntries.map((item) => {
+    return {
+      id: item.imageId,
+      prompt: item.prompt,
+      publishedAt: dayjs.unix(item.timestamp).format('MMMM D, YYYY'),
+      extension: item.extension,
+      imageURL: `https://raw.githubusercontent.com/megasanjay/aigallery/main/${item.imageId}.${item.extension}`,
+    };
+  });
 
   const posts = await Promise.all(
-    listOfPosts.map(async (post: Post) => {
+    formattedDBEntries.map(async (post: Post) => {
       const {
         base64,
         // eslint-disable-next-line unused-imports/no-unused-vars
         img: { width, height, ...img },
-      } = await getPlaiceholder(post.mainImage);
+      } = await getPlaiceholder(post.imageURL);
 
-      const imageMeta = await probe(post.mainImage);
+      const imageMeta = await probe(post.imageURL);
 
       return {
         ...img,

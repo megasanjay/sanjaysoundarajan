@@ -49,7 +49,7 @@
     "url-metadata": "2.5.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.4.4",
+    "@commitlint/cli": "17.5.0",
     "@commitlint/config-conventional": "17.4.4",
     "@fairdataihub/config": "2.2.3",
     "@svgr/webpack": "6.5.1",

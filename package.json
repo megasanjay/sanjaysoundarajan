@@ -71,7 +71,7 @@
     "husky": "8.0.3",
     "jest": "29.5.0",
     "jest-environment-jsdom": "29.5.0",
-    "lint-staged": "13.2.1",
+    "lint-staged": "13.2.2",
     "megasanjay-devmoji": "^1.2.1",
     "next-sitemap": "4.0.7",
     "postcss": "8.4.23",

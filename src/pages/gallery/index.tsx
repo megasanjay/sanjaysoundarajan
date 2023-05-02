@@ -111,7 +111,7 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
           >
             <motion.h1
               variants={textItem}
-              className="mt-4 mb-4 text-left text-5xl font-bold "
+              className="mb-4 mt-4 text-left text-5xl font-bold "
             >
               Gallery 🤖
             </motion.h1>
@@ -123,9 +123,10 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               }}
               className="pb-10"
             >
-              This is a collection of images that I have generated using a
-              variety of different AI models. I have also included the prompt
-              that I used to generate the image. I hope you enjoy them!
+              A small collection of images, that I found interesting, generated
+              using a variety of different AI models that. I have also included
+              the prompt that was used to generate the image. I hope you enjoy
+              them!
             </motion.p>
           </motion.div>
         </section>
@@ -244,7 +245,7 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                           />
                         </a>
                       </div>
-                      <div className="flex items-center justify-between space-x-2 pt-1 pb-3 text-sm ">
+                      <div className="flex items-center justify-between space-x-2 pb-3 pt-1 text-sm ">
                         <p>{selectedImage.imagePrompt}</p>
                         <div className="flex justify-end text-slate-100">
                           <HiClipboardCopy

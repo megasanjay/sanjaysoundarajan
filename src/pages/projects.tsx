@@ -24,6 +24,7 @@ type EEType = {
   tech: string[];
   github: string;
   url?: string;
+  npm?: string;
   ogImage: string;
   badges: string[];
 };
@@ -66,7 +67,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
           >
             <motion.h1
               variants={item}
-              className="mt-4 mb-2 text-left text-5xl font-bold "
+              className="mb-2 mt-4 text-left text-5xl font-bold "
             >
               Projects 🛠️
             </motion.h1>
@@ -96,7 +97,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex w-full flex-col py-4 px-3 pt-8 "
+                className="flex w-full flex-col px-3 py-4 pt-8 "
               >
                 <motion.h2
                   variants={item}
@@ -179,7 +180,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
           >
             <motion.h1
               variants={item}
-              className="mt-4 mb-2 text-left text-5xl font-bold "
+              className="mb-2 mt-4 text-left text-5xl font-bold "
             >
               Everything else...
             </motion.h1>
@@ -206,7 +207,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                 initial="hidden"
                 whileInView="show"
                 viewport={{ once: true }}
-                className="flex w-full flex-col py-4 px-3 pt-8 "
+                className="flex w-full flex-col px-3 py-4 pt-8 "
               >
                 <motion.h2
                   variants={item}
@@ -269,6 +270,19 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                           height="25"
                         />
                       </a>
+                      {project.npm && (
+                        <a
+                          href={project.npm}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className={
+                            `flex items-center transition-all hover:text-sky-500 ` +
+                            `umami--click--${project.id}-npm-link`
+                          }
+                        >
+                          <Icon icon="carbon:logo-npm" width="25" height="25" />
+                        </a>
+                      )}
                       {project.url && (
                         <a
                           href={project.url}

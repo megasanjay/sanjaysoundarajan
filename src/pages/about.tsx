@@ -23,7 +23,7 @@ export default function About() {
           >
             <motion.h1
               variants={textItem}
-              className="mt-4 mb-4 text-left text-5xl font-bold "
+              className="mb-4 mt-4 text-left text-5xl font-bold "
             >
               About me 👋
             </motion.h1>
@@ -49,14 +49,14 @@ export default function About() {
                 computing), I joined the{' '}
                 <StyledLink
                   href="https://fairdataihub.org"
-                  className="umami--click--calmii-link"
+                  data-umami-event="FAIR Data Innovations Hub link"
                 >
                   FAIR Data Innovations Hub
                 </StyledLink>{' '}
                 team at{' '}
                 <StyledLink
                   href="https://calmi2.org"
-                  className="umami--click--calmii-link"
+                  data-umami-event="CALMII link"
                 >
                   California Medical Innovations Institute
                 </StyledLink>{' '}
@@ -66,33 +66,20 @@ export default function About() {
               <p className="mt-4">
                 At the moment, I create apps with Electron, Vue, Next.js, and
                 Python. Check out some of the things I&apos;ve{' '}
-                <StyledLink
-                  href="/projects"
-                  className="umami--click--projects-link"
-                >
-                  {' '}
-                  worked{' '}
-                </StyledLink>{' '}
-                on.
+                <StyledLink href="/projects"> worked </StyledLink> on.
               </p>
 
               <p className="mt-4">
                 If you would like to see some of the publications that I&apos;ve
                 authored or been a part of, checkout the
-                <StyledLink
-                  href="/publications"
-                  className="umami--click--publications-link"
-                >
-                  {' '}
-                  publications{' '}
-                </StyledLink>
+                <StyledLink href="/publications"> publications </StyledLink>
                 section. I am very much a part of
                 <span className="text-sky-500"> #OpenScience </span>
                 so if you are interested in reading my works, please reach out
                 to me at{' '}
                 <StyledLink
                   href="mailto:contact@sanjaysoundarajan.dev"
-                  className="umami--click--contact-me-email-link"
+                  data-umami-event="Contact me - email link"
                 >
                   contact@sanjaysoundarajan.dev
                 </StyledLink>{' '}
@@ -110,7 +97,7 @@ export default function About() {
             <motion.div variants={textItem} className="mt-4">
               <a
                 href="https://tally.so#tally-open=wdWpJo&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=5000"
-                className="umami--click--contact-me-form-button"
+                data-umami-event="Contact me - form button"
               >
                 <div className="mt-4">
                   <StyledButton>Contact Me</StyledButton>

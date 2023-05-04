@@ -136,10 +136,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={
-                          `flex items-center transition-all hover:text-sky-500 ` +
-                          `umami--click--${project.id}-github-repo-link`
-                        }
+                        className="flex items-center transition-all hover:text-sky-500"
+                        data-umami-event="Projects"
+                        data-umami-event-type="GitHub link"
+                        data-umami-event-id={project.id}
                       >
                         <Icon
                           icon="ant-design:github-filled"
@@ -151,10 +151,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={
-                          `flex items-center transition-all hover:text-sky-500 ` +
-                          `umami--click--${project.id}-demo-link`
-                        }
+                        className="flex items-center transition-all hover:text-sky-500"
+                        data-umami-event="Projects"
+                        data-umami-event-type="Demo link"
+                        data-umami-event-id={project.id}
                       >
                         <Icon
                           icon="akar-icons:link-out"
@@ -259,10 +259,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className={
-                          `flex items-center transition-all hover:text-sky-500 ` +
-                          `umami--click--${project.id}-github-repo-link`
-                        }
+                        className="flex items-center transition-all hover:text-sky-500"
+                        data-umami-event="Everything Else"
+                        data-umami-event-type="GitHub link"
+                        data-umami-event-id={project.id}
                       >
                         <Icon
                           icon="ant-design:github-filled"
@@ -275,10 +275,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                           href={project.npm}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={
-                            `flex items-center transition-all hover:text-sky-500 ` +
-                            `umami--click--${project.id}-npm-link`
-                          }
+                          className="flex items-center transition-all hover:text-sky-500"
+                          data-umami-event="Everything Else"
+                          data-umami-event-type="Npm link"
+                          data-umami-event-id={project.id}
                         >
                           <Icon icon="carbon:logo-npm" width="25" height="25" />
                         </a>
@@ -288,10 +288,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className={
-                            `flex items-center transition-all hover:text-sky-500 ` +
-                            `umami--click--${project.id}-demo-link`
-                          }
+                          className="flex items-center transition-all hover:text-sky-500"
+                          data-umami-event="Everything Else"
+                          data-umami-event-type="Demo link"
+                          data-umami-event-id={project.id}
                         >
                           <Icon
                             icon="akar-icons:link-out"

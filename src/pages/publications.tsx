@@ -50,7 +50,7 @@ export default function Publications() {
           >
             <motion.h1
               variants={item}
-              className="mt-4 mb-4 text-left text-5xl font-bold "
+              className="mb-4 mt-4 text-left text-5xl font-bold "
             >
               Publications & Research 🔬
             </motion.h1>
@@ -61,14 +61,14 @@ export default function Publications() {
               reading any specific publication, please reach out to me at{' '}
               <StyledLink
                 href="mailto:contact@sanjaysoundarajan.dev"
-                className="umami--click--contact-me-email-link"
+                data-umami-event="Contact me - email link"
               >
                 contact@sanjaysoundarajan.dev
               </StyledLink>{' '}
               for the full text.
             </motion.p>
 
-            <motion.div variants={item} className="mt-4 mb-4 text-sky-500">
+            <motion.div variants={item} className="mb-4 mt-4 text-sky-500">
               <StyledLink href="https://orcid.org/0000-0003-2829-8032">
                 <StyledButton>
                   <div className="flex  items-center space-x-2 py-1">
@@ -94,7 +94,7 @@ export default function Publications() {
                 whileInView="show"
                 viewport={{ once: true }}
                 key={publication.title}
-                className="my-2 w-full rounded-lg border-slate-200 bg-slate-50 py-4 px-3 shadow-md"
+                className="my-2 w-full rounded-lg border-slate-200 bg-slate-50 px-3 py-4 shadow-md"
               >
                 <motion.article
                   variants={item}
@@ -103,7 +103,9 @@ export default function Publications() {
                   <h2 className="w-auto  text-xl">
                     <StyledLink
                       href={publication.url}
-                      className={`umami--click--${publication.id}-fulltext-link`}
+                      data-umami-event="Publications"
+                      data-umami-event-type="Title url"
+                      data-umami-event-id={publication.id}
                     >
                       {publication.title}
                     </StyledLink>
@@ -120,10 +122,10 @@ export default function Publications() {
                       <span className="mr-2">DOI: </span>
                       <StyledLink
                         href={publication.url}
-                        className={
-                          `break-all ` +
-                          `umami--click--${publication.id}-doi-link`
-                        }
+                        className="break-all"
+                        data-umami-event="Publications"
+                        data-umami-event-type="DOI link"
+                        data-umami-event-id={publication.id}
                       >
                         {publication.doi}
                       </StyledLink>
@@ -134,10 +136,10 @@ export default function Publications() {
 
                   <details className="mt-2 text-base">
                     <summary
-                      className={
-                        `cursor-pointer ` +
-                        `umami--click--${publication.id}-abstract`
-                      }
+                      className="cursor-pointer"
+                      data-umami-event="Publications"
+                      data-umami-event-type="Expand abstract"
+                      data-umami-event-id={publication.id}
                     >
                       Abstract
                     </summary>
@@ -148,10 +150,10 @@ export default function Publications() {
 
                   <details className="mt-2 text-base">
                     <summary
-                      className={
-                        `cursor-pointer ` +
-                        `umami--click--${publication.id}-citation`
-                      }
+                      className="cursor-pointer"
+                      data-umami-event="Publications"
+                      data-umami-event-type="Expand citation"
+                      data-umami-event-id={publication.id}
                     >
                       Citation
                     </summary>

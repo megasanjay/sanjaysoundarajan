@@ -74,7 +74,8 @@ export default function Header() {
               href="https://github.com/megasanjay"
               target="_blank"
               rel="noopener noreferrer"
-              className="umami--click--github-profile-link mx-2 flex items-center"
+              className="mx-2 flex items-center"
+              data-umami-event="GitHub Profile"
             >
               <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
                 <Icon icon="akar-icons:github-fill" width="25" height="25" />
@@ -84,7 +85,8 @@ export default function Header() {
               href="https://twitter.com/megasanjay"
               target="_blank"
               rel="noopener noreferrer"
-              className="umami--click--twitter-profile-link mx-2 flex items-center"
+              className="mx-2 flex items-center"
+              data-umami-event="Twitter Profile"
             >
               <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
                 <Icon icon="akar-icons:twitter-fill" width="25" height="25" />
@@ -94,7 +96,8 @@ export default function Header() {
               href="https://www.linkedin.com/in/sanjay-soundarajan/"
               target="_blank"
               rel="noopener noreferrer"
-              className="umami--click--linkedin-profile-link mx-2 flex items-center"
+              className="mx-2 flex items-center"
+              data-umami-event="LinkedIn Profile"
             >
               <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
                 <Icon
@@ -111,13 +114,13 @@ export default function Header() {
               animate={isOpen ? 'open' : 'closed'}
               variants={variants}
               className={
-                `fixed top-0 right-0 z-20` +
+                `fixed right-0 top-0 z-20` +
                 `${inClient ? ` block` : ` hidden`}`
               }
             >
               <ul className=" flex h-screen w-auto flex-col border border-r-2 bg-white px-2 text-right">
                 <div
-                  className="mr-2 mt-1 mb-2 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-sky-500"
+                  className="mb-2 mr-2 mt-1 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-sky-500"
                   onClick={() => setIsOpen((isOpen) => !isOpen)}
                 >
                   <Icon icon="ci:close-big" width={25} height={25} />

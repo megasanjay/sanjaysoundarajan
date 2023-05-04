@@ -59,7 +59,7 @@ class MyDocument extends Document {
             async
             defer
             data-website-id="755919fb-f6aa-4bd2-aa7a-15420fd3e4d1"
-            src="https://umami.sanjaysoundarajan.dev/mushroom.js"
+            src="https://umami.sanjaysoundarajan.dev/mushroom"
           />
 
           <script async src="https://tally.so/widgets/embed.js"></script>

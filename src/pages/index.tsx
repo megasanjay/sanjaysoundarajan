@@ -77,7 +77,7 @@ export default function Home() {
               I currently work as a front end developer at the{' '}
               <StyledLink
                 href="https://fairdataihub.org"
-                className="umami--click--fairdataihub-link"
+                data-umami-category="FAIR Data Innovations Hub link"
               >
                 FAIR Data Innovations Hub
               </StyledLink>{' '}
@@ -86,7 +86,7 @@ export default function Home() {
 
             <motion.div variants={item} className="mt-4">
               <Link href="/about" passHref>
-                <div className="umami--click--about-me-button mt-4">
+                <div className="mt-4">
                   <StyledButton>About Me</StyledButton>
                 </div>
               </Link>

@@ -124,9 +124,8 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               className="pb-10"
             >
               A small collection of images, that I found interesting, generated
-              using a variety of different AI models. I have also included
-              the prompt that was used to generate the image. I hope you enjoy
-              them!
+              using a variety of different AI models. I have also included the
+              prompt that was used to generate the image. I hope you enjoy them!
             </motion.p>
           </motion.div>
         </section>

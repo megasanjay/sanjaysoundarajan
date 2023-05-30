@@ -2,7 +2,7 @@ import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import * as React from 'react';
+import { useEffect, useState } from 'react';
 
 const navigationBarLinks = [
   { href: '/projects', label: 'projects' },
@@ -12,15 +12,28 @@ const navigationBarLinks = [
 ];
 
 export default function Header() {
-  const [isOpen, setIsOpen] = React.useState(false);
-  const [inClient, setInClient] = React.useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [inClient, setInClient] = useState(false);
+  const [onTop, setOnTop] = useState(true);
+
   const router = useRouter();
 
   const routerPathNameArray = router.pathname.split('/');
 
-  React.useEffect(() => {
+  useEffect(() => {
     setInClient(typeof window !== 'undefined');
-  }, []);
+
+    const handleScroll = () => {
+      if (onTop !== (window.pageYOffset === 0)) {
+        setOnTop(window.pageYOffset === 0);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  }, [onTop]);
 
   const variants = {
     open: { opacity: 1, x: 0 },
@@ -28,7 +41,11 @@ export default function Header() {
   };
 
   return (
-    <header className="sticky top-0 z-10  bg-white">
+    <header
+      className={`${
+        onTop ? '' : 'shadow-sm'
+      } sticky top-0 z-10 bg-white transition-all`}
+    >
       <div className=" relative mx-auto flex h-14 max-w-screen-lg items-center justify-between">
         <Link href="/" passHref>
           <span className="cursor-pointer pl-4 text-base font-bold hover:text-gray-600">

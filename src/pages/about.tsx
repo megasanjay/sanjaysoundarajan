@@ -64,8 +64,8 @@ export default function About() {
               </p>
 
               <p className="mt-4">
-                At the moment, I create apps with Electron, Vue, Next.js, and
-                Python. Check out some of the things I&apos;ve{' '}
+                At the moment, I create apps with Electron, Vue, Nuxt, Next.js,
+                and Python. Check out some of the things I&apos;ve{' '}
                 <StyledLink href="/projects"> worked </StyledLink> on.
               </p>
 

@@ -32,7 +32,7 @@ export default function Header() {
       <div className=" relative mx-auto flex h-14 max-w-screen-lg items-center justify-between">
         <Link href="/" passHref>
           <span className="cursor-pointer pl-4 text-base font-bold hover:text-gray-600">
-            Home
+            home
           </span>
         </Link>
 

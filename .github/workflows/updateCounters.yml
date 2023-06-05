@@ -20,5 +20,11 @@ jobs:
       - name: Install dependencies
         run: yarn install --frozen-lockfile
 
+      - name: Create environment file
+        run: |
+          touch .env.local
+          echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> .env.local
+          echo MONGODB_DB=${{ secrets.MONGODB_DB }} >> .env.local
+
       - name: Update counters
         run: yarn update-counters

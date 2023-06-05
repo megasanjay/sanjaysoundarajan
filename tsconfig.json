@@ -20,14 +20,7 @@
     },
     "incremental": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.ts",
-    "**/*.tsx",
-    "src/pages/gallery.jsx",
-    "src/pages/gallery/index.tsx",
-    "scripts/ci.js"
-  ],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "scripts/ci.js"],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]
 }

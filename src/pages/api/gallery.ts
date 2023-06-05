@@ -60,6 +60,42 @@ const gallery = async (request: NextApiRequest, response: NextApiResponse) => {
       response.status(400).json({ error: 'Missing body' });
       return;
     }
+  }
+  if (request.method === 'GET') {
+    try {
+      await client.connect();
+
+      const database = client.db(dbName);
+      const collection = database.collection('AIGallery');
+
+      // get id from query params
+      const sanitizedQuery = sanitize(request.query);
+
+      const id = sanitizedQuery.id;
+
+      if (id) {
+        const existingRecord = await collection.findOne({
+          imageId: id,
+        });
+
+        if (existingRecord) {
+          const likesCount = existingRecord.likesCount;
+
+          response.status(200).json({
+            imageId: id,
+            likesCount: likesCount || 0,
+          });
+        } else {
+          response.status(404).json({ error: 'Image not found' });
+          return;
+        }
+      } else {
+        response.status(404).json({ error: 'Image not found' });
+        return;
+      }
+    } catch (error) {
+      response.status(500).json({ error: error });
+    }
   } else {
     response.status(405).json({ error: 'Method not allowed' });
     return;

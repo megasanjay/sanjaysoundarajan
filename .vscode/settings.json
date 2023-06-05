@@ -3,8 +3,9 @@
   "editor.formatOnSave": true,
   "editor.tabSize": 2,
   "editor.codeActionsOnSave": {
-    "source.fixAll": true
+    "source.fixAll.eslint": true
   },
+  "eslint.debug": true,
   "headwind.runOnSave": false,
   "typescript.preferences.importModuleSpecifier": "non-relative",
   "cSpell.words": ["sparclink"]

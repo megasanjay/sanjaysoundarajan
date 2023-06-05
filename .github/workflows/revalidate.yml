@@ -1,0 +1,14 @@
+name: Revalidate cache
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch:
+jobs:
+  release:
+    name: Revalidate cache
+    runs-on: ubuntu-20.04
+    steps:
+      - name: Make Request
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: ${{ secrets.REVALIDATE_URL}}

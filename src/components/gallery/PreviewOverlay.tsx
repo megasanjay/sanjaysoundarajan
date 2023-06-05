@@ -11,13 +11,21 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
   const [isLiked, setIsLiked] = useState(false);
 
   useEffect(() => {
-    if (typeof window !== 'undefined' && window.localStorage) {
-      const localImageId = window.localStorage.getItem(id);
+    const mainFunction = () => {
+      if (typeof window !== 'undefined' && window.localStorage) {
+        const localImageId = window.localStorage.getItem(id);
 
-      if (localImageId === 'true') {
-        setIsLiked(true);
+        if (localImageId === 'true') {
+          setIsLiked(true);
+        }
       }
-    }
+    };
+
+    // call the function in half a second intervals
+    const interval = setInterval(mainFunction, 500);
+
+    // clear the interval when the component unmounts
+    return () => clearInterval(interval);
   }, [id]);
 
   const handleLikeButtonClick = async (id: string) => {

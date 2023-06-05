@@ -148,7 +148,7 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 blurDataURL,
                 imageAuthor = '',
                 prompt = '',
-                likesCount = 0,
+                likesCount,
               }) => (
                 <div
                   className="group relative mx-2 mb-3 w-auto md:px-0"

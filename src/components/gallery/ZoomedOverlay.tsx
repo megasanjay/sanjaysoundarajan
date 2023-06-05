@@ -109,7 +109,7 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
               className=""
               onClick={(e) => {
                 e.stopPropagation();
-                handleLikeButtonClick(imageId).then().catch();
+                handleLikeButtonClick(imageId);
               }}
             >
               {isLiked ? (

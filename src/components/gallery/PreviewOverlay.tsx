@@ -63,7 +63,7 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
         className="mb-1"
         onClick={(e) => {
           e.stopPropagation();
-          handleLikeButtonClick(id).then().catch();
+          handleLikeButtonClick(id);
         }}
       >
         {isLiked ? (

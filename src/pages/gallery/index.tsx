@@ -164,9 +164,7 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                       prompt,
                       publishedAt,
                       likesCount,
-                    )
-                      .then()
-                      .catch();
+                    );
                   }}
                 >
                   <Image

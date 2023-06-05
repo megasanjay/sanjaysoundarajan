@@ -34,10 +34,10 @@ try {
   results.forEach(async (result) => {
     const updatedCount = (result.likesCount || 0) + 1;
 
-    // await collection.updateOne(
-    //   { _id: result._id },
-    //   { $set: { likesCount: updatedCount } },
-    // );
+    await collection.updateOne(
+      { _id: result._id },
+      { $set: { likesCount: updatedCount } },
+    );
 
     // eslint-disable-next-line no-console
     console.log(`Updated counter for id: ${result.imageId}`);

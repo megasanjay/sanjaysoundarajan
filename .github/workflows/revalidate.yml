@@ -13,4 +13,4 @@ jobs:
         with:
           url: ${{ secrets.REVALIDATE_URL}}
           method: GET
-          preventFailureOnNoResponse: false
+          preventFailureOnNoResponse: true

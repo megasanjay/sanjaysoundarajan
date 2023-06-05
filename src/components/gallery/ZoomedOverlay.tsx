@@ -63,9 +63,11 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
           if (!res.ok) {
             throw new Error('Something went wrong');
           } else {
-            console.log('Success', id, localLikesCount);
+            // eslint-disable-next-line no-console
+            console.log('Success');
           }
         } catch (err) {
+          // eslint-disable-next-line no-console
           console.error(err);
         }
       }

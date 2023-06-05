@@ -38,9 +38,11 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
           if (!res.ok) {
             throw new Error('Something went wrong');
           } else {
+            // eslint-disable-next-line no-console
             console.log('Success');
           }
         } catch (err) {
+          // eslint-disable-next-line no-console
           console.error(err);
         }
       }

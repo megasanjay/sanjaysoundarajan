@@ -31,7 +31,7 @@ try {
     .aggregate([{ $sample: { size: 5 } }])
     .toArray();
 
-  results.forEach(async (result) => {
+  for await (const result of results) {
     const updatedCount = (result.likesCount || 0) + 1;
 
     await collection.updateOne(
@@ -41,7 +41,7 @@ try {
 
     // eslint-disable-next-line no-console
     console.log(`Updated counter for id: ${result.imageId}`);
-  });
+  }
 
   await client.close();
 

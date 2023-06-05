@@ -1,6 +1,6 @@
 {
   "compilerOptions": {
-    "target": "es5",
+    "target": "es2022",
     "lib": ["dom", "dom.iterable", "esnext"],
     "allowJs": true,
     "skipLibCheck": true,
@@ -25,7 +25,8 @@
     "**/*.ts",
     "**/*.tsx",
     "src/pages/gallery.jsx",
-    "src/pages/gallery/index.tsx"
+    "src/pages/gallery/index.tsx",
+    "scripts/ci.js"
   ],
   "exclude": ["node_modules"],
   "moduleResolution": ["node_modules", ".next", "node"]

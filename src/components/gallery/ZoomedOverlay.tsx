@@ -75,7 +75,15 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
   };
 
   const copyToClipboard = (str: string) => {
-    navigator.clipboard.writeText(str);
+    navigator.clipboard
+      .writeText(str)
+      .then(() => {
+        notify();
+      })
+      .catch((error) => {
+        // eslint-disable-next-line no-console
+        console.error(error);
+      });
   };
 
   const notify = () => toast.success('Prompt copied to clipboard!');
@@ -101,7 +109,7 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
               className=""
               onClick={(e) => {
                 e.stopPropagation();
-                handleLikeButtonClick(imageId);
+                handleLikeButtonClick(imageId).then().catch();
               }}
             >
               {isLiked ? (
@@ -142,7 +150,6 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
               className="cursor-pointer rounded-lg transition-all hover:text-sky-400"
               onClick={() => {
                 copyToClipboard(imagePrompt);
-                notify();
               }}
             />
           </div>

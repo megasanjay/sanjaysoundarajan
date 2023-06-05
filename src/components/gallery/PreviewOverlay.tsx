@@ -61,9 +61,9 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
     <div className="overlay absolute bottom-[-1px] flex h-14 w-full items-center justify-between rounded-lg px-4 pt-6 opacity-0 transition-all group-hover:bottom-0 group-hover:opacity-100">
       <button
         className="mb-1"
-        onClick={(e) => {
+        onClick={async (e) => {
           e.stopPropagation();
-          handleLikeButtonClick(id);
+          handleLikeButtonClick(id).then().catch();
         }}
       >
         {isLiked ? (

@@ -153,6 +153,9 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <div
                   className="group relative mx-2 mb-3 w-auto md:px-0"
                   key={id}
+                  data-umami-event="Gallery"
+                  data-umami-event-type="Image click"
+                  data-umami-event-id={id}
                   onClick={() => {
                     handleImageClick(
                       id,
@@ -218,7 +221,12 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
               >
                 <Dialog.Panel className="max-h-screen max-w-screen-md transform overflow-hidden rounded-2xl bg-white text-left align-middle shadow-xl transition-all">
                   <div className="group relative">
-                    <ExternalLink href={selectedImage.url}>
+                    <ExternalLink
+                      href={selectedImage.url}
+                      data-umami-event="Gallery"
+                      data-umami-event-type="Image click"
+                      data-umami-event-id={selectedImage.id}
+                    >
                       <Image
                         src={selectedImage.url}
                         alt={selectedImage.imagePrompt}

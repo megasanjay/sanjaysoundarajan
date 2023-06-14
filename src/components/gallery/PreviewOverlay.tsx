@@ -65,6 +65,10 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
           e.stopPropagation();
           handleLikeButtonClick(id);
         }}
+        data-umami-event="Gallery"
+        data-umami-event-type="Reaction"
+        data-umami-event-id={id}
+        data-umami-event-reaction={isLiked ? 'Unlike' : 'Like'}
       >
         {isLiked ? (
           <Icon

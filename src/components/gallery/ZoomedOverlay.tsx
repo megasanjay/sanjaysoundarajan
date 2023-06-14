@@ -125,6 +125,10 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
                 e.stopPropagation();
                 handleLikeButtonClick(imageId);
               }}
+              data-umami-event="Gallery"
+              data-umami-event-type="Reaction"
+              data-umami-event-id={imageId}
+              data-umami-event-reaction={isLiked ? 'Unlike' : 'Like'}
             >
               {isLiked ? (
                 <div className="flex flex-col items-center justify-center">

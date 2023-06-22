@@ -1,4 +1,4 @@
-name: Update Counters
+name: Update Image Metadata
 
 on:
   workflow_dispatch:
@@ -19,6 +19,9 @@ jobs:
 
       - name: Install dependencies
         run: yarn install --frozen-lockfile
+
+      - name: Install additional dependencies
+        run: yarn add plaiceholder probe-image-size sharp vue3-lottie vue3-marquee
 
       - name: Create environment file
         run: |

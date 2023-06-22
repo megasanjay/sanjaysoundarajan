@@ -36,8 +36,6 @@
     "mongo-sanitize": "^1.1.0",
     "mongodb": "^5.1.0",
     "next": "13.4.6",
-    "plaiceholder": "^2.5.0",
-    "probe-image-size": "^7.2.3",
     "react": "18.2.0",
     "react-accessible-accordion": "^5.0.0",
     "react-dom": "18.2.0",
@@ -47,7 +45,6 @@
     "react-tiny-popover": "7.2.4",
     "react-tippy": "1.4.0",
     "react-toastify": "^9.1.1",
-    "sharp": "^0.32.0",
     "tailwind-merge": "1.13.2",
     "url-metadata": "3.0.1"
   },

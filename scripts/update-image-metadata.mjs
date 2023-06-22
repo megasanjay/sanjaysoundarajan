@@ -52,6 +52,9 @@ try {
       itemBase64 = base64;
 
       toUpdate = true;
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('\tbase64 already exists');
     }
 
     if (!itemHeight || !itemWidth) {
@@ -61,6 +64,9 @@ try {
       itemWidth = width;
 
       toUpdate = true;
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('\theight and width already exists');
     }
 
     if (toUpdate) {
@@ -77,6 +83,12 @@ try {
           },
         },
       );
+
+      // eslint-disable-next-line no-console
+      console.log('\tupdated');
+    } else {
+      // eslint-disable-next-line no-console
+      console.log('\tno update required');
     }
   }
 

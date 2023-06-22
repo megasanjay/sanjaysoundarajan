@@ -34,7 +34,7 @@ try {
     // eslint-disable-next-line no-console
     console.log('Generating metadata for', item.imageId);
 
-    let itemBase64 = item.base64;
+    let itemBlurDataURL = item.blurDataURL;
     let itemHeight = item.height;
     let itemWidth = item.width;
 
@@ -42,19 +42,19 @@ try {
 
     let toUpdate = false;
 
-    if (!itemBase64) {
+    if (!itemBlurDataURL) {
       const buffer = await fetch(imageURL).then(async (res) =>
         Buffer.from(await res.arrayBuffer()),
       );
 
       const { base64 } = await getPlaiceholder(buffer);
 
-      itemBase64 = base64;
+      itemBlurDataURL = base64;
 
       toUpdate = true;
     } else {
       // eslint-disable-next-line no-console
-      console.log('\tbase64 already exists');
+      console.log('\blurDataURL already exists');
     }
 
     if (!itemHeight || !itemWidth) {
@@ -74,7 +74,7 @@ try {
         { _id: item._id },
         {
           $set: {
-            blurDataURL: itemBase64,
+            blurDataURL: itemBlurDataURL,
             height: itemHeight,
             width: itemWidth,
           },

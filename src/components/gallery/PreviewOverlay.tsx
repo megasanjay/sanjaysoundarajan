@@ -32,9 +32,15 @@ const PreviewOverlay: React.FC<PreviewOverlayProps> = ({ id, publishedAt }) => {
     if (typeof window !== 'undefined' && window.localStorage) {
       if (isLiked) {
         window.localStorage.removeItem(id);
+
+        window.umami.track('Unlike Image', { id });
+
         setIsLiked(false);
       } else {
         window.localStorage.setItem(id, 'true');
+
+        window.umami.track('Like Image', { id });
+
         setIsLiked(true);
 
         try {

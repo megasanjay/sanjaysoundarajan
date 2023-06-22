@@ -54,10 +54,14 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
       if (isLiked) {
         window.localStorage.removeItem(id);
 
+        window.umami.track('Unlike Image', { id });
+
         setIsLiked(false);
         setLocalLikesCount(localLikesCount - 1);
       } else {
         window.localStorage.setItem(id, 'true');
+
+        window.umami.track('Like Image', { id });
 
         setIsLiked(true);
 
@@ -87,10 +91,12 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
     }
   };
 
-  const copyToClipboard = (str: string) => {
+  const copyToClipboard = (str: string, id: string) => {
     navigator.clipboard
       .writeText(str)
       .then(() => {
+        window.umami.track('Copy Prompt', { id });
+
         notify();
       })
       .catch((error) => {
@@ -170,7 +176,7 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
               size={25}
               className="cursor-pointer rounded-lg transition-all hover:text-sky-400"
               onClick={() => {
-                copyToClipboard(imagePrompt);
+                copyToClipboard(imagePrompt, imageId);
               }}
             />
           </div>

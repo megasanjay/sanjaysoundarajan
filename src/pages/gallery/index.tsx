@@ -5,8 +5,6 @@ import { motion } from 'framer-motion';
 import { MongoClient } from 'mongodb';
 import { InferGetStaticPropsType } from 'next';
 import Image from 'next/image';
-import { getPlaiceholder } from 'plaiceholder';
-import probe from 'probe-image-size';
 import { Fragment, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
 import { ToastContainer } from 'react-toastify';
@@ -21,17 +19,15 @@ import ZoomedOverlay from '@/components/gallery/ZoomedOverlay';
 import Layout from '@/components/layout/Layout';
 import ExternalLink from '@/components/links/ExternalLink';
 
-type Post = {
-  id: string;
-  prompt: string;
-  publishedAt: string;
-  imageURL: string;
-  imageAuthor: string;
-  extension: string;
-  likesCount: number;
-};
+declare global {
+  interface Window {
+    umami: {
+      track: (eventName: string, eventData: Record<string, unknown>) => void;
+    };
+  }
+}
 
-type ModalProps = {
+interface ModalProps {
   id: string;
   url: string;
   width: number;
@@ -42,7 +38,7 @@ type ModalProps = {
   imageAuthorURL: string;
   publishedAt: string;
   likesCount: number;
-};
+}
 
 const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
   posts,
@@ -85,6 +81,8 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
       imageAuthorProfilePicture = '/images/gallery/chatgpt.jpg';
       imageAuthorURL = 'https://chat.openai.com/';
     }
+
+    window.umami.track('Expand Image', { type: 'Click', id });
 
     setIsOpen(!isOpen);
     setSelectedImage({
@@ -153,9 +151,6 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
                 <div
                   className="group relative mx-2 mb-3 w-auto md:px-0"
                   key={id}
-                  data-umami-event="Gallery"
-                  data-umami-event-type="Image click"
-                  data-umami-event-id={id}
                   onClick={() => {
                     handleImageClick(
                       id,
@@ -288,7 +283,7 @@ export async function getStaticProps() {
    */
   const dbEntries = await collection.find({}).toArray();
 
-  const formattedDBEntries = dbEntries.map((item) => {
+  const posts = dbEntries.map((item) => {
     return {
       id: item.imageId,
       prompt: item.prompt,
@@ -297,38 +292,11 @@ export async function getStaticProps() {
       imageAuthor: item.imageAuthor,
       likesCount: item.likesCount || 0,
       imageURL: `https://cdn.jsdelivr.net/gh/megasanjay/aigallery/${item.imageId}.${item.extension}`,
+      blurDataURL: item.blurDataURL,
+      width: item.width,
+      height: item.height,
     };
   });
-
-  const totalNumberOfImages = formattedDBEntries.length;
-
-  const posts = await Promise.all(
-    formattedDBEntries.map(async (post: Post, index: number) => {
-      // eslint-disable-next-line no-console
-      console.log(
-        `Generating placeholder for ${post.imageURL} - (${
-          index + 1
-        }/${totalNumberOfImages})`,
-      );
-
-      const {
-        base64,
-        // eslint-disable-next-line unused-imports/no-unused-vars
-        img: { width, height, ...img },
-      } = await getPlaiceholder(post.imageURL);
-
-      const imageMeta = await probe(post.imageURL);
-
-      return {
-        ...img,
-
-        width: imageMeta.width,
-        height: imageMeta.height,
-        ...post,
-        blurDataURL: base64,
-      };
-    }),
-  ).then((values) => values);
 
   // sort posts by date in ascending order
   posts.sort(

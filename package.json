@@ -13,6 +13,7 @@
     "test:watch": "jest --watch",
     "test": "jest",
     "update-counters": "node ./scripts/update-counters.mjs",
+    "update-image-metadata": "node ./scripts/update-image-metadata.mjs",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "release": "standard-version",

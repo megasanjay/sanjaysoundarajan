@@ -1,0 +1,30 @@
+name: Update Counters
+
+on:
+  workflow_dispatch:
+
+  schedule:
+    - cron: '*/5 * * * *'
+
+jobs:
+  update-counters:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout the repo
+        uses: actions/checkout@v3
+
+      - name: Setup Node
+        uses: actions/setup-node@v3
+
+      - name: Install dependencies
+        run: yarn install --frozen-lockfile
+
+      - name: Create environment file
+        run: |
+          touch .env.local
+          echo MONGODB_URI=${{ secrets.MONGODB_URI }} >> .env.local
+          echo MONGODB_DB=${{ secrets.MONGODB_DB }} >> .env.local
+
+      - name: Update image metadata
+        run: yarn update-image-metadata

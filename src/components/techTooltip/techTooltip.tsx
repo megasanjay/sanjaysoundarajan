@@ -76,6 +76,10 @@ const data: dataType = {
     icon: 'fluent:notebook-lightning-20-filled',
     title: 'Histoire',
   },
+  nuxt: {
+    icon: 'simple-icons:nuxtdotjs',
+    title: 'Nuxt.js',
+  },
 };
 
 const variants = {

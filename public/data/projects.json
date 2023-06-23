@@ -36,15 +36,6 @@
     "url": "https://fairdataihub.org"
   },
   {
-    "title": "FAIRshare Documentation",
-    "id": "fairshare-documentation",
-    "image": "/images/projects/fairsharedocs.png",
-    "description": "A documentation site for the FAIRshare application. This site is built with the Docusaurus framework. Custom React components are used to handle the feedback from each page of the docs platform. These results are recorded via serverless functions and stored in Google Analytics.",
-    "tech": ["docusaurus", "tailwind", "react", "googleanalytics"],
-    "github": "https://github.com/fairdataihub/fairdataihub.org",
-    "url": "https://fairdataihub.org"
-  },
-  {
     "title": "FAIRshare Authentication",
     "id": "fairshare-authentication",
     "image": "/images/projects/fairshareauth.png",
@@ -61,6 +52,15 @@
     "tech": ["vue3", "tailwind", "flask", "python"],
     "github": "https://github.com/fairdataihub/SPARClink",
     "url": "https://sparclink.vercel.app/"
+  },
+  {
+    "title": "FAIRshare Documentation",
+    "id": "fairshare-documentation",
+    "image": "/images/projects/fairsharedocs.png",
+    "description": "A documentation site for the FAIRshare application. This site is built with the Docusaurus framework. Custom React components are used to handle the feedback from each page of the docs platform. These results are recorded via serverless functions and stored in Google Analytics.",
+    "tech": ["docusaurus", "tailwind", "react", "googleanalytics"],
+    "github": "https://github.com/fairdataihub/fairdataihub.org",
+    "url": "https://fairdataihub.org"
   },
   {
     "title": "Developer Documentation",

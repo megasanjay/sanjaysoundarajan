@@ -121,7 +121,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                   </div>
 
                   <div className="flex flex-col md:w-6/12">
-                    <p className="text-base font-normal">
+                    <p className="pt-1 text-base font-normal">
                       {project.description}
                     </p>
 

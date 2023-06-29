@@ -96,6 +96,10 @@ const data: dataType = {
     icon: 'logos:postgresql',
     title: 'PostgreSQL',
   },
+  chakraui: {
+    icon: 'simple-icons:chakraui',
+    title: 'Chakra UI',
+  },
   zod: {
     icon: 'logos:zod',
     title: 'Zod',
@@ -116,7 +120,7 @@ const TechTooltip: React.FC<ToolTipProps> = ({
   const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 
   return (
-    <div className="relative mr-2 p-1">
+    <div className="relative mb-2 mr-2 p-1 sm:mb-0">
       <motion.div
         animate={isPopoverOpen ? 'open' : 'closed'}
         variants={variants}

@@ -47,13 +47,22 @@
     "url": "https://fairdataihub.org/sodaforsparc"
   },
   {
-    "title": "fairdataihub.org",
+    "title": "FAIR Data Innovations Hub Website",
     "id": "fairdataihub-org",
     "image": "/images/projects/fairdataihuborg.png",
     "description": "A Next.js website created for the FAIR Data Innovations Hub organization. This site uses Vercel serverless functions for contact forms with custom email responses. A custom markdown based blog has been integrated for news and updates. End-to-end testing is handled via Cypress.",
     "tech": ["nextjs", "ts", "react", "tailwind", "cypress"],
     "github": "https://github.com/fairdataihub/fairdataihub.org",
     "url": "https://fairdataihub.org"
+  },
+  {
+    "title": "AI-READI Website",
+    "id": "aireadi",
+    "image": "/images/projects/aireadi.png",
+    "description": "The AI-READI organization is generating a flagship AI-ready and ethically-sourced dataset to support future AI-driven discoveries in diabetes. The AI-READI website is built with Next.js and is the main source of information about the project.",
+    "tech": ["nextjs", "ts", "react", "chakraui", "tailwind"],
+    "github": "https://github.com/AI-READI/aireadi.org",
+    "url": "https://aireadi.org"
   },
   {
     "title": "FAIRshare Authentication",
@@ -74,21 +83,12 @@
     "url": "https://sparclink.vercel.app/"
   },
   {
-    "title": "FAIRshare Documentation",
-    "id": "fairshare-documentation",
-    "image": "/images/projects/fairsharedocs.png",
-    "description": "A documentation site for the FAIRshare application. This site is built with the Docusaurus framework. Custom React components are used to handle the feedback from each page of the docs platform. These results are recorded via serverless functions and stored in Google Analytics.",
-    "tech": ["docusaurus", "tailwind", "react", "googleanalytics"],
-    "github": "https://github.com/fairdataihub/fairdataihub.org",
-    "url": "https://fairdataihub.org"
-  },
-  {
-    "title": "Developer Documentation",
-    "id": "fairdataihub-developer-documentation",
-    "image": "/images/projects/devfairdataihuborg.png",
-    "description": "A Vitepress based site to handle all developer documentaion for the FAIR Data Innovations Hub organization. ",
-    "tech": ["vite", "vue3"],
-    "github": "https://github.com/fairdataihub/dev.fairdataihub.org",
-    "url": "https://dev.fairdataihub.org/"
+    "title": "Bi/Trifurcation Calculator",
+    "id": "bi-trifurcation-calculator",
+    "image": "/images/projects/bitrifurcation.png",
+    "description": "When stenting a diseased artery segment in a bifurcation or trifurcation, it is important to ensure diameters that will achieve optimal blood flow to prevent risks of restenosis. This calculator helps to determine the optimal diameter for a diseased segment knowing the diameters of the other two or three segments in a bifurcation or trifurcation, respectively.",
+    "tech": ["nuxt", "vue3", "ts", "tailwind", "naiveui", "vite"],
+    "github": "https://github.com/fairdataihub/bitri-calculator",
+    "url": "https://bitri-calculator.vercel.app/"
   }
 ]

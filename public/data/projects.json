@@ -1,5 +1,25 @@
 [
   {
+    "title": "Kato",
+    "id": "kato",
+    "image": "/images/projects/kato.png",
+    "description": "Kato is a free and evolving alternative to the Momentum app. It replaces the default new tab page with a visually pleasing dashboard. It offers a clean and intuitive design, featuring a daily inspirational quote, a to-do list, and a weather widget. As a work in progress, it strives to continually improve and refine its features based on user feedback and evolving needs. Stay tuned for updates as Kato evolves into a robust productivity tool.",
+    "tech": [
+      "nuxt",
+      "vue3",
+      "ts",
+      "tailwind",
+      "naiveui",
+      "vite",
+      "supabase",
+      "prisma",
+      "zod",
+      "postgresql"
+    ],
+    "github": "https://github.com/megasanjay/kato",
+    "url": "https://kato.day"
+  },
+  {
     "title": "FAIRshare",
     "id": "fairshare",
     "image": "/images/projects/fairshare.png",

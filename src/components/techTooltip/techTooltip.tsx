@@ -80,6 +80,26 @@ const data: dataType = {
     icon: 'simple-icons:nuxtdotjs',
     title: 'Nuxt.js',
   },
+  naiveui: {
+    icon: 'logos:naiveui',
+    title: 'Naive UI',
+  },
+  supabase: {
+    icon: 'ri:supabase-fill',
+    title: 'Supabase ',
+  },
+  prisma: {
+    icon: 'logos:prisma',
+    title: 'Prisma ',
+  },
+  postgresql: {
+    icon: 'logos:postgresql',
+    title: 'PostgreSQL',
+  },
+  zod: {
+    icon: 'logos:zod',
+    title: 'Zod',
+  },
 };
 
 const variants = {
@@ -96,7 +116,7 @@ const TechTooltip: React.FC<ToolTipProps> = ({
   const [isPopoverOpen, setIsPopoverOpen] = React.useState(false);
 
   return (
-    <div className="relative">
+    <div className="relative mr-2 p-1">
       <motion.div
         animate={isPopoverOpen ? 'open' : 'closed'}
         variants={variants}

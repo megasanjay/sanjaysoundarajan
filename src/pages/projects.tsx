@@ -125,7 +125,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                       {project.description}
                     </p>
 
-                    <div className="my-4 flex space-x-4">
+                    <div className="my-4 flex flex-wrap items-center ">
                       {project.tech.map((tech: string) => (
                         <TechTooltip key={tech} tech={tech} />
                       ))}

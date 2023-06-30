@@ -89,6 +89,6 @@
     "description": "When stenting a diseased artery segment in a bifurcation or trifurcation, it is important to ensure diameters that will achieve optimal blood flow to prevent risks of restenosis. This calculator helps to determine the optimal diameter for a diseased segment knowing the diameters of the other two or three segments in a bifurcation or trifurcation, respectively.",
     "tech": ["nuxt", "vue3", "ts", "tailwind", "naiveui", "vite"],
     "github": "https://github.com/fairdataihub/bitri-calculator",
-    "url": "https://bitri-calculator.vercel.app/"
+    "url": "https://arterydiametercalc.com/"
   }
 ]

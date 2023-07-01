@@ -95,14 +95,17 @@ export default function About() {
             </motion.div>
 
             <motion.div variants={textItem} className="mt-4">
-              <a
-                href="https://tally.so#tally-open=wdWpJo&tally-overlay=1&tally-emoji-text=👋&tally-emoji-animation=wave&tally-auto-close=5000"
+              <div
+                className="mt-4"
+                data-tally-open="wdWpJo"
+                data-tally-width="390"
+                data-tally-overlay="1"
+                data-tally-emoji-text="👋"
+                data-tally-emoji-animation="wave"
                 data-umami-event="Contact me - form button"
               >
-                <div className="mt-4">
-                  <StyledButton>Contact Me</StyledButton>
-                </div>
-              </a>
+                <StyledButton>Contact Me</StyledButton>
+              </div>
             </motion.div>
           </motion.div>
         </section>

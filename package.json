@@ -31,7 +31,7 @@
     "clsx": "2.0.0",
     "dayjs": "^1.11.7",
     "dotenv": "^16.1.4",
-    "framer-motion": "10.13.0",
+    "framer-motion": "10.15.0",
     "groq": "^2.33.2",
     "mongo-sanitize": "^1.1.0",
     "mongodb": "^5.1.0",

@@ -1,3 +1,4 @@
+import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
 import Link from 'next/link';
 import * as React from 'react';
@@ -87,7 +88,12 @@ export default function Home() {
             <motion.div variants={item} className="mt-4">
               <Link href="/about" passHref>
                 <div className="mt-4">
-                  <StyledButton>About Me</StyledButton>
+                  <StyledButton>
+                    <div className="flex items-center space-x-2">
+                      <Icon icon="ri:user-5-fill" width="20" height="20" />
+                      <span>About Me</span>
+                    </div>
+                  </StyledButton>
                 </div>
               </Link>
             </motion.div>

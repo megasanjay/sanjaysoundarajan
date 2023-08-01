@@ -8,6 +8,7 @@ const navigationBarLinks = [
   { href: '/projects', label: 'projects' },
   { href: '/publications', label: 'publications' },
   { href: '/about', label: 'about me' },
+  { href: '/resume/SanjaySoundarajan-Resume.pdf', label: 'resume' },
   { href: '/gallery', label: 'gallery' },
 ];
 

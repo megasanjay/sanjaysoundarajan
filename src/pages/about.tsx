@@ -94,9 +94,22 @@ export default function About() {
               </p>
             </motion.div>
 
-            <motion.div variants={textItem} className="mt-4">
+            <motion.div
+              variants={textItem}
+              className="mt-8 flex space-x-6 items-center"
+            >
+              <div data-umami-event="View resume - form button">
+                <StyledLink href="/resume/SanjaySoundarajan-Resume.pdf">
+                  <StyledButton>
+                    <div className="flex items-center space-x-2">
+                      <Icon icon="mdi:resume" width="20" height="20" />
+                      <span>View my Resume</span>
+                    </div>
+                  </StyledButton>
+                </StyledLink>
+              </div>
+
               <div
-                className="mt-4"
                 data-tally-open="wdWpJo"
                 data-tally-width="390"
                 data-tally-overlay="1"
@@ -104,7 +117,12 @@ export default function About() {
                 data-tally-emoji-animation="wave"
                 data-umami-event="Contact me - form button"
               >
-                <StyledButton>Contact Me</StyledButton>
+                <StyledButton>
+                  <div className="flex items-center space-x-2">
+                    <Icon icon="mdi:email-edit" width="20" height="20" />
+                    <span>Contact Me</span>
+                  </div>
+                </StyledButton>
               </div>
             </motion.div>
           </motion.div>

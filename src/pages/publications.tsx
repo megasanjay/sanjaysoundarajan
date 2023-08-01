@@ -71,7 +71,7 @@ export default function Publications() {
             <motion.div variants={item} className="mb-4 mt-4 text-sky-500">
               <StyledLink href="https://orcid.org/0000-0003-2829-8032">
                 <StyledButton>
-                  <div className="flex  items-center space-x-2 py-1">
+                  <div className="flex items-center space-x-2 py-1">
                     <Icon icon="academicons:orcid" width="20" height="20" />
                     <span className="text-base">View my ORCID profile</span>
                   </div>

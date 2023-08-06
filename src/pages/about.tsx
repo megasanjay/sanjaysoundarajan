@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import * as React from 'react';
 
 import { textContainer, textItem } from '@/lib/framer';
@@ -11,7 +12,10 @@ import StyledLink from '@/components/links/StyledLink';
 export default function About() {
   return (
     <Layout>
-      <title>About Me</title>
+      <Head>
+        <title> About | Sanjay Soundarajan </title>
+      </Head>
+
       <main>
         <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
           <motion.div

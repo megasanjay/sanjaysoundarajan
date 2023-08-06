@@ -60,6 +60,26 @@ class MyDocument extends Document {
           />
 
           <script async src="https://tally.so/widgets/embed.js"></script>
+
+          <meta property="og:title" content="Sanjay Soundarajan" />
+          <meta property="twitter:title" content="Sanjay Soundarajan" />
+
+          <link rel="canonical" href="https://sanjaysoundarajan.dev" />
+          <meta property="og:url" content="https://sanjaysoundarajan.dev" />
+          <meta
+            property="twitter:url"
+            content="https://sanjaysoundarajan.dev"
+          />
+
+          <meta name="description" content="Sanjay Soundarajan's portfolio" />
+          <meta
+            property="og:description"
+            content="Sanjay Soundarajan's portfolio"
+          />
+          <meta
+            property="twitter:description"
+            content="Sanjay Soundarajan's portfolio"
+          />
         </Head>
         <body>
           <Main />

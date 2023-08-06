@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import Image from 'next/image';
 import * as React from 'react';
 import urlMetadata from 'url-metadata';
@@ -55,7 +56,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
 
   return (
     <Layout>
-      <title>Projects</title>
+      <Head>
+        <title> Projects | Sanjay Soundarajan </title>
+      </Head>
+
       <main className="divide-y">
         <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pt-10 md:pt-20">
           <motion.div

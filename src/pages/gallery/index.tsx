@@ -4,6 +4,7 @@ import dayjs from 'dayjs';
 import { motion } from 'framer-motion';
 import { MongoClient } from 'mongodb';
 import { InferGetStaticPropsType } from 'next';
+import Head from 'next/head';
 import Image from 'next/image';
 import { Fragment, useState } from 'react';
 import Masonry, { ResponsiveMasonry } from 'react-responsive-masonry';
@@ -101,7 +102,10 @@ const GalleryPage: React.FC<InferGetStaticPropsType<typeof getStaticProps>> = ({
 
   return (
     <Layout>
-      <title>Gallery</title>
+      <Head>
+        <title> Gallery | Sanjay Soundarajan </title>
+      </Head>
+
       <main className="relative mx-auto w-full max-w-screen-lg">
         <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pt-10 md:pt-20">
           <motion.div

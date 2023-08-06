@@ -1,5 +1,6 @@
 import { Icon } from '@iconify/react';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 import * as React from 'react';
 
 type publicationType = {
@@ -38,7 +39,10 @@ export default function Publications() {
 
   return (
     <Layout>
-      <title>Publications</title>
+      <Head>
+        <title> Publications | Sanjay Soundarajan</title>
+      </Head>
+
       <main>
         <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
           <motion.div

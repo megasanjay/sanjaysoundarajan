@@ -54,7 +54,7 @@ try {
       toUpdate = true;
     } else {
       // eslint-disable-next-line no-console
-      console.log('\blurDataURL already exists');
+      console.log('\tblurDataURL already exists');
     }
 
     if (!itemHeight || !itemWidth) {

@@ -100,13 +100,14 @@ export default function About() {
 
             <motion.div
               variants={textItem}
-              className="mt-8 flex space-x-6 items-center"
+              className="mt-8 flex sm:space-x-6 space-y-4 sm:space-y-0 sm:items-center items-start flex-col sm:flex-row"
             >
               <div data-umami-event="View resume - form button">
                 <StyledLink href="/resume/SanjaySoundarajan-Resume.pdf">
                   <StyledButton>
                     <div className="flex items-center space-x-2">
                       <Icon icon="mdi:resume" width="20" height="20" />
+
                       <span>View my Resume</span>
                     </div>
                   </StyledButton>
@@ -124,6 +125,7 @@ export default function About() {
                 <StyledButton>
                   <div className="flex items-center space-x-2">
                     <Icon icon="mdi:email-edit" width="20" height="20" />
+
                     <span>Contact Me</span>
                   </div>
                 </StyledButton>

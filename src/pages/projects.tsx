@@ -117,7 +117,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                   <div className="md:w-5/12">
                     <Image
                       src={project.image}
-                      alt="Screenshot of FAIRshare"
+                      alt={`screenshots of ${project.title}`}
                       width="1342"
                       height="975"
                       priority={true}
@@ -227,7 +227,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                   <div className="rounded-lg pb-5 shadow-lg md:w-5/12">
                     <Image
                       src={project.ogImage}
-                      alt="Screenshot of FAIRshare"
+                      alt={`GitHub overview page for ${project.title}`}
                       width="1200"
                       height="600"
                       priority={true}

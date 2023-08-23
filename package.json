@@ -19,6 +19,7 @@
     "release": "standard-version",
     "push-release": "git push --follow-tags origin main",
     "postbuild": "next-sitemap",
+    "postinstall": "husky install",
     "prepare": "husky install"
   },
   "dependencies": {

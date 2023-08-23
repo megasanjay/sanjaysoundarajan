@@ -1,19 +1,19 @@
 [
   {
     "title": "Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool",
-    "id": "10-1101-202204-18-488694",
-    "conferenceTitle": "Preprint",
-    "publicationDate": "2019-12",
-    "authors": "Bhavesh Patel, Sanjay Soundarajan and Zicheng Hu",
-    "doi": "10.1101/2022.04.18.488694",
-    "url": "https://doi.org/10.1101/2022.04.18.488694",
-    "citation": "@article {Patel2022.04.18.488694, author = {Patel, Bhavesh and Soundarajan, Sanjay and Hu, Zicheng}, title = {Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool}, elocation-id = {2022.04.18.488694}, year = {2022}, doi = {10.1101/2022.04.18.488694}, publisher = {Cold Spring Harbor Laboratory}, URL = {https://www.biorxiv.org/content/early/2022/06/07/2022.04.18.488694}, eprint = {https://www.biorxiv.org/content/early/2022/06/07/2022.04.18.488694.full.pdf}, journal = {bioRxiv}}",
+    "id": "s41597-023-02463-x",
+    "conferenceTitle": "nature / scientific data",
+    "publicationDate": "2023-08",
+    "authors": "Bhavesh Patel, Sanjay Soundarajan, Hervé Ménager & Zicheng Hu",
+    "doi": "10.1038/s41597-023-02463-x",
+    "url": "https://doi.org/10.1038/s41597-023-02463-x",
+    "citation": "@Article{Patel2023, author={Patel, Bhavesh and Soundarajan, Sanjay and Ménager, Hervé and Hu, Zicheng}, title={Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool}, journal={Scientific Data}, year={2023}, month={Aug}, day={23}, volume={10}, number={1}, pages={557}, issn={2052-4463}, doi={10.1038/s41597-023-02463-x},url={https://doi.org/10.1038/s41597-023-02463-x}}",
     "abstract": "Findable, Accessible, Interoperable, and Reusable (FAIR) guiding principles tailored for research software have been proposed by the FAIR for Research Software (FAIR4RS) Working Group. They provide a foundation for optimizing the reuse of research software. The FAIR4RS principles are, however, aspirational and do not provide practical instructions to the researchers. To fill this gap, we propose in this work the first actionable step-by-step guidelines for biomedical researchers to make their research software compliant with the FAIR4RS principles. We designate them as the FAIR Biomedical Research Software (FAIR-BioRS) guidelines. Our process for developing these guidelines, presented here, is based on a re-classification of the FAIR4RS principles and a thorough review of current practices in the field. To support researchers, we have also developed a tool that streamlines the process of implementing these guidelines. This tool is incorporated in FAIRshare, a free and open-source software application aimed at simplifying the curation and sharing of FAIR biomedical data and software through user-friendly interfaces and automation. Details about this tool are also presented."
   },
   {
     "title": "SPARClink: an interactive tool to visualize the impact of the SPARC program",
     "id": "10-12688-f1000research-75071-1",
-    "conferenceTitle": "2022 F1000Research",
+    "conferenceTitle": "F1000Research",
     "publicationDate": "2019-12",
     "authors": "Sanjay Soundarajan, Sachira Kuruppu, Ashutosh Singh, Jongchan Kim and Monalisa Achalla",
     "doi": "10.12688/f1000research.75071.1",

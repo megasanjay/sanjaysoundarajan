@@ -37,8 +37,14 @@ export default function Header() {
   }, [onTop]);
 
   const variants = {
-    open: { opacity: 1, x: 0 },
-    closed: { opacity: 0, x: '100%' },
+    closed: {
+      opacity: 0,
+      x: '100%',
+    },
+    open: {
+      opacity: 1,
+      x: 0,
+    },
   };
 
   return (
@@ -99,6 +105,7 @@ export default function Header() {
                 <Icon icon="akar-icons:github-fill" width="25" height="25" />
               </div>
             </a>
+
             <a
               href="https://twitter.com/megasanjay"
               target="_blank"
@@ -110,6 +117,7 @@ export default function Header() {
                 <Icon icon="akar-icons:twitter-fill" width="25" height="25" />
               </div>
             </a>
+
             <a
               href="https://www.linkedin.com/in/sanjay-soundarajan/"
               target="_blank"
@@ -127,39 +135,37 @@ export default function Header() {
             </a>
           </div>
 
-          {inClient && (
-            <motion.div
-              animate={isOpen ? 'open' : 'closed'}
-              variants={variants}
-              className={
-                `fixed right-0 top-0 z-20` +
-                `${inClient ? ` block` : ` hidden`}`
-              }
-            >
-              <ul className=" flex h-screen w-auto flex-col border border-r-2 bg-white px-2 text-right">
-                <div
-                  className="mb-2 mr-2 mt-1 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-sky-500"
-                  onClick={() => setIsOpen((isOpen) => !isOpen)}
-                >
-                  <Icon icon="ci:close-big" width={25} height={25} />
-                </div>
-                {navigationBarLinks.map(({ href, label }) => (
-                  <Link href={href} passHref key={`${href}${label}`}>
-                    <li
-                      className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600 ${
-                        routerPathNameArray.includes(href.replace('/', ''))
-                          ? 'text-sky-500'
-                          : ''
-                      } `}
-                      onClick={() => setIsOpen((isOpen) => !isOpen)}
-                    >
-                      <span className=" ">{label}</span>
-                    </li>
-                  </Link>
-                ))}
-              </ul>
-            </motion.div>
-          )}
+          <motion.aside
+            initial="closed"
+            animate={isOpen ? 'open' : 'closed'}
+            variants={variants}
+            className="fixed right-0 top-0 z-20"
+          >
+            <ul className="flex h-screen w-auto flex-col  border-l-2 bg-white px-2 text-right">
+              <div
+                className="mb-2 mr-2 mt-1 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-sky-500"
+                onClick={() => setIsOpen((isOpen) => !isOpen)}
+                role="button"
+              >
+                <Icon icon="ci:close-big" width={25} height={25} />
+              </div>
+
+              {navigationBarLinks.map(({ href, label }) => (
+                <Link href={href} passHref key={`${href}${label}`}>
+                  <motion.li
+                    className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600 ${
+                      routerPathNameArray.includes(href.replace('/', ''))
+                        ? 'text-sky-500'
+                        : ''
+                    } `}
+                    onClick={() => setIsOpen((isOpen) => !isOpen)}
+                  >
+                    <span className=" ">{label}</span>
+                  </motion.li>
+                </Link>
+              ))}
+            </ul>
+          </motion.aside>
         </nav>
       </div>
     </header>

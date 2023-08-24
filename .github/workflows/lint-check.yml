@@ -12,7 +12,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --pure-lockfile
       - run: yarn lint:strict
 
   tsc:
@@ -23,7 +23,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --pure-lockfile
       - run: yarn typecheck
 
   prettier:
@@ -34,7 +34,7 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --pure-lockfile
       - run: yarn format:check
 
   test:
@@ -45,5 +45,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           cache: 'yarn'
-      - run: yarn install --frozen-lockfile
+      - run: yarn install --pure-lockfile
       - run: yarn test

@@ -8,14 +8,14 @@ interface ToolTipProps {
   height?: number;
 }
 
-interface dataType {
+interface DataType {
   [key: string]: {
     icon: string;
     title: string;
   };
 }
 
-const data: dataType = {
+const data: DataType = {
   vue3: {
     icon: 'logos:vue',
     title: 'Vue 3',

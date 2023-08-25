@@ -14,7 +14,6 @@ const navigationBarLinks = [
 
 export default function Header() {
   const [isOpen, setIsOpen] = useState(false);
-  const [inClient, setInClient] = useState(false);
   const [onTop, setOnTop] = useState(true);
 
   const router = useRouter();
@@ -22,8 +21,6 @@ export default function Header() {
   const routerPathNameArray = router.pathname.split('/');
 
   useEffect(() => {
-    setInClient(typeof window !== 'undefined');
-
     const handleScroll = () => {
       if (onTop !== (window.pageYOffset === 0)) {
         setOnTop(window.pageYOffset === 0);

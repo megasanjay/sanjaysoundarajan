@@ -5766,6 +5766,11 @@ natural-compare@^1.4.0:
   resolved "https://registry.yarnpkg.com/natural-compare/-/natural-compare-1.4.0.tgz#4abebfeed7541f2c27acfb29bdbbd15c8d5ba4f7"
   integrity sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==
 
+neko-ts@^0.0.6:
+  version "0.0.6"
+  resolved "https://registry.yarnpkg.com/neko-ts/-/neko-ts-0.0.6.tgz#f08ca5edb5e1d946369d0e25ef49a4f6f2940de3"
+  integrity sha512-PqKIgmqD1LwRM7fb1gqC3ITbojxB47hZmm6eUYjLUAM5w1+KnQ9TZxMDMJHl7pK0XE37ekMPSD7Vzfn0Pa6wow==
+
 neo-async@^2.6.2:
   version "2.6.2"
   resolved "https://registry.yarnpkg.com/neo-async/-/neo-async-2.6.2.tgz#b4aafb93e3aeb2d8174ca53cf163ab7d7308305f"

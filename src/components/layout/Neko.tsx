@@ -7,8 +7,10 @@ export default function Neko() {
 
   const toggleNeko = () => {
     if (isPlaying) {
+      console.log('sleeping');
       neko.current?.sleep();
     } else {
+      console.log('waking');
       neko.current?.wake();
     }
 
@@ -33,7 +35,7 @@ export default function Neko() {
           className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
           onClick={toggleNeko}
         >
-          {isPlaying ? 'Get some rest, Neko' : "Let's play, Neko!"}
+          {isPlaying ? 'Get some rest, Neko!' : "Let's play, Neko!"}
         </button>
       </div>
     </div>

@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { BrowserView } from 'react-device-detect';
 
 import Header from '@/components/layout/Header';
 import Neko from '@/components/layout/Neko';
@@ -8,10 +9,12 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <Header />
+
       {children}
-      <div className="hidden sm:block">
+
+      <BrowserView>
         <Neko />
-      </div>
+      </BrowserView>
     </>
   );
 }

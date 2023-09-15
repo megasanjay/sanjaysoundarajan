@@ -61,7 +61,7 @@ export default function Home() {
               variants={item}
               className="mt-4 text-left text-2xl  text-slate-800 md:text-2xl"
             >
-              I currently work as a front end developer at the{' '}
+              I currently work as a research software engineer at the{' '}
               <StyledLink
                 href="https://fairdataihub.org"
                 data-umami-category="FAIR Data Innovations Hub link"

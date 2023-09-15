@@ -36,8 +36,8 @@ export default function About() {
               <p className="mt-4">Hello! வணக்கம்! ආයුබෝවන්! Hola!</p>
 
               <p className="mt-4">
-                I&apos;m a front end web developer who loves wearing many
-                software engineering hats.
+                I&apos;m a research software engineer who loves doing a little
+                bit of everything.
               </p>
 
               <p className="mt-4 ">

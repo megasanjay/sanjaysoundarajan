@@ -6539,10 +6539,10 @@ react-responsive-masonry@^2.1.7:
   resolved "https://registry.yarnpkg.com/react-responsive-masonry/-/react-responsive-masonry-2.1.7.tgz#9b4a8d63b296a6265bea720c9d7da89754548346"
   integrity sha512-/jOqnTVNtO8zRJMTl6ZXBex7EFYEIFBLVlkIFjiCT7omfm0CgNF2z4ST8RIr0v2ut15NWAQs7Q3kJJPhMoe3Ew==
 
-react-tiny-popover@7.2.4:
-  version "7.2.4"
-  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-7.2.4.tgz#b11fe9b43d1fc8ac46e760419346afd41d6111ee"
-  integrity sha512-T7ZSwXcUtPXCog3Bux9+TjoTvUeMi/+zI0Yv/TkIznZCWUg0XTt2797G0IiT5mTVeJeLivUzdOmKA1hOQdMfOQ==
+react-tiny-popover@8.0.2:
+  version "8.0.2"
+  resolved "https://registry.yarnpkg.com/react-tiny-popover/-/react-tiny-popover-8.0.2.tgz#ab18f3e280811a16dcae0047b88626d8ba89ccc3"
+  integrity sha512-YKP6dLeLCkEyHhKwm6jAD1Z6id7kDYT9rW6h/qknFFXlsU9dGCbHtvMi9RjuJIDrazVV2017unSjdCEnMi2rdQ==
 
 react-tippy@1.4.0:
   version "1.4.0"

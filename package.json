@@ -52,8 +52,8 @@
     "url-metadata": "3.3.0"
   },
   "devDependencies": {
-    "@commitlint/cli": "17.8.1",
-    "@commitlint/config-conventional": "17.8.1",
+    "@commitlint/cli": "18.0.0",
+    "@commitlint/config-conventional": "18.0.0",
     "@fairdataihub/config": "2.2.3",
     "@svgr/webpack": "8.1.0",
     "@tailwindcss/forms": "0.5.6",

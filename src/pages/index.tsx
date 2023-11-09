@@ -33,8 +33,8 @@ export default function Home() {
         <title> Sanjay Soundarajan </title>
       </Head>
 
-      <main>
-        <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-20 md:pt-40 ">
+      <main className="h-[calc(100vh-56px)] flex items-center">
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3">
           <div className="mb-16 flex w-full justify-center md:justify-start ">
             <LottieAnimation
               animationData={heroLottie}

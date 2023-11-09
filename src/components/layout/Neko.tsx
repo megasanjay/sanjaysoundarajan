@@ -23,7 +23,7 @@ export default function Neko() {
     if (!neko.current) {
       neko.current = new NekoClass({
         origin: {
-          x: 100,
+          x: window.innerWidth - 90,
           y: window.innerHeight - 90,
         },
       });
@@ -34,7 +34,7 @@ export default function Neko() {
 
   return (
     <div className="relative neko-container hidden sm:block">
-      <div className="fixed bottom-5 left-5 neko-box">
+      <div className="fixed bottom-5 right-5 neko-box">
         <button
           className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
           onClick={toggleNeko}

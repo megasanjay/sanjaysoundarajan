@@ -2042,14 +2042,14 @@
   integrity sha512-jhuKLIRrhvCPLqwPcx6INqmKeiA5EWrsCOPhrlFSrbrmU4ZMPjj5Ul/oLCMDO98XRUIwVm78xICz4EPCektzeQ==
 
 "@types/mongo-sanitize@^1.0.1":
-  version "1.0.2"
-  resolved "https://registry.yarnpkg.com/@types/mongo-sanitize/-/mongo-sanitize-1.0.2.tgz#2ae723a6a5290228febadcf8a62c9aca358c8337"
-  integrity sha512-FEsbb5rn/0ICHJ29PD0EvgyKPXgw980Xjek7bEaCWUz2NeiwxW4hA0fsblnxcGoQdD5B6yxLy0Gc2QTRUCw4MA==
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/@types/mongo-sanitize/-/mongo-sanitize-1.0.3.tgz#42ffddbf8e3ab27c01a45148fe8d15399d4292f2"
+  integrity sha512-Crd9RpMJKNxl4fBfGyBUOJZc0TCTjirlZC61GDVPlauDvcclqAY7/7fnJHs+2T1P0eAEf4W4QtwbCIoHMfvXrw==
 
 "@types/needle@*":
-  version "3.2.2"
-  resolved "https://registry.yarnpkg.com/@types/needle/-/needle-3.2.2.tgz#807608bd177f4b11019b82b5258519200856a99d"
-  integrity sha512-xUKAjFjDcucpgfyTvnbaqN+WBKyM9UehBuVRI/1AoPbaXrCScADqeTgTM1ZBYnS3Ovs9IEQt813IcJNyac7dNQ==
+  version "3.2.3"
+  resolved "https://registry.yarnpkg.com/@types/needle/-/needle-3.2.3.tgz#9d850da6f0f3fb713c2ea184fecd357a025bacbf"
+  integrity sha512-aUtoZUGROl654rDZlZYPRYaysAOBaVgjnbmYKq3n32afuqFvEts31YGixTebSOCJt7B7qKnHzCzcjbMig5LcQg==
   dependencies:
     "@types/node" "*"
 

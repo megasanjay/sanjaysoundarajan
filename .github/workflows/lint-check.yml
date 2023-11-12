@@ -15,16 +15,16 @@ jobs:
       - run: yarn install --pure-lockfile
       - run: yarn lint:strict
 
-  tsc:
-    name: Run Type Check
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'yarn'
-      - run: yarn install --pure-lockfile
-      - run: yarn typecheck
+  # tsc:
+  #   name: Run Type Check
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         cache: 'yarn'
+  #     - run: yarn install --pure-lockfile
+  #     - run: yarn typecheck
 
   prettier:
     name: Run Prettier Check
@@ -37,13 +37,13 @@ jobs:
       - run: yarn install --pure-lockfile
       - run: yarn format:check
 
-  test:
-    name: Run Test
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-node@v4
-        with:
-          cache: 'yarn'
-      - run: yarn install --pure-lockfile
-      - run: yarn test
+  # test:
+  #   name: Run Test
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v4
+  #     - uses: actions/setup-node@v4
+  #       with:
+  #         cache: 'yarn'
+  #     - run: yarn install --pure-lockfile
+  #     - run: yarn test

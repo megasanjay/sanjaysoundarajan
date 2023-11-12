@@ -6,7 +6,6 @@ import * as React from 'react';
 
 import StyledButton from '@/components/buttons/StyledButton';
 import Layout from '@/components/layout/Layout';
-import StyledLink from '@/components/links/StyledLink';
 import LottieAnimation from '@/components/lotties';
 
 import heroLottie from '~/lotties/hi.json';
@@ -52,23 +51,17 @@ export default function Home() {
           >
             <motion.h1
               variants={item}
-              className="mt-4 text-left text-5xl font-bold md:text-5xl"
+              className="mt-4 text-left text-5xl font-bold md:text-6xl "
             >
               Hi! I&apos;m Sanjay
             </motion.h1>
 
             <motion.p
               variants={item}
-              className="mt-4 text-left text-2xl  text-slate-800 md:text-2xl"
+              className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12"
             >
-              I&apos;m currently a front end developer at the <br />
-              <StyledLink
-                href="https://fairdataihub.org"
-                data-umami-category="FAIR Data Innovations Hub link"
-              >
-                FAIR Data Innovations Hub
-              </StyledLink>{' '}
-              where I build tools for data submission and open science.
+              I&apos;m a front end developer for the FAIR Data Innovations Hub
+              and I build tools for open science.
             </motion.p>
 
             <motion.div variants={item} className="mt-4">

@@ -12,7 +12,7 @@ const InternalLink = React.forwardRef<HTMLAnchorElement, InternalLinkProps>(
     return (
       <Link ref={ref} href={href} passHref>
         <span
-          className={`${className} link link-underline link-underline-black cursor-pointer text-sky-500 transition-[color] hover:text-sky-400`}
+          className={`${className} link link-underline link-underline-black cursor-pointer text-orange-500 transition-[color] hover:text-orange-400`}
         >
           {children}
         </span>

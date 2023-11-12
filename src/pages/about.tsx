@@ -77,10 +77,8 @@ export default function About() {
                 If you would like to see some of the publications that I&apos;ve
                 authored or been a part of, checkout the
                 <StyledLink href="/publications"> publications </StyledLink>
-                section. I am very much a part of
-                <span className="text-sky-500"> #OpenScience </span>
-                so if you are interested in reading my works, please reach out
-                to me at{' '}
+                section. I am very much a proponent of open access, so if you
+                are interested in reading my works, please reach out to me at{' '}
                 <StyledLink
                   href="mailto:contact@sanjaysoundarajan.dev"
                   data-umami-event="Contact me - email link"
@@ -105,7 +103,7 @@ export default function About() {
               <div data-umami-event="View resume - form button">
                 <StyledLink href="/resume/SanjaySoundarajan-Resume.pdf">
                   <StyledButton>
-                    <div className="flex items-center space-x-2">
+                    <div className="flex items-center space-x-2 text-base">
                       <Icon icon="mdi:resume" width="20" height="20" />
 
                       <span>View my Resume</span>
@@ -123,7 +121,7 @@ export default function About() {
                 data-umami-event="Contact me - form button"
               >
                 <StyledButton>
-                  <div className="flex items-center space-x-2">
+                  <div className="flex items-center space-x-2 text-base">
                     <Icon icon="mdi:email-edit" width="20" height="20" />
 
                     <span>Contact Me</span>

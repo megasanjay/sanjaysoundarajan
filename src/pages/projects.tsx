@@ -140,7 +140,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center transition-all hover:text-sky-500"
+                        className="flex items-center transition-all hover:text-amber-500"
                         data-umami-event="Projects"
                         data-umami-event-type="GitHub link"
                         data-umami-event-id={project.id}
@@ -155,7 +155,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.url}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center transition-all hover:text-sky-500"
+                        className="flex items-center transition-all hover:text-amber-500"
                         data-umami-event="Projects"
                         data-umami-event-type="Demo link"
                         data-umami-event-id={project.id}
@@ -263,7 +263,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                         href={project.github}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="flex items-center transition-all hover:text-sky-500"
+                        className="flex items-center transition-all hover:text-amber-500"
                         data-umami-event="Everything Else"
                         data-umami-event-type="GitHub link"
                         data-umami-event-id={project.id}
@@ -279,7 +279,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                           href={project.npm}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center transition-all hover:text-sky-500"
+                          className="flex items-center transition-all hover:text-amber-500"
                           data-umami-event="Everything Else"
                           data-umami-event-type="Npm link"
                           data-umami-event-id={project.id}
@@ -292,7 +292,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                           href={project.url}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="flex items-center transition-all hover:text-sky-500"
+                          className="flex items-center transition-all hover:text-amber-500"
                           data-umami-event="Everything Else"
                           data-umami-event-type="Demo link"
                           data-umami-event-id={project.id}

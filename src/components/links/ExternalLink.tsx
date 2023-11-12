@@ -12,7 +12,7 @@ const ExternalLink = React.forwardRef<HTMLAnchorElement, ExternalLinkProps>(
       <a
         ref={ref}
         href={href}
-        className={`${className} link link-underline link-underline-black text-sky-500 transition-[color] hover:text-sky-400`}
+        className={`${className} link link-underline link-underline-black text-orange-500 transition-[color] hover:text-orange-400`}
         target="_blank"
         rel="noopener noreferrer"
       >

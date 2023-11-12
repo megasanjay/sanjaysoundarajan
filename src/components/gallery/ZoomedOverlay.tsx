@@ -174,7 +174,7 @@ const ZoomedOverlay: React.FC<PreviewOverlayProps> = ({
           <div className="flex justify-end text-slate-100">
             <HiClipboardCopy
               size={25}
-              className="cursor-pointer rounded-lg transition-all hover:text-sky-400"
+              className="cursor-pointer rounded-lg transition-all hover:text-orange-400"
               onClick={() => {
                 copyToClipboard(imagePrompt, imageId);
               }}

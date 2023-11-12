@@ -124,19 +124,21 @@ const TechTooltip: React.FC<ToolTipProps> = ({
       <motion.div
         animate={isPopoverOpen ? 'open' : 'closed'}
         variants={variants}
-        className="absolute -top-10 w-max rounded-lg border border-slate-100 bg-white px-3 py-1 "
+        className="absolute -top-10 w-max rounded-lg border border-slate-100 bg-white px-3 py-1 pointer-events-none"
       >
-        <span className="text-base font-medium">{techData.title}</span>
+        <span className="text-base font-medium ">{techData.title}</span>
       </motion.div>
 
-      <Icon
-        className="grayscale"
-        icon={techData.icon}
-        width={width}
-        height={height}
-        onMouseEnter={() => setIsPopoverOpen(true)}
-        onMouseLeave={() => setIsPopoverOpen(false)}
-      />
+      <div className=" hover:bg-orange-50 transition-all rounded-md p-1">
+        <Icon
+          className="grayscale"
+          icon={techData.icon}
+          width={width}
+          height={height}
+          onMouseEnter={() => setIsPopoverOpen(true)}
+          onMouseLeave={() => setIsPopoverOpen(false)}
+        />
+      </div>
     </div>
   );
 };

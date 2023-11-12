@@ -36,7 +36,7 @@ export default function Neko() {
     <div className="relative neko-container hidden sm:block">
       <div className="fixed bottom-5 right-5 neko-box">
         <button
-          className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-white border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
+          className="inline-flex items-center justify-center px-4 py-2 text-base font-medium leading-6 text-gray-600 whitespace-no-wrap bg-orange-50 border border-gray-200 rounded-md shadow-sm hover:bg-gray-50 focus:outline-none focus:shadow-none"
           onClick={toggleNeko}
         >
           {isPlaying ? 'Get some rest, Neko!' : "Let's play, Neko!"}

@@ -52,7 +52,7 @@ export default function Header() {
     >
       <div className=" relative mx-auto flex h-14 max-w-screen-lg items-center justify-between">
         <Link href="/" passHref>
-          <span className="cursor-pointer pl-4 text-base font-bold hover:text-gray-600">
+          <span className="cursor-pointer pl-4 text-base font-bold hover:text-orange-400">
             home
           </span>
         </Link>
@@ -69,9 +69,9 @@ export default function Header() {
                 <li key={`${href}${label}`}>
                   <Link href={href} passHref>
                     <span
-                      className={`cursor-pointer text-base font-medium transition-all hover:text-sky-600 ${
+                      className={`cursor-pointer text-base font-medium transition-all hover:text-orange-400 ${
                         routerPathNameArray.includes(href.replace('/', ''))
-                          ? 'text-sky-500'
+                          ? '!text-orange-600'
                           : ''
                       }`}
                     >
@@ -83,7 +83,7 @@ export default function Header() {
             </ul>
 
             <div
-              className="flex cursor-pointer items-center justify-center rounded-lg p-2 transition-all hover:bg-slate-100 hover:text-sky-500 md:hidden"
+              className="flex cursor-pointer items-center justify-center rounded-lg p-2 transition-all hover:bg-slate-100 hover:text-orange-500 md:hidden"
               onClick={() => setIsOpen((isOpen) => !isOpen)}
             >
               <Icon icon="bytesize:menu" width="25" height="25" />
@@ -98,7 +98,7 @@ export default function Header() {
               className="mx-2 flex items-center"
               data-umami-event="GitHub Profile"
             >
-              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
+              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-amber-500">
                 <Icon icon="akar-icons:github-fill" width="25" height="25" />
               </div>
             </a>
@@ -110,7 +110,7 @@ export default function Header() {
               className="mx-2 flex items-center"
               data-umami-event="Twitter Profile"
             >
-              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
+              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-amber-500">
                 <Icon icon="akar-icons:twitter-fill" width="25" height="25" />
               </div>
             </a>
@@ -122,7 +122,7 @@ export default function Header() {
               className="mx-2 flex items-center"
               data-umami-event="LinkedIn Profile"
             >
-              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-sky-500">
+              <div className="flex cursor-pointer items-center justify-center transition-all hover:text-amber-500">
                 <Icon
                   icon="akar-icons:linkedin-box-fill"
                   width="25"
@@ -140,7 +140,7 @@ export default function Header() {
           >
             <ul className="flex h-screen w-auto flex-col  border-l-2 bg-white px-2 text-right">
               <div
-                className="mb-2 mr-2 mt-1 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-sky-500"
+                className="mb-2 mr-2 mt-1 flex cursor-pointer items-center justify-end pt-2 transition-all hover:text-orange-500"
                 onClick={() => setIsOpen((isOpen) => !isOpen)}
                 role="button"
               >
@@ -150,9 +150,9 @@ export default function Header() {
               {navigationBarLinks.map(({ href, label }) => (
                 <Link href={href} passHref key={`${href}${label}`}>
                   <motion.li
-                    className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-sky-600 ${
+                    className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-orange-400 ${
                       routerPathNameArray.includes(href.replace('/', ''))
-                        ? 'text-sky-500'
+                        ? '!text-orange-600'
                         : ''
                     } `}
                     onClick={() => setIsOpen((isOpen) => !isOpen)}

@@ -5,11 +5,11 @@ import { useRouter } from 'next/router';
 import { useEffect, useState } from 'react';
 
 const navigationBarLinks = [
-  { href: '/projects', label: 'projects' },
-  { href: '/publications', label: 'publications' },
-  { href: '/about', label: 'about me' },
-  { href: '/resume/SanjaySoundarajan-Resume.pdf', label: 'resume' },
-  { href: '/gallery', label: 'gallery' },
+  { href: '/projects', label: 'Projects' },
+  { href: '/publications', label: 'Publications' },
+  { href: '/about', label: 'About Me' },
+  { href: '/resume/SanjaySoundarajan-Resume.pdf', label: 'Resume' },
+  { href: '/gallery', label: 'Gallery' },
 ];
 
 export default function Header() {
@@ -52,8 +52,8 @@ export default function Header() {
     >
       <div className=" relative mx-auto flex h-14 max-w-screen-lg items-center justify-between">
         <Link href="/" passHref>
-          <span className="cursor-pointer pl-4 text-base font-bold hover:text-orange-400">
-            home
+          <span className="cursor-pointer pl-4 text-base font-bold hover:text-orange-400 lowercase">
+            Home
           </span>
         </Link>
 
@@ -69,7 +69,7 @@ export default function Header() {
                 <li key={`${href}${label}`}>
                   <Link href={href} passHref>
                     <span
-                      className={`cursor-pointer text-base font-medium transition-all hover:text-orange-400 ${
+                      className={`cursor-pointer text-base font-medium transition-all hover:text-orange-400 lowercase ${
                         routerPathNameArray.includes(href.replace('/', ''))
                           ? '!text-orange-600'
                           : ''
@@ -150,7 +150,7 @@ export default function Header() {
               {navigationBarLinks.map(({ href, label }) => (
                 <Link href={href} passHref key={`${href}${label}`}>
                   <motion.li
-                    className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all  hover:bg-slate-100  hover:text-orange-400 ${
+                    className={`cursor-pointer rounded-md px-3 py-2 text-base transition-all lowercase hover:bg-slate-100  hover:text-orange-400 ${
                       routerPathNameArray.includes(href.replace('/', ''))
                         ? '!text-orange-600'
                         : ''

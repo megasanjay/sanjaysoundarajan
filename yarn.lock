@@ -7741,10 +7741,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-url-metadata@3.4.6:
-  version "3.4.6"
-  resolved "https://registry.yarnpkg.com/url-metadata/-/url-metadata-3.4.6.tgz#4fb0a6d7e9f90d67f3676f825a70f94fbe120537"
-  integrity sha512-W1vOGZMFHWE7ncFpFWYDiz2rjYDSVAB6VfaRaWr46V9KQBn+ixxZJYCzwyGy+ruwDH16W2KffbBiaYTbWSzRiA==
+url-metadata@3.4.7:
+  version "3.4.7"
+  resolved "https://registry.yarnpkg.com/url-metadata/-/url-metadata-3.4.7.tgz#aae70f3433c03987dd8609c1ad177ac2075263e5"
+  integrity sha512-BsDZaNiiWGrAD1cbo9t9M/uRoVhsWTniwLgA2ofTTeshSdVM56K267X7Szjw/eXZsYGBR3LNYfcLpvRROQbUtA==
   dependencies:
     cheerio "^1.0.0-rc.12"
 

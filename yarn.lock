@@ -7783,10 +7783,10 @@ uri-js@^4.2.2:
   dependencies:
     punycode "^2.1.0"
 
-url-metadata@3.5.4:
-  version "3.5.4"
-  resolved "https://registry.yarnpkg.com/url-metadata/-/url-metadata-3.5.4.tgz#83433e86a589f83340988a9ef6e3708a9fe870e1"
-  integrity sha512-phgtkJrvqTUbUDbQkGZ9AP6rhlyzmdombRMw8bC562+nstEkAN1YhRElNRyJqoxVMo3q5ktQAFCS0xuHQ+XInA==
+url-metadata@3.5.6:
+  version "3.5.6"
+  resolved "https://registry.yarnpkg.com/url-metadata/-/url-metadata-3.5.6.tgz#b7ec2f459f92e3fe44e512f351d002e2a10a6214"
+  integrity sha512-0DQgW2K2unI64GL4CVyadeBYOiR8rSaxpfO5fjE7aiV7UCK6dLUMlv3tmBt07EKt2Z1jP3uvrytQM7rjOSFR/A==
   dependencies:
     cheerio "^1.0.0-rc.12"
     node-fetch "^3.3.2"

@@ -1719,24 +1719,24 @@
   integrity sha512-+1VkjdD0QBLPodGrJUeqarH8VAIvQODIbwh9XpP5Syisf7YoQgsJKPNFoqqLQlu+VQ/tVSshMR6loPMn8U+dPg==
 
 "@portabletext/react@^3.0.0":
-  version "3.0.11"
-  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.0.11.tgz#c5f31d9ea990391a3850ba4dfd685373107d9a21"
-  integrity sha512-LATQQRxvP3TlAnFayjYt7kPJcnpAtWH6XHl4RFU31pKb1G6gZlTWTB+chXXAv0uQG6Be7OEdRzCmsz9XFEVNew==
+  version "3.0.13"
+  resolved "https://registry.yarnpkg.com/@portabletext/react/-/react-3.0.13.tgz#21ef9a316327d91df62e4d5efe2e168e10dee459"
+  integrity sha512-TOSk1uwtkJC+VMK1dY5bHPnvNr/SXaqbWpEQoBC8oMhI55qnZg5pL9VBuw6BI2XEMsH5Il2tQngRQrtEeRklog==
   dependencies:
-    "@portabletext/toolkit" "^2.0.10"
-    "@portabletext/types" "^2.0.8"
+    "@portabletext/toolkit" "^2.0.12"
+    "@portabletext/types" "^2.0.10"
 
-"@portabletext/toolkit@^2.0.10":
+"@portabletext/toolkit@^2.0.12":
+  version "2.0.12"
+  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-2.0.12.tgz#c161db8c0e0db275092ba24a74c09e734c7566c1"
+  integrity sha512-uSA8bDAuRht3uuFRXxVmDD3OkoqNYhT/R0JaCuoiaxr5WwEbFW/Rgngai/QInH9VxlDvfOpVCyt+DIIAm2W/uA==
+  dependencies:
+    "@portabletext/types" "^2.0.10"
+
+"@portabletext/types@^2.0.10":
   version "2.0.10"
-  resolved "https://registry.yarnpkg.com/@portabletext/toolkit/-/toolkit-2.0.10.tgz#ddcf88cb76b287ff9d5c94f69a6b370a9c9aba9c"
-  integrity sha512-d+F9JvpnMEx7kd6saZ9OWA4U1Iwuokh6TOht7iqkfWU+0ivh9yM4v+b0Kpu+iiPcElicoabhtXol+yTvWJ1jDw==
-  dependencies:
-    "@portabletext/types" "^2.0.8"
-
-"@portabletext/types@^2.0.8":
-  version "2.0.8"
-  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.8.tgz#34aec838701482f838bdd0ee07a9e31dc01a9230"
-  integrity sha512-eiq9/kMX2bYezS4/kLFk3xNnruCFjCDdw6aYEv5ECHVKkYROiuLd3/AsP5d7tWF3+kPPy6tB0Wq8aqDG/URHGA==
+  resolved "https://registry.yarnpkg.com/@portabletext/types/-/types-2.0.10.tgz#fc670c85f534b69b6eb6b0df6903cb4e1524e98a"
+  integrity sha512-pyyT3w8bV2v0LjOiSMHMEqzUhUO9FD54xU4tdLDt9WKBShrvP9NTQO5BO4bUljp1l5I5yyai0Y/OTKI8VAE9BQ==
 
 "@rushstack/eslint-patch@^1.3.3":
   version "1.4.0"

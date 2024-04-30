@@ -31,7 +31,7 @@
     "@types/mongo-sanitize": "^1.0.1",
     "@types/react-responsive-masonry": "^2.1.0",
     "axios": "^1.3.4",
-    "clsx": "2.1.0",
+    "clsx": "2.1.1",
     "dayjs": "^1.11.7",
     "dotenv": "^16.1.4",
     "framer-motion": "11.1.7",

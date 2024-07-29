@@ -2068,18 +2068,18 @@
   integrity sha512-Crd9RpMJKNxl4fBfGyBUOJZc0TCTjirlZC61GDVPlauDvcclqAY7/7fnJHs+2T1P0eAEf4W4QtwbCIoHMfvXrw==
 
 "@types/needle@*":
-  version "3.2.3"
-  resolved "https://registry.yarnpkg.com/@types/needle/-/needle-3.2.3.tgz#9d850da6f0f3fb713c2ea184fecd357a025bacbf"
-  integrity sha512-aUtoZUGROl654rDZlZYPRYaysAOBaVgjnbmYKq3n32afuqFvEts31YGixTebSOCJt7B7qKnHzCzcjbMig5LcQg==
+  version "3.3.0"
+  resolved "https://registry.yarnpkg.com/@types/needle/-/needle-3.3.0.tgz#4efe9c27b4ffed8b5b9f2025dab75931877daac0"
+  integrity sha512-UFIuc1gdyzAqeVUYpSL+cliw2MmU/ZUhVZKE7Zo4wPbgc8hbljeKSnn6ls6iG8r5jpegPXLUIhJ+Wb2kLVs8cg==
   dependencies:
     "@types/node" "*"
 
 "@types/node@*":
-  version "20.10.0"
-  resolved "https://registry.yarnpkg.com/@types/node/-/node-20.10.0.tgz#16ddf9c0a72b832ec4fcce35b8249cf149214617"
-  integrity sha512-D0WfRmU9TQ8I9PFx9Yc+EBHw+vSpIub4IDvQivcp26PtPrdMGAq5SDcpXEo/epqa/DXotVpekHiLNTg3iaKXBQ==
+  version "22.0.0"
+  resolved "https://registry.yarnpkg.com/@types/node/-/node-22.0.0.tgz#04862a2a71e62264426083abe1e27e87cac05a30"
+  integrity sha512-VT7KSYudcPOzP5Q0wfbowyNLaVR8QWUdw+088uFWwfvpY6uCWaXpqV6ieLAu9WBcnTa7H4Z5RLK8I5t2FuOcqw==
   dependencies:
-    undici-types "~5.26.4"
+    undici-types "~6.11.1"
 
 "@types/normalize-package-data@^2.4.0":
   version "2.4.1"
@@ -2087,9 +2087,9 @@
   integrity sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==
 
 "@types/probe-image-size@^7.2.0":
-  version "7.2.4"
-  resolved "https://registry.yarnpkg.com/@types/probe-image-size/-/probe-image-size-7.2.4.tgz#337af8343d60dd8d94a4497435e7ef8a8a8b889b"
-  integrity sha512-HVqYj3L+D+S/6qpQRv5qMxrD/5pglzZuhP7ZIqgVSZ+Ck4z1TCFkNIRG8WesFueQTqWFTSgkkAl6f8lwxFPQSw==
+  version "7.2.5"
+  resolved "https://registry.yarnpkg.com/@types/probe-image-size/-/probe-image-size-7.2.5.tgz#ffa9d6119a60db0b976c7fa6453eea6b9ac5f3bc"
+  integrity sha512-9Bg6d/GNnjmhMMxadDstwrSlquuuLf0jQuPszbU6n3QUfybif3V/ryD3J2i9iaiC5JB/FU/8E41n88SM/UB+Tg==
   dependencies:
     "@types/needle" "*"
     "@types/node" "*"
@@ -7788,10 +7788,10 @@ unbox-primitive@^1.0.2:
     has-symbols "^1.0.3"
     which-boxed-primitive "^1.0.2"
 
-undici-types@~5.26.4:
-  version "5.26.5"
-  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-5.26.5.tgz#bcd539893d00b56e964fd2657a4866b221a65617"
-  integrity sha512-JlCMO+ehdEIKqlFxk6IfVoAUVmgz7cU7zD/h9XZ0qzeosSHmUJVOzSQvvYSYWXkFXC+IfLKSIffhv0sVZup6pA==
+undici-types@~6.11.1:
+  version "6.11.1"
+  resolved "https://registry.yarnpkg.com/undici-types/-/undici-types-6.11.1.tgz#432ea6e8efd54a48569705a699e62d8f4981b197"
+  integrity sha512-mIDEX2ek50x0OlRgxryxsenE5XaQD4on5U2inY7RApK3SOJpofyw7uW2AyfMKkhAxXIceo2DeWGVGwyvng1GNQ==
 
 unicode-canonical-property-names-ecmascript@^2.0.0:
   version "2.0.0"

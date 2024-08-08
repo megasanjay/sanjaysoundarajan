@@ -98,7 +98,7 @@ export default function About() {
 
             <motion.div
               variants={textItem}
-              className="mt-8 flex sm:space-x-6 space-y-4 sm:space-y-0 sm:items-center items-start flex-col sm:flex-row"
+              className="mt-8 flex flex-wrap items-center gap-4"
             >
               <div data-umami-event="View resume - form button">
                 <StyledLink href="/resume/SanjaySoundarajan-Resume.pdf">

@@ -74,7 +74,7 @@ export default function Publications() {
 
             <motion.div
               variants={item}
-              className="mb-4 mt-4 text-sky-500 flex space-x-3"
+              className="mb-4 mt-4 text-sky-500 flex flex-wrap items-center gap-4"
             >
               <StyledLink href="https://orcid.org/0000-0003-2829-8032">
                 <StyledButton>

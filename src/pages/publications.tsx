@@ -72,12 +72,30 @@ export default function Publications() {
               for the full text.
             </motion.p>
 
-            <motion.div variants={item} className="mb-4 mt-4 text-sky-500">
+            <motion.div
+              variants={item}
+              className="mb-4 mt-4 text-sky-500 flex space-x-3"
+            >
               <StyledLink href="https://orcid.org/0000-0003-2829-8032">
                 <StyledButton>
                   <div className="flex items-center space-x-2 py-1">
                     <Icon icon="academicons:orcid" width="20" height="20" />
                     <span className="text-base">View my ORCID profile</span>
+                  </div>
+                </StyledButton>
+              </StyledLink>
+
+              <StyledLink href="https://scholar.google.com/citations?user=4_FJnd8AAAAJ&hl=en">
+                <StyledButton>
+                  <div className="flex items-center space-x-2 py-1">
+                    <Icon
+                      icon="simple-icons:googlescholar"
+                      width="20"
+                      height="20"
+                    />
+                    <span className="text-base">
+                      View my Google Scholar profile
+                    </span>
                   </div>
                 </StyledButton>
               </StyledLink>

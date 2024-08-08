@@ -1,10 +1,32 @@
 [
   {
+    "title": "SODA: Software to Support the Curation and Sharing of FAIR Autonomic Nervous System Data",
+    "id": "10-21105-joss-06140",
+    "conferenceTitle": "Journal of Open Source Software",
+    "publicationDate": "2024-07",
+    "authors": "Christopher Marroquin, Jacob Clark, Dorian Portillo, Sanjay Soundarajan, Tram Ngo and Bhavesh Patel",
+    "doi": "10.21105/joss.06140",
+    "url": "https://doi.org/10.21105/joss.06140",
+    "citation": "@Article{Marroquin2024, doi = {10.21105/joss.06140}, url = {https://doi.org/10.21105/joss.06140}, year = {2024}, publisher = {The Open Journal}, volume = {9}, number = {100}, pages = {6140}, author = {Christopher Marroquin and Jacob Clark and Dorian Portillo and Sanjay Soundarajan and Tram Ngo and Bhavesh Patel}, title = {SODA: Software to Support the Curation and Sharing of FAIR Autonomic Nervous System Data}, journal = {Journal of Open Source Software} }",
+    "abstract": "SODA (Software to Organize Data Automatically) is an open source and free cross-platform desktop software that assists researchers in preparing and sharing their autonomic nervous system (ANS) related data according to the guidelines developed by the National Institute of Health (NIH)'s Stimulating Peripheral Activity to Relieve Conditions (SPARC) Program. By combining intuitive user interfaces with automation, SODA streamlines the process of implementing the SPARC guidelines which can otherwise be challenging and/or time consuming for researchers."
+  },
+  {
+    "title": "Clinical Dataset Structure: A Universal Standard for Structuring Clinical Research Data and Metadata",
+    "id": "2795004",
+    "conferenceTitle": "ARVO Annual Meeting Abstract",
+    "publicationDate": "2024-06",
+    "authors": "Bhavesh Patel, Sanjay Soundarajan, Aydan Gasimova, Nayoon Gim, Jamie Shaffer and Aaron Y Lee",
+    "doi": "",
+    "url": "https://iovs.arvojournals.org/article.aspx?articleid=2795004",
+    "citation": "",
+    "abstract": "During clinical research studies, multiple modalities of data are typically collected such as surveys, vitals, and eye images. There is currently no consensus on how to structure such multimodal data into a consistently organized dataset that is easily reusable by humans and machines in line with the FAIR (Findable, Accessible, Interoperable, Reusable) Principles. We addressed this issue in the Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights (AI-READI) project by developing the Clinical Dataset Structure (CDS), a standard approach for organizing multimodal clinical research data and metadata at the root level."
+  },
+  {
     "title": "Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool",
     "id": "s41597-023-02463-x",
     "conferenceTitle": "nature / scientific data",
     "publicationDate": "2023-08",
-    "authors": "Bhavesh Patel, Sanjay Soundarajan, Hervé Ménager & Zicheng Hu",
+    "authors": "Bhavesh Patel, Sanjay Soundarajan, Hervé Ménager and Zicheng Hu",
     "doi": "10.1038/s41597-023-02463-x",
     "url": "https://doi.org/10.1038/s41597-023-02463-x",
     "citation": "@Article{Patel2023, author={Patel, Bhavesh and Soundarajan, Sanjay and Ménager, Hervé and Hu, Zicheng}, title={Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool}, journal={Scientific Data}, year={2023}, month={Aug}, day={23}, volume={10}, number={1}, pages={557}, issn={2052-4463}, doi={10.1038/s41597-023-02463-x},url={https://doi.org/10.1038/s41597-023-02463-x}}",

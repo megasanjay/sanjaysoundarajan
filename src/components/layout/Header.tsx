@@ -9,7 +9,7 @@ const navigationBarLinks = [
   { href: '/publications', label: 'Publications' },
   { href: '/about', label: 'About Me' },
   { href: '/resume/SanjaySoundarajan-Resume.pdf', label: 'Resume' },
-  { href: '/gallery', label: 'Gallery' },
+  // { href: '/gallery', label: 'Gallery' },
 ];
 
 export default function Header() {

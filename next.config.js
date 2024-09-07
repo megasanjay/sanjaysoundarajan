@@ -4,6 +4,16 @@ module.exports = {
     dirs: ['src'],
   },
 
+  async redirects() {
+    return [
+      {
+        source: '/gallery',
+        destination: '/',
+        permanent: true,
+      },
+    ];
+  },
+
   images: {
     domains: [
       'images.unsplash.com',

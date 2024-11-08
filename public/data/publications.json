@@ -1,5 +1,16 @@
 [
   {
+    "title": "AI-READI: rethinking AI data collection, preparation and sharing in diabetes research and beyond",
+    "id": "10-1038-s42255-024-01165-x",
+    "conferenceTitle": "Nature Metabolism",
+    "publicationDate": "2024-07-08",
+    "authors": "AI-READI Consortium",
+    "doi": "10.1038/s42255-024-01165-x",
+    "url": "https://doi.org/10.1038/s42255-024-01165-x",
+    "citation": "@Article{Baxter2024-ez, title = '{AI-READI}: rethinking {AI} data collection, preparation and sharing in diabetes research and beyond', author = 'Baxter, Sally L and de Sa, Virginia R and Ferryman, Kadija and Jain, Prachee and Lee, Cecilia S and Li-Pook-Than, Jennifer and Liu, T Y Alvin and Owen, Julia P and Patel, Bhavesh and Yu, Qilu and Zangwill, Linda M and Bahmani, Amir and Chute, Christopher G and Edberg, Jeffrey C and Hurst, Samantha and Ishikawa, Hiroshi and Lee, Aaron Y and McGwin, Gerald and McWeeney, Shannon and Nebeker, Camille and Owsley, Cynthia and Singer, Sara J and Adib, Riddhiman and Adibuzzaman, Mohammad and Alavi, Arash and Ashley, Catherine and Baer, Adrienne and Benton, Erik and Blazes, Marian and Cohen, Aaron and Cordier, Benjamin and Crist, Katie and Cuddy, Colleen and Gasimova, Aydan and Gim, Nayoon and Hong, Stephanie and Kim, Trina and Lin, Wei-Chun and Mitchell, Jessica and Ngadisastra, Caitlyn and Patronilo, Victoria and Shaffer, Jamie and Soundarajan, Sanjay and Zhao, Kevin and Drolet, Caroline and Lucero, Abigail and Matthies, Dawn and Pittock, Hanna and Watkins, Kate and York, Brittany and Amankwa, Charles E and Bangudi, Monique and Haboudal, Nada and Hallaj, Shahin and Heinke, Anna and Huang, Lingling and Kalaw, Fritz Gerald P and Karsolia, Apoorva and Khazaei, Hadi and Mohammed, Muna and Simpkins, Kyongmi and Wang, Xujing and Consortium, A I-R E A D I and Committee, Writing and Investigators, Principal and Research, Technical and Staff, Clinical and Managers, Project and {Interns} and Scientists, Nih Program', abstract = 'Here, we introduce Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights (AI-READI), a multidisciplinary data-generation project designed to create and share a multimodal dataset optimized for artificial intelligence research in type 2 diabetes mellitus.', journal = 'Nature Metabolism', month = nov, year = 2024}",
+    "abstract": "Here, we introduce Artificial Intelligence Ready and Equitable Atlas for Diabetes Insights (AI-READI), a multidisciplinary data-generation project designed to create and share a multimodal dataset optimized for artificial intelligence research in type 2 diabetes mellitus."
+  },
+  {
     "title": "SODA: Software to Support the Curation and Sharing of FAIR Autonomic Nervous System Data",
     "id": "10-21105-joss-06140",
     "conferenceTitle": "Journal of Open Source Software",
@@ -24,7 +35,7 @@
   {
     "title": "Making Biomedical Research Software FAIR: Actionable Step-by-step Guidelines with a User-support Tool",
     "id": "s41597-023-02463-x",
-    "conferenceTitle": "nature / scientific data",
+    "conferenceTitle": "Nature / Scientific Data",
     "publicationDate": "2023-08",
     "authors": "Bhavesh Patel, Sanjay Soundarajan, Hervé Ménager and Zicheng Hu",
     "doi": "10.1038/s41597-023-02463-x",

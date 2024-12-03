@@ -28,6 +28,17 @@
     "npm": "https://www.npmjs.com/package/vue3-marquee"
   },
   {
+    "title": "Logwatch",
+    "id": "logwatch",
+    "description": "Logwatch is a simple logstreaming service that allows you to stream your logs to a web page. It is a lightweight and easy to use solution that can be used in any application that can send remote logs to a server.",
+    "tech": ["vue3", "vite", "nuxt", "ts", "postgresql"],
+    "github": "https://github.com/fairdataihub/logwatch",
+    "badges": [
+      "https://img.shields.io/github/stars/fairdataihub/logwatch.svg?style=flat-square"
+    ],
+    "url": "https://logwatch.fairdataihub.org"
+  },
+  {
     "title": "GitHub Zenodo release action",
     "id": "upload-to-zenodo",
     "description": "This is a Github action to update your 'codemeta.json', 'CITATION.cff' and '.zenodo.json' files with the release information and then upload your release to Zenodo. This action is primarily created for use for documentation releases at the FAIR Data Innovations Hub but can be used by anyone for any Github repository.",

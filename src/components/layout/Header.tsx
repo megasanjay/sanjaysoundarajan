@@ -46,7 +46,7 @@ export default function Header() {
 
   return (
     <header
-      className={`${onTop ? '' : 'shadow-sm'} sticky top-0 z-10 transition-all`}
+      className={`${onTop ? '' : 'shadow-sm'} sticky top-0 z-10 bg-white transition-all`}
     >
       <div className="relative mx-auto flex h-14 max-w-screen-lg items-center justify-between">
         <Link href="/" passHref>

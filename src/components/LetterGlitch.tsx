@@ -166,6 +166,7 @@ const LetterGlitch = ({
     if (!context.current || letters.current.length === 0) {
       return;
     }
+
     const ctx = context.current;
     const { width, height } = canvasRef.current!.getBoundingClientRect();
     ctx.clearRect(0, 0, width, height);
@@ -176,13 +177,11 @@ const LetterGlitch = ({
       const x = (index % grid.current.columns) * charWidth;
       const y = Math.floor(index / grid.current.columns) * charHeight;
 
-      // Add a 0.0001% chance for the color to be fully solid. opacity of 10% otherwise. color is provided as an #rrggbb string
       const opacity = Math.random() > 0.9999 ? 1 : 0.08;
       const rgb = hexToRgb(letter.color);
 
       if (rgb) {
         ctx.fillStyle = `rgba(${rgb.r},${rgb.g},${rgb.b},${opacity})`;
-
         ctx.fillText(letter.char, x, y);
       }
     });
@@ -216,7 +215,10 @@ const LetterGlitch = ({
       lastGlitchTime.current = now;
     }
 
-    animationRef.current = requestAnimationFrame(animate);
+    // Throttle FPS
+    setTimeout(() => {
+      animationRef.current = requestAnimationFrame(animate);
+    }, 1000 / 30); // Adjust to 30 FPS or another rate as needed
   };
 
   useEffect(() => {

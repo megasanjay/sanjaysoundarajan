@@ -14,7 +14,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         glitchSpeed={150}
         centerVignette={false}
         outerVignette={false}
-        smooth={false}
       />
 
       <Header />

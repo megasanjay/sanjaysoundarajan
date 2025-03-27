@@ -5,13 +5,11 @@ const LetterGlitch = ({
   glitchSpeed = 50,
   centerVignette = false,
   outerVignette = true,
-  smooth = true,
 }: {
   glitchColors: string[];
   glitchSpeed: number;
   centerVignette: boolean;
   outerVignette: boolean;
-  smooth: boolean;
 }) => {
   const canvasRef = useRef<HTMLCanvasElement | null>(null);
   const animationRef = useRef<number | null>(null);
@@ -20,8 +18,6 @@ const LetterGlitch = ({
     {
       char: string;
       color: string;
-      targetColor: string;
-      colorProgress: number;
     }[]
   >([]);
 
@@ -120,19 +116,6 @@ const LetterGlitch = ({
       : null;
   };
 
-  const interpolateColor = (
-    start: { r: number; g: number; b: number },
-    end: { r: number; g: number; b: number },
-    factor: number,
-  ) => {
-    const result = {
-      r: Math.round(start.r + (end.r - start.r) * factor),
-      g: Math.round(start.g + (end.g - start.g) * factor),
-      b: Math.round(start.b + (end.b - start.b) * factor),
-    };
-    return `rgb(${result.r}, ${result.g}, ${result.b})`;
-  };
-
   const calculateGrid = (width: number, height: number) => {
     const columns = Math.ceil(width / charWidth);
     const rows = Math.ceil(height / charHeight);
@@ -147,8 +130,6 @@ const LetterGlitch = ({
     letters.current = Array.from({ length: totalLetters }, () => ({
       char: getRandomChar(),
       color: getRandomColor(),
-      targetColor: getRandomColor(),
-      colorProgress: 1,
     }));
   };
 
@@ -195,12 +176,9 @@ const LetterGlitch = ({
       const x = (index % grid.current.columns) * charWidth;
       const y = Math.floor(index / grid.current.columns) * charHeight;
 
-      // Add a 0.01% chance for the color to be fully solid. opacity of 10% otherwise. color is provided as an #rrggbb string
-
+      // Add a 0.0001% chance for the color to be fully solid. opacity of 10% otherwise. color is provided as an #rrggbb string
       const opacity = Math.random() > 0.9999 ? 1 : 0.08;
       const rgb = hexToRgb(letter.color);
-
-      // console.log(letter);
 
       if (rgb) {
         ctx.fillStyle = `rgba(${rgb.r},${rgb.g},${rgb.b},${opacity})`;
@@ -224,39 +202,8 @@ const LetterGlitch = ({
       } // Skip if index is invalid
 
       letters.current[index].char = getRandomChar();
-      letters.current[index].targetColor = getRandomColor();
 
-      if (!smooth) {
-        letters.current[index].color = letters.current[index].targetColor;
-        letters.current[index].colorProgress = 1;
-      } else {
-        letters.current[index].colorProgress = 0;
-      }
-    }
-  };
-
-  const handleSmoothTransitions = () => {
-    let needsRedraw = false;
-    letters.current.forEach((letter) => {
-      if (letter.colorProgress < 1) {
-        letter.colorProgress += 0.05;
-        letter.colorProgress = Math.min(letter.colorProgress, 1);
-
-        const startRgb = hexToRgb(letter.color);
-        const endRgb = hexToRgb(letter.targetColor);
-        if (startRgb && endRgb) {
-          letter.color = interpolateColor(
-            startRgb,
-            endRgb,
-            letter.colorProgress,
-          );
-          needsRedraw = true;
-        }
-      }
-    });
-
-    if (needsRedraw) {
-      drawLetters();
+      letters.current[index].color = getRandomColor();
     }
   };
 
@@ -267,10 +214,6 @@ const LetterGlitch = ({
       updateLetters();
       drawLetters();
       lastGlitchTime.current = now;
-    }
-
-    if (smooth) {
-      handleSmoothTransitions();
     }
 
     animationRef.current = requestAnimationFrame(animate);
@@ -307,7 +250,7 @@ const LetterGlitch = ({
       window.removeEventListener('resize', handleResize);
     };
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [glitchSpeed, smooth]);
+  }, [glitchSpeed]);
 
   return (
     <div className="absolute inset-0 w-full h-full bg-white overflow-hidden -z-10">

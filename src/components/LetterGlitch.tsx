@@ -168,6 +168,11 @@ const LetterGlitch = ({
     }
 
     const ctx = context.current;
+
+    if (!canvasRef.current) {
+      return;
+    }
+
     const { width, height } = canvasRef.current!.getBoundingClientRect();
     ctx.clearRect(0, 0, width, height);
     ctx.font = `${fontSize}px monospace`;

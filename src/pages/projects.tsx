@@ -60,7 +60,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
         <title> Projects | Sanjay Soundarajan </title>
       </Head>
 
-      <main className="divide-y h-full">
+      <main className="divide-y ">
         <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pt-10 md:pt-20">
           <motion.div
             variants={container}
@@ -224,7 +224,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                   variants={item}
                   className="flex w-full flex-col py-2 md:flex-row md:items-center md:justify-around md:px-3"
                 >
-                  <div className="rounded-lg pb-5 shadow-lg md:w-5/12">
+                  <div className="rounded-lg pb-5 md:w-5/12">
                     <Image
                       src={project.ogImage}
                       alt={`GitHub overview page for ${project.title}`}

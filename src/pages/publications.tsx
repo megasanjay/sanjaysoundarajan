@@ -44,7 +44,7 @@ export default function Publications() {
       </Head>
 
       <main>
-        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-20">
           <motion.div
             variants={container}
             initial="hidden"

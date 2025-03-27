@@ -16,8 +16,8 @@ export default function About() {
         <title> About | Sanjay Soundarajan </title>
       </Head>
 
-      <main>
-        <section className="mx-auto flex  w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-20">
+      <main className="min-h-[calc(100vh-56px)] h-full">
+        <section className="mx-auto flex h-full w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-20">
           <motion.div
             variants={textContainer}
             initial="hidden"
@@ -33,14 +33,16 @@ export default function About() {
             </motion.h1>
 
             <motion.div variants={textItem}>
-              <p className="mt-4">Hello! வணக்கம்! ආයුබෝවන්! Hola!</p>
+              <p className="mt-4 font-medium">
+                Hello! வணக்கம்! ආයුබෝවන්! Hola!
+              </p>
 
               <p className="mt-4">
                 I&apos;m a web developer who loves wearing many software
                 engineering hats.
               </p>
 
-              <p className="mt-4 ">
+              <p className="mt-4">
                 I originally grew up in Sri Lanka{' '}
                 <Icon
                   icon="twemoji:flag-sri-lanka"

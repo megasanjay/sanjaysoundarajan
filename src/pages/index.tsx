@@ -33,7 +33,7 @@ export default function Home() {
       </Head>
 
       <main className="h-[calc(100vh-56px)] flex items-center">
-        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3">
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3">
           <div className="mb-16 flex w-full justify-center md:justify-start ">
             <LottieAnimation
               animationData={heroLottie}
@@ -58,7 +58,7 @@ export default function Home() {
 
             <motion.p
               variants={item}
-              className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12"
+              className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12 font-medium"
             >
               I&apos;m a front end developer for the FAIR Data Innovations Hub
               and I build tools for open science.

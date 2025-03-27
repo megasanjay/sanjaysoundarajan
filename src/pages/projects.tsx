@@ -60,8 +60,8 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
         <title> Projects | Sanjay Soundarajan </title>
       </Head>
 
-      <main className="divide-y">
-        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pt-10 md:pt-20">
+      <main className="divide-y h-full">
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pt-10 md:pt-20">
           <motion.div
             variants={container}
             initial="hidden"
@@ -174,7 +174,7 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
           </motion.div>
         </section>
 
-        <section className="mx-auto flex w-full max-w-screen-lg flex-col bg-white px-3 pb-32 pt-10 md:pt-10">
+        <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-10">
           <motion.div
             variants={container}
             initial="hidden"

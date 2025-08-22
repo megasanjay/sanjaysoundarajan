@@ -60,8 +60,8 @@ export default function Home() {
               variants={item}
               className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12 font-medium"
             >
-              I&apos;m a Research Software Engineer for the FAIR Data Innovations Hub
-              and I build tools for open science.
+              I&apos;m a Research Software Engineer for the FAIR Data
+              Innovations Hub and I build tools for open science.
             </motion.p>
 
             <motion.div variants={item} className="mt-4">

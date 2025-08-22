@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       window.__CONSOLE_LOGGED__ = true;
 
       // Nice hello artwork for console
+      // eslint-disable-next-line no-console
       console.log(
         '%c' +
           `

@@ -1,9 +1,5 @@
 /** @type {import('next').NextConfig} */
 module.exports = {
-  eslint: {
-    dirs: ['src'],
-  },
-
   async redirects() {
     return [
       {
@@ -15,33 +11,30 @@ module.exports = {
   },
 
   images: {
-    domains: [
-      'images.unsplash.com',
-      'opengraph.githubassets.com',
-      'cdn.sanity.io',
-      'raw.githubusercontent.com',
-      'cdn.jsdelivr.net',
+    dangerouslyAllowSVG: true,
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'opengraph.githubassets.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.sanity.io',
+      },
+      {
+        protocol: 'https',
+        hostname: 'raw.githubusercontent.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.jsdelivr.net',
+      },
     ],
   },
 
   reactStrictMode: true,
-
-  // SVGR
-  webpack(config) {
-    config.module.rules.push({
-      test: /\.svg$/i,
-      issuer: /\.[jt]sx?$/,
-      use: [
-        {
-          loader: '@svgr/webpack',
-          options: {
-            typescript: true,
-            icon: true,
-          },
-        },
-      ],
-    });
-
-    return config;
-  },
 };

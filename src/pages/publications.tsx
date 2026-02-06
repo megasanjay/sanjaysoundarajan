@@ -99,6 +99,21 @@ export default function Publications() {
                   </div>
                 </StyledButton>
               </StyledLink>
+
+              <StyledLink href="https://www.researchgate.net/profile/Sanjay-Soundarajan">
+                <StyledButton>
+                  <div className="flex items-center space-x-2 py-1">
+                    <Icon
+                      icon="simple-icons:researchgate"
+                      width="20"
+                      height="20"
+                    />
+                    <span className="text-base">
+                      View my ResearchGate profile
+                    </span>
+                  </div>
+                </StyledButton>
+              </StyledLink>
             </motion.div>
           </motion.div>
 

@@ -72,7 +72,7 @@ export default function Hardware() {
         className="
           mt-8 w-full rounded-xl
           border border-slate-200/70
-          bg-transparent
+          bg-white/50
           p-5
           shadow-[0_1px_0_0_rgba(15,23,42,0.06)]
           transition-all
@@ -165,20 +165,20 @@ export default function Hardware() {
             <SpecSection
               section={desktopSpecs}
               icon="🖥️"
-              subtitle="Main workstation + gaming rig"
+              subtitle="Main Workstation + Gaming Rig"
               highlights={['Ryzen 7 9800X3D', 'RTX 5090', '32GB DDR5', 'QD-OLED 165Hz']}
             />
 
             <SpecSection
               section={laptop1Specs}
               icon="🧰"
-              subtitle="Modular dev laptop"
+              subtitle="Modular Dev Laptop"
             />
 
             <SpecSection
               section={laptop2Specs}
               icon="🍎"
-              subtitle="MacOS workflow"
+              subtitle="MacOS Workflow"
             />
           </motion.div>
         </section>

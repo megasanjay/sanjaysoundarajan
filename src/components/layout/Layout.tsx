@@ -1,8 +1,8 @@
 import * as React from 'react';
+import { BrowserView } from 'react-device-detect';
 
-// import { BrowserView } from 'react-device-detect';
 import Header from '@/components/layout/Header';
-// import Neko from '@/components/layout/Neko';
+import Neko from '@/components/layout/Neko';
 import LetterGlitch from '@/components/LetterGlitch';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -19,10 +19,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Header />
 
       {children}
-      {/* 
+
       <BrowserView>
         <Neko />
-      </BrowserView> */}
+      </BrowserView>
     </div>
   );
 }

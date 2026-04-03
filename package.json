@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix --cache && yarn format",
+    "lint:fix": "eslint src --fix --cache && pnpm format",
     "lint:strict": "eslint --cache --max-warnings=0 src",
     "typecheck": "tsc --noEmit --incremental false",
     "test:watch": "jest --watch",
@@ -82,8 +82,10 @@
     "tailwindcss-debug-screens": "2.2.1",
     "typescript": "5.5.4"
   },
-  "volta": {
-    "node": "22.18.0",
-    "yarn": "1.22.22"
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }

@@ -14,10 +14,8 @@
 
 ### 1. Install dependencies
 
-It is encouraged to use **yarn** so the husky hooks can work properly.
-
 ```bash
-yarn install
+pnpm install
 ```
 
 ### 2. Run the development server
@@ -25,7 +23,7 @@ yarn install
 You can start the server using this command:
 
 ```bash
-yarn dev
+pnpm dev
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser.

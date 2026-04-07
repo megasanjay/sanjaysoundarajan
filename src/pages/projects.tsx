@@ -1,5 +1,5 @@
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
+import { motion, type Variants } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
 import * as React from 'react';
@@ -38,18 +38,18 @@ interface PageProps {
 }
 
 const Projects: React.FC<PageProps> = ({ eeJSON }) => {
-  const container = {
+  const container: Variants = {
     hidden: { opacity: 0 },
     show: {
       opacity: 1,
       transition: {
         staggerChildren: 0.25,
-        ease: 'easeInOut',
+        ease: 'easeInOut' as const,
       },
     },
   };
 
-  const item = {
+  const item: Variants = {
     hidden: { opacity: 0, translateY: 100 },
     show: { opacity: 1, translateY: 0 },
   };

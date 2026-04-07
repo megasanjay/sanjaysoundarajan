@@ -2,7 +2,7 @@ import { Neko as NekoClass } from 'neko-ts';
 import { useEffect, useRef, useState } from 'react';
 
 export default function Neko() {
-  const neko = useRef<NekoClass>();
+  const neko = useRef<NekoClass | undefined>(undefined);
   const [isPlaying, setIsPlaying] = useState(false);
 
   const toggleNeko = () => {

@@ -114,6 +114,21 @@ export default function Publications() {
                   </div>
                 </StyledButton>
               </StyledLink>
+
+              <StyledLink href="https://scholardata.io/users/01KRZ0JMQ068Y8X0ZN2KTA102Z">
+                <StyledButton>
+                  <div className="flex items-center space-x-2 py-1">
+                    <Icon
+                      icon="mdi:database-search-outline"
+                      width="20"
+                      height="20"
+                    />
+                    <span className="text-base">
+                      View my Scholar Data profile
+                    </span>
+                  </div>
+                </StyledButton>
+              </StyledLink>
             </motion.div>
           </motion.div>
 

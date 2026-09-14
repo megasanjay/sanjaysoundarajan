@@ -4,3 +4,18 @@ declare namespace JSX {
     'lottie-player': any;
   }
 }
+
+declare module 'neko-ts' {
+  export interface NekoOptions {
+    origin: {
+      x: number;
+      y: number;
+    };
+  }
+
+  export class Neko {
+    constructor(options: NekoOptions);
+    sleep(): void;
+    wake(): void;
+  }
+}

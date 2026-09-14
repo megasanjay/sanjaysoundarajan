@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { motion, type Variants } from 'framer-motion';
 import Head from 'next/head';
 import Image from 'next/image';
 import * as React from 'react';
@@ -38,22 +37,6 @@ interface PageProps {
 }
 
 const Projects: React.FC<PageProps> = ({ eeJSON }) => {
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-        ease: 'easeInOut' as const,
-      },
-    },
-  };
-
-  const item: Variants = {
-    hidden: { opacity: 0, translateY: 100 },
-    show: { opacity: 1, translateY: 0 },
-  };
-
   return (
     <Layout>
       <Head>
@@ -62,58 +45,33 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
 
       <main className="divide-y ">
         <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pt-10 md:pt-20">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
-          >
-            <motion.h1
-              variants={item}
-              className="mb-2 mt-4 text-left text-5xl font-bold "
-            >
+          <div className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800">
+            <h1 className="mb-2 mt-4 text-left text-5xl font-bold ">
               Projects 🛠️
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={item} className="mt-4">
+            <p className="mt-4">
               A list of all the things I have been a part of. All of these
               projects are open source so you can check them out on GitHub.
-            </motion.p>
+            </p>
 
-            <motion.span variants={item} className="mt-2 hidden text-xs italic">
+            <span className="mt-2 hidden text-xs italic">
               psst... I&apos;m listing everything here since it is fun to see
               all the projects I&apos;ve been a part of.
-            </motion.span>
-          </motion.div>
+            </span>
+          </div>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800"
-          >
+          <div className="mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800">
             {projectsJSON.map((project: portfolioType) => (
-              <motion.article
+              <article
                 key={project.title}
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
                 className="flex w-full flex-col px-3 py-4 pt-8 "
               >
-                <motion.h2
-                  variants={item}
-                  className="mb-1 text-3xl font-bold md:pl-10"
-                >
+                <h2 className="mb-1 text-3xl font-bold md:pl-10">
                   {project.title}
-                </motion.h2>
+                </h2>
 
-                <motion.div
-                  variants={item}
-                  className="flex w-full flex-col py-2 md:flex-row md:items-start md:justify-around md:px-3"
-                >
+                <div className="flex w-full flex-col py-2 md:flex-row md:items-start md:justify-around md:px-3">
                   <div className="md:w-5/12">
                     <Image
                       src={project.image}
@@ -168,62 +126,37 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                       </a>
                     </div>
                   </div>
-                </motion.div>
-              </motion.article>
+                </div>
+              </article>
             ))}
-          </motion.div>
+          </div>
         </section>
 
         <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-10">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
-          >
-            <motion.h1
-              variants={item}
-              className="mb-2 mt-4 text-left text-5xl font-bold "
-            >
+          <div className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800">
+            <h1 className="mb-2 mt-4 text-left text-5xl font-bold ">
               Everything else...
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={item} className="mt-4">
+            <p className="mt-4">
               Occasionally I work on projects that are born out of curiosity.
               The following list includes components, libraries, demos, starter
               templates and anything else that piqued my interest. All of these
               projects are open source so you can check them out on GitHub.
-            </motion.p>
-          </motion.div>
+            </p>
+          </div>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800"
-          >
+          <div className="mt-4 flex w-full flex-col items-start justify-center divide-y px-4 text-left text-xl text-slate-800">
             {eeJSON.map((project: EEType) => (
-              <motion.article
+              <article
                 key={project.title}
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
                 className="flex w-full flex-col px-3 py-4 pt-8 "
               >
-                <motion.h2
-                  variants={item}
-                  className="mb-1 text-3xl font-bold md:pl-10"
-                >
+                <h2 className="mb-1 text-3xl font-bold md:pl-10">
                   {project.title}
-                </motion.h2>
+                </h2>
 
-                <motion.div
-                  variants={item}
-                  className="flex w-full flex-col py-2 md:flex-row md:items-center md:justify-around md:px-3"
-                >
+                <div className="flex w-full flex-col py-2 md:flex-row md:items-center md:justify-around md:px-3">
                   <div className="rounded-lg pb-5 md:w-5/12">
                     <Image
                       src={project.ogImage}
@@ -306,10 +239,10 @@ const Projects: React.FC<PageProps> = ({ eeJSON }) => {
                       )}
                     </div>
                   </div>
-                </motion.div>
-              </motion.article>
+                </div>
+              </article>
             ))}
-          </motion.div>
+          </div>
         </section>
       </main>
     </Layout>

@@ -1,8 +1,5 @@
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import * as React from 'react';
-
-import { textContainer, textItem } from '@/lib/framer';
 
 import Layout from '@/components/layout/Layout';
 
@@ -43,20 +40,20 @@ export default function Hardware() {
 
   // Laptop specifications
   const laptop1Specs: HardwareSection = {
+    title: 'MacBook Pro',
+    specs: [
+      { label: 'CPU', value: 'Apple M5 Pro' },
+      { label: 'RAM', value: '48GB Unified Memory' },
+      { label: 'Storage', value: '1TB  SSD' },
+    ],
+  };
+
+  const laptop2Specs: HardwareSection = {
     title: 'Framework Laptop 13',
     specs: [
       { label: 'CPU', value: 'AMD Ryzen 5 7640U' },
       { label: 'RAM', value: '64GB DDR5 6000MHz' },
       { label: 'Storage', value: '1TB NVMe SSD' },
-    ],
-  };
-
-  const laptop2Specs: HardwareSection = {
-    title: 'MacBook Pro',
-    specs: [
-      { label: 'CPU', value: 'Apple M4' },
-      { label: 'RAM', value: '24GB Unified Memory' },
-      { label: 'Storage', value: '1TB  SSD' },
     ],
   };
 
@@ -67,8 +64,7 @@ export default function Hardware() {
     highlights?: string[];
   }> = ({ section, icon = '🧩', subtitle, highlights }) => {
     return (
-      <motion.section
-        variants={textItem}
+      <section
         className="
           mt-8 w-full rounded-xl
           border border-slate-200/70
@@ -90,17 +86,19 @@ export default function Hardware() {
                 leading-none
               "
             >
-              <span className="shrink-0 leading-none">{icon}</span>
+              {/* <span className="shrink-0 leading-none">{icon}</span> */}
               <span className="leading-none">{section.title}</span>
             </h2>
 
-            {subtitle ? (
-              <p className="mt-2 text-sm text-slate-600">{subtitle}</p>
-            ) : null}
-
-            {highlights?.length ? (
+            {subtitle || highlights?.length ? (
               <div className="mt-3 flex flex-wrap gap-2">
-                {highlights.map((h) => (
+                {subtitle ? (
+                  <span className="inline-flex rounded-full border border-orange-200 bg-orange-50 px-2.5 py-1 text-xs font-medium text-orange-700">
+                    {subtitle}
+                  </span>
+                ) : null}
+
+                {highlights?.map((h) => (
                   <span
                     key={h}
                     className="rounded-full border border-slate-200/70 px-2.5 py-1 text-xs text-slate-700"
@@ -128,11 +126,9 @@ export default function Hardware() {
             </div>
           ))}
         </dl>
-      </motion.section>
+      </section>
     );
   };
-
-
 
   return (
     <Layout>
@@ -142,45 +138,35 @@ export default function Hardware() {
 
       <main className="min-h-[calc(100vh-56px)] h-full">
         <section className="mx-auto w-full max-w-screen-lg px-3 pb-32 pt-10 md:pt-20">
-          <motion.div
-            variants={textContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="rounded-3xl px-4 py-6"
-          >
-            <motion.h1
-              variants={textItem}
-              className="mb-4 mt-4 inline-flex items-center gap-2 text-5xl font-bold leading-none text-slate-900"
-            >
+          <div className="rounded-3xl px-4 py-6">
+            <h1 className="mb-4 mt-4 inline-flex items-center gap-2 text-5xl font-bold leading-none text-slate-900">
               <span className="leading-none">Hardware</span>
               <span className="leading-none">💻</span>
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={textItem} className="mt-4 font-medium">
+            <p className="mt-4 font-medium">
               Here&apos;s a list of the hardware I use for development and
               everyday computing.
-            </motion.p>
+            </p>
 
             <SpecSection
               section={desktopSpecs}
-              icon="🖥️"
-              subtitle="Main Workstation + Gaming Rig"
-              highlights={['Ryzen 7 9800X3D', 'RTX 5090', '32GB DDR5', 'QD-OLED 165Hz']}
+              subtitle="Gaming Rig"
+              highlights={[
+                'Ryzen 7 9800X3D',
+                'RTX 5090',
+                '32GB DDR5',
+                'QD-OLED 165Hz',
+              ]}
             />
 
             <SpecSection
               section={laptop1Specs}
-              icon="🧰"
-              subtitle="Modular Dev Laptop"
+              subtitle="Main Developer Machine"
             />
 
-            <SpecSection
-              section={laptop2Specs}
-              icon="🍎"
-              subtitle="MacOS Workflow"
-            />
-          </motion.div>
+            <SpecSection section={laptop2Specs} subtitle="Modular Dev Laptop" />
+          </div>
         </section>
       </main>
     </Layout>

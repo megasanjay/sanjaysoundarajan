@@ -1,9 +1,6 @@
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import * as React from 'react';
-
-import { textContainer, textItem } from '@/lib/framer';
 
 import StyledButton from '@/components/buttons/StyledButton';
 import Layout from '@/components/layout/Layout';
@@ -18,21 +15,12 @@ export default function About() {
 
       <main className="min-h-[calc(100vh-56px)] h-full">
         <section className="mx-auto flex h-full w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-20">
-          <motion.div
-            variants={textContainer}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
-          >
-            <motion.h1
-              variants={textItem}
-              className="mb-4 mt-4 text-left text-5xl font-bold "
-            >
+          <div className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800">
+            <h1 className="mb-4 mt-4 text-left text-5xl font-bold ">
               About me 👋
-            </motion.h1>
+            </h1>
 
-            <motion.div variants={textItem}>
+            <div>
               <p className="mt-4 font-medium">
                 Hello! வணக்கம்! ආයුබෝවන්! Hola!
               </p>
@@ -96,12 +84,9 @@ export default function About() {
                 or if I can help you in some way, please don&apos;t hesitate to
                 reach out.
               </p>
-            </motion.div>
+            </div>
 
-            <motion.div
-              variants={textItem}
-              className="mt-8 flex flex-wrap items-center gap-4"
-            >
+            <div className="mt-8 flex flex-wrap items-center gap-4">
               <div data-umami-event="View resume - form button">
                 <StyledLink href="/resume/SanjaySoundarajan-Resume.pdf">
                   <StyledButton>
@@ -130,8 +115,8 @@ export default function About() {
                   </div>
                 </StyledButton>
               </div>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
       </main>
     </Layout>

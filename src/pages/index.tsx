@@ -1,31 +1,14 @@
 import { Icon } from '@iconify/react';
-import { motion } from 'framer-motion';
 import Head from 'next/head';
 import Link from 'next/link';
 import * as React from 'react';
-
-import StyledButton from '@/components/buttons/StyledButton';
-import Layout from '@/components/layout/Layout';
 import LottieAnimation from '@/components/lotties';
 
 import heroLottie from '~/lotties/hi.json';
 
+import StyledButton from '@/components/buttons/StyledButton';
+import Layout from '@/components/layout/Layout';
 export default function Home() {
-  const container = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.3,
-      },
-    },
-  };
-
-  const item = {
-    hidden: { opacity: 0, translateY: 100 },
-    show: { opacity: 1, translateY: 0 },
-  };
-
   return (
     <Layout>
       <Head>
@@ -42,29 +25,17 @@ export default function Home() {
             />
           </div>
 
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex flex-col items-start justify-center px-4 text-center "
-          >
-            <motion.h1
-              variants={item}
-              className="mt-4 text-left text-5xl font-bold md:text-6xl "
-            >
+          <div className="flex flex-col items-start justify-center px-4 text-center ">
+            <h1 className="mt-4 text-left text-5xl font-bold md:text-6xl ">
               Hi! I&apos;m Sanjay
-            </motion.h1>
+            </h1>
 
-            <motion.p
-              variants={item}
-              className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12 font-medium"
-            >
+            <p className="mt-6 text-left text-2xl text-slate-800 md:text-3xl md:w-10/12 font-medium">
               I&apos;m a Research Software Engineer for the FAIR Data
               Innovations Hub and I build tools for open science.
-            </motion.p>
+            </p>
 
-            <motion.div variants={item} className="mt-4">
+            <div className="mt-4">
               <Link href="/about" passHref>
                 <div className="mt-4">
                   <StyledButton>
@@ -75,8 +46,8 @@ export default function Home() {
                   </StyledButton>
                 </div>
               </Link>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
         </section>
       </main>
     </Layout>

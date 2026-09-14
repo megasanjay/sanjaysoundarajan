@@ -1,5 +1,4 @@
 import { Icon } from '@iconify/react';
-import { motion, type Variants } from 'framer-motion';
 import Head from 'next/head';
 import * as React from 'react';
 
@@ -21,22 +20,6 @@ import StyledLink from '@/components/links/StyledLink';
 import PublicationsJSON from '~/data/publications.json';
 
 export default function Publications() {
-  const container: Variants = {
-    hidden: { opacity: 0 },
-    show: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.25,
-        ease: 'easeInOut' as const,
-      },
-    },
-  };
-
-  const item: Variants = {
-    hidden: { opacity: 0, translateY: 100 },
-    show: { opacity: 1, translateY: 0 },
-  };
-
   return (
     <Layout>
       <Head>
@@ -45,21 +28,12 @@ export default function Publications() {
 
       <main>
         <section className="mx-auto flex w-full max-w-screen-lg flex-col px-3 pb-32 pt-10 md:pt-20">
-          <motion.div
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800"
-          >
-            <motion.h1
-              variants={item}
-              className="mb-4 mt-4 text-left text-5xl font-bold "
-            >
+          <div className="flex flex-col items-start justify-center px-4 text-left text-xl text-slate-800">
+            <h1 className="mb-4 mt-4 text-left text-5xl font-bold ">
               Publications & Research 🔬
-            </motion.h1>
+            </h1>
 
-            <motion.p variants={item} className="mt-4">
+            <p className="mt-4">
               All my research work, that has been published (in reverse
               chronological order), is listed here. If you are interested in
               reading any specific publication, please reach out to me at{' '}
@@ -70,12 +44,9 @@ export default function Publications() {
                 contact@sanjaysoundarajan.dev
               </StyledLink>{' '}
               for the full text.
-            </motion.p>
+            </p>
 
-            <motion.div
-              variants={item}
-              className="mb-4 mt-4 text-sky-500 flex flex-wrap items-center gap-4"
-            >
+            <div className="mb-4 mt-4 text-sky-500 flex flex-wrap items-center gap-4">
               <StyledLink href="https://orcid.org/0000-0003-2829-8032">
                 <StyledButton>
                   <div className="flex items-center space-x-2 py-1">
@@ -129,29 +100,16 @@ export default function Publications() {
                   </div>
                 </StyledButton>
               </StyledLink>
-            </motion.div>
-          </motion.div>
+            </div>
+          </div>
 
-          <motion.ul
-            variants={container}
-            initial="hidden"
-            whileInView="show"
-            viewport={{ once: true }}
-            className="mt-4 flex w-full flex-col items-start justify-center text-left text-xl text-slate-800"
-          >
+          <ul className="mt-4 flex w-full flex-col items-start justify-center text-left text-xl text-slate-800">
             {PublicationsJSON.map((publication: publicationType) => (
-              <motion.li
-                variants={container}
-                initial="hidden"
-                whileInView="show"
-                viewport={{ once: true }}
+              <li
                 key={publication.title}
                 className="my-2 w-full rounded-lg border-slate-200 bg-slate-50 px-3 py-4 shadow-md"
               >
-                <motion.article
-                  variants={item}
-                  className=" flex w-full flex-col"
-                >
+                <article className=" flex w-full flex-col">
                   <h2 className="w-auto  text-xl">
                     <StyledLink
                       href={publication.url}
@@ -215,10 +173,10 @@ export default function Publications() {
                       </p>
                     </details>
                   )}
-                </motion.article>
-              </motion.li>
+                </article>
+              </li>
             ))}
-          </motion.ul>
+          </ul>
         </section>
       </main>
     </Layout>

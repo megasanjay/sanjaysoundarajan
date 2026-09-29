@@ -1,5 +1,16 @@
 [
   {
+    "title": "The State of Scientific Poster Sharing and Reuse",
+    "id": "s41597-026-08389-4",
+    "conferenceTitle": "Nature / Scientific Data",
+    "publicationDate": "2026-09-29",
+    "authors": "Aydan Gasimova, Paapa Mensah-Kane, Gerard F. Blake, Sanjay Soundarajan, James O'Neill & Bhavesh Patel",
+    "doi": "10.1038/s41597-026-08389-4",
+    "url": "https://doi.org/10.1038/s41597-026-08389-4",
+    "citation": "@Article{Gasimova2026, author={Gasimova, Aydan and Mensah-Kane, Paapa and Blake, Gerard F. and Soundarajan, Sanjay and O'Neill, James and Patel, Bhavesh}, title={The State of Scientific Poster Sharing and Reuse}, journal={Scientific Data}, year={2026}, month={Sep}, day={29}, abstract={Scientific posters are one of the most common forms of scholarly communication and contain early-stage insights with potential to accelerate scientific discovery. We investigated where posters are shared, to what extent their sharing aligns with the FAIR principles, and how commonly they are reused. We identified 86 platforms hosting posters, with many not assigning persistent identifiers. A total of 150k posters are shared as of 2024 on the 43 platforms where we were able to count, which is relatively low. Looking in more detail at posters shared on Zenodo and Figshare, we found that repositories are not always supporting structured metadata critical for poster discovery, like conference information, and that researchers are not providing such metadata even if they are supported. We also observed that while there is some engagement with posters in terms of views and downloads, citing posters is not yet a common practice. These gaps mean valuable early-stage insights are being lost to the scientific community, pointing to a need for clearer guidelines and stronger incentives for FAIR poster sharing and reuse.}, issn={2052-4463}, doi={10.1038/s41597-026-08389-4}, url={https://doi.org/10.1038/s41597-026-08389-4}}",
+    "abstract": "Scientific posters are one of the most common forms of scholarly communication and contain early-stage insights with potential to accelerate scientific discovery. We investigated where posters are shared, to what extent their sharing aligns with the FAIR principles, and how commonly they are reused. We identified 86 platforms hosting posters, with many not assigning persistent identifiers. A total of 150k posters are shared as of 2024 on the 43 platforms where we were able to count, which is relatively low. Looking in more detail at posters shared on Zenodo and Figshare, we found that repositories are not always supporting structured metadata critical for poster discovery, like conference information, and that researchers are not providing such metadata even if they are supported. We also observed that while there is some engagement with posters in terms of views and downloads, citing posters is not yet a common practice. These gaps mean valuable early-stage insights are being lost to the scientific community, pointing to a need for clearer guidelines and stronger incentives for FAIR poster sharing and reuse."
+  },
+  {
     "title": "Dataset documentation for responsible AI: analysis of suitability and usage for health datasets",
     "id": "10.1038-s41746-026-02714-2",
     "conferenceTitle": "npj Digital Medicine",

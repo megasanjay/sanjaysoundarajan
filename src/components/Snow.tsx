@@ -64,9 +64,30 @@ const LEAF_GROUPS: IconGroup[] = [
 // (months are 0-indexed)
 const getSeasonGroups = (date: Date): IconGroup[] | null => {
   const month = date.getMonth();
-  if (month === 10) return LEAF_GROUPS;
+  if (month === 10) return getNovemberGroups(date);
   if (month === 11) return SNOW_GROUPS;
   return null;
+};
+
+// November shifts from leaves to snow: all leaves on the 1st, all snow by the
+// last day, so it hands over to December without a jump
+const getNovemberGroups = (date: Date): IconGroup[] => {
+  const daysInMonth = new Date(date.getFullYear(), date.getMonth() + 1, 0)
+    .getDate();
+  // 0 on the 1st, 1 on the last day
+  const snowShare = (date.getDate() - 1) / (daysInMonth - 1);
+
+  return [
+    ...LEAF_GROUPS.map((group) => ({
+      ...group,
+      weight: group.weight * (1 - snowShare),
+    })),
+    ...SNOW_GROUPS.map((group) => ({
+      ...group,
+      weight: group.weight * snowShare,
+    })),
+    // Drop groups with no share so their icons aren't fetched
+  ].filter((group) => group.weight > 0);
 };
 
 interface FlakeShape {

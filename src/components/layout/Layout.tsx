@@ -4,6 +4,7 @@ import { BrowserView } from 'react-device-detect';
 import Header from '@/components/layout/Header';
 import Neko from '@/components/layout/Neko';
 import LetterGlitch from '@/components/LetterGlitch';
+import Snow from '@/components/Snow';
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   // Put Header or Footer Here
@@ -15,6 +16,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         centerVignette={false}
         outerVignette={false}
       />
+
+      <Snow />
 
       <Header />
 

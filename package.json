@@ -12,8 +12,6 @@
     "typecheck": "tsc --noEmit --incremental false",
     "test:watch": "jest --watch",
     "test": "jest",
-    "update-counters": "node ./scripts/update-counters.mjs",
-    "update-image-metadata": "node ./scripts/update-image-metadata.mjs",
     "format": "prettier -w .",
     "format:check": "prettier -c .",
     "release": "standard-version",
@@ -23,9 +21,7 @@
   "dependencies": {
     "@iconify/react": "6.0.4",
     "clsx": "2.1.1",
-    "dotenv": "18.0.10",
     "framer-motion": "14.14.0",
-    "mongodb": "7.9.0",
     "neko-ts": "0.0.7",
     "next": "16.4.6",
     "react": "19.3.1",
